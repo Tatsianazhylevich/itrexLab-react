@@ -1,0 +1,1 @@
+export { DoctorWiew } from './DoctorWiew';

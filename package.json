@@ -39,7 +39,8 @@
       "no-nested-ternary": 0,
       "react/jsx-filename-extension": 0,
       "no-plusplus": 0,
-      "jsx-a11y/control-has-associated-label": 0
+      "jsx-a11y/control-has-associated-label": 0,
+      "no-console": 0
     }
   },
   "browserslist": {

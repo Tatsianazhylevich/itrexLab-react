@@ -9,3 +9,7 @@ body {
   height: 1024px;
   max-width: 1920px;
 }
+
+.errorinput {
+  background: 1px solid red;
+}

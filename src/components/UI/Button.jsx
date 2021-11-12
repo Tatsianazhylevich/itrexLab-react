@@ -15,4 +15,11 @@ const StyledButton = styled.button`
   padding-right: 32px;
   color: #FFFFFF;
   cursor: pointer;
+  @media (max-width: 600px) {
+    width: 123px;
+    height: 46px;
+    margin-top: 20px;
+    background: url(${arrowRightIcon}) no-repeat center right 16px, #7297FF;
+    padding-right: 30px;
+  }
 `;

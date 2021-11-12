@@ -1,27 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useField } from 'formik';
-import { WarningText } from './WarningText';
-// import nameIcon from '../../assets/icons/user.png';
-// import emailIcon from '../../assets/icons/Vector.png';
-// import passwordIcon from '../../assets/icons/lock.png';
-// import confirmIcon from '../../assets/icons/check.png';
+import { ErrorMessage, useField } from 'formik';
+import { StyledWarningText } from './WarningText';
+import eye from '../../assets/icons/eye.png';
+import eyeSlash from '../../assets/icons/eye-slash.png';
 
-export function Input({ ...props }) {
-  const [field, meta] = useField(props);
+export const Input = ({ label, isEyeVisible, ...props }) => {
+  const [field] = useField(props);
+  const [visible, setVisible] = useState(false);
+
+  const changeVisibility = () => {
+    setVisible(!visible);
+  };
+
   return (
-    <div>
-      <StyledInput
-        className={props.name}
-        {...field}
-        {...props}
-      />
-      {meta.touched && meta.error ? (
-        <WarningText className="error">{meta.error}</WarningText>
-      ) : null}
-    </div>
+    <StyledDiv>
+      <StyledLabel htmlFor={field.name}>{label}</StyledLabel>
+      {isEyeVisible
+        ? <StyledInput {...field} {...props} autoComplete="off" type={visible ? 'text' : 'password'} />
+        : <StyledInput {...field} {...props} autoComplete="off" />}
+      { isEyeVisible
+        ? (<PasswordControl onClick={changeVisibility} src={visible ? eye : eyeSlash} />)
+        : null}
+      <ErrorMessage component={StyledWarningText} name={field.name} />
+    </StyledDiv>
   );
-}
+};
+
+const StyledDiv = styled.div`
+  position: relative;
+`;
 
 const StyledInput = styled.input`
     width: 368px;
@@ -31,12 +39,33 @@ const StyledInput = styled.input`
     line-height: 24px;
     border: 1px solid #DCE0EC;
     border-radius: 8px;
-    /* background: url({nameIcon}) no-repeat center left 20px;
-    padding-left: 63px;
-    background-color: #FFFFFF; */
     outline: none;
     cursor: pointer;
     &:focus {
         border: 1px solid #7297FF;
     }
+    @media (max-width: 600px) {
+      width: 100%;
+      height: 40px;
+      font-size: 15px;
+      line-height: 140%;
+      margin: 12px 0;
+    }
+`;
+
+const StyledLabel = styled.label`
+    font-size: 0px;
+
+`;
+
+const PasswordControl = styled.img`
+  position: absolute;
+  right: 20px;
+  top: 35px;
+  width: 24px;
+  @media (max-width: 600px) {
+    top: 20px;
+    right: 20px;
+  }
+    
 `;

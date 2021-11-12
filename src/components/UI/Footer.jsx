@@ -24,7 +24,7 @@ export function Footer(props) {
     return (
       <StyledFooter className="sign-bar__have-account">
         <StyledFooterText>{footerText}</StyledFooterText>
-        <Link to={footerLink}>{footerLinkText}</Link>
+        <StyledFooterLink to={footerLink}>{footerLinkText}</StyledFooterLink>
       </StyledFooter>
     );
   }
@@ -34,6 +34,11 @@ export function Footer(props) {
 const StyledFooter = styled.div`
     display: flex;
     margin-top: 85px;
+    @media (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+      margin-top: 48px;
+    }
 `;
 
 const StyledFooterText = styled.span`
@@ -42,4 +47,10 @@ const StyledFooterText = styled.span`
     font-size: 15px;
     line-height: 140%;
     color: #A1ABC9;
+`;
+
+const StyledFooterLink = styled(Link)`
+  @media (max-width: 600px) {
+    margin: 0;
+  }
 `;

@@ -15,6 +15,7 @@ export function CardList() {
           status={patient.status}
           description={patient.description}
           time={patient.time}
+          key={patient.id}
         />
       ))}
 

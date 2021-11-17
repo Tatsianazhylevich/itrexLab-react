@@ -10,8 +10,8 @@ export function DoctorWiew() {
       <StyledMain>
         <NavMenu
           buttons={[
-            { title: 'Patients' },
-            { title: 'Resolutions' }]}
+            { title: 'Patients', id: 1 },
+            { title: 'Resolutions', id: 2 }]}
         />
         <BoardCard>
           <BoardHeader title="My Patients" />

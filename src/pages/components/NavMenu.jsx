@@ -14,6 +14,7 @@ export function NavMenu({ buttons }) {
           <StyledMenuItem
             onClick={() => handleOnClick(button.title)}
             isActive={button.title === activeButton}
+            key={button.id}
           >
             {button.title}
           </StyledMenuItem>

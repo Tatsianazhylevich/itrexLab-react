@@ -4,3 +4,4 @@ export { Card } from './Card';
 export { Title } from './Title';
 export { Container } from './Container';
 export { StyledWarningText } from './WarningText';
+export { SectionHeader } from './SectionHeader';

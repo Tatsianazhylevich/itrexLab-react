@@ -5,7 +5,9 @@ import { StyledWarningText } from './WarningText';
 import eye from '../../assets/icons/eye.png';
 import eyeSlash from '../../assets/icons/eye-slash.png';
 
-export const Input = ({ label, isEyeVisible, ...props }) => {
+export const Input = ({
+  label, isEyeVisible, fontSize, ...props
+}) => {
   const [field] = useField(props);
   const [visible, setVisible] = useState(false);
 
@@ -15,7 +17,7 @@ export const Input = ({ label, isEyeVisible, ...props }) => {
 
   return (
     <StyledDiv>
-      <StyledLabel htmlFor={field.name}>{label}</StyledLabel>
+      <StyledLabel fontSize={fontSize} htmlFor={field.name}>{label}</StyledLabel>
       {isEyeVisible
         ? <StyledInput {...field} {...props} autoComplete="off" type={visible ? 'text' : 'password'} />
         : <StyledInput {...field} {...props} autoComplete="off" />}
@@ -29,12 +31,14 @@ export const Input = ({ label, isEyeVisible, ...props }) => {
 
 const StyledDiv = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: column;
 `;
 
 const StyledInput = styled.input`
     width: 368px;
     height: 56px;
-    margin: 20px 0;
+    margin: 0 0 20px 0;
     font-size: 17px;
     line-height: 24px;
     border: 1px solid #DCE0EC;
@@ -54,7 +58,7 @@ const StyledInput = styled.input`
 `;
 
 const StyledLabel = styled.label`
-    font-size: 0px;
+    font-size: ${(props) => props.fontSize}px;
 
 `;
 

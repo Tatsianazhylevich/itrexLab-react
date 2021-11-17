@@ -68,30 +68,35 @@ export function SignUpForm() {
             name="name"
             type="text"
             placeholder="First Name"
+            fontSize="0"
           />
           <InputName
             label="Surname"
             name="lastName"
             type="text"
             placeholder="Last Name"
+            fontSize="0"
           />
           <InputEmail
             label="Email"
             name="email"
             type="email"
             placeholder="email@gmail.com"
+            fontSize="0"
           />
           <InputPassword
             label="Password"
             name="password"
             isEyeVisible
             placeholder="Password"
+            fontSize="0"
           />
           <InputConfirmPassword
             label="Confirm Password"
             name="confirmPassword"
             isEyeVisible
             placeholder="Confirm Password"
+            fontSize="0"
           />
           <Button type="submit">Submit</Button>
           <Footer link={SIGN_UP_PATH} />

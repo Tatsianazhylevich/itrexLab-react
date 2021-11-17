@@ -1,32 +1,17 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
-import { Header, NavMenu } from '../../components';
+import { Header } from '../../components';
 import { BoardCard, BoardHeader } from '../components';
-import { DoctorList } from './components';
-import { USER_APPOINTMENT_PATH } from '../../components/routes';
-// import patients from './patientsMock';
+import { SectionContainer } from './components';
 
-export function UserView() {
-  const history = useHistory();
-
-  const getAppointment = () => {
-    history.push(USER_APPOINTMENT_PATH);
-  };
-
+export function AppointmentsView() {
   return (
     <StyledWrapper className="wrapper">
       <Header name="Larry Prinston" position="Patient" />
       <StyledMain>
-        <NavMenu
-          buttons={[
-            { title: 'Profile' },
-            { title: 'Appointments' },
-            { title: 'Resolutions' }]}
-        />
         <BoardCard>
-          <BoardHeader title="My Appointments" getAppointment={getAppointment} isBtnVisible />
-          <DoctorList />
+          <BoardHeader title="Make an appointment" />
+          <SectionContainer />
         </BoardCard>
       </StyledMain>
     </StyledWrapper>
@@ -45,7 +30,7 @@ const StyledWrapper = styled.div`
 `;
 
 const StyledMain = styled.div`
-  padding: 40px 0 40px 48px;
+  padding: 40px 48px;
   max-width: 1792px;
   height: 896px;
   background-color:#F9FAFF;

@@ -47,12 +47,14 @@ export function SignInForm() {
             name="email"
             type="email"
             placeholder="bart@gmail.com"
+            fontSize="0"
           />
           <InputPassword
             label="Password"
             name="password"
             type="password"
             placeholder="Password"
+            fontSize="0"
           />
           <Button type="submit">Submit</Button>
           <Link to={RESTORE_PASSWORD_PATH}>Forgot password?</Link>

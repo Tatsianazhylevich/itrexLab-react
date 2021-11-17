@@ -48,6 +48,7 @@ export function RestorePasswordForm() {
             name="email"
             type="email"
             placeholder="bart@gmail.com"
+            fontSize="0"
           />
           <Button type="submit">Send Reset Link</Button>
         </StyledForm>

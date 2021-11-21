@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Header } from '../../components';
+import { Header, SelectDoctorForm } from '../../components';
 import { BoardCard, BoardHeader } from '../components';
-import { SectionContainer } from './components';
 
 export function AppointmentsView() {
   return (
@@ -11,7 +10,7 @@ export function AppointmentsView() {
       <StyledMain>
         <BoardCard>
           <BoardHeader title="Make an appointment" />
-          <SectionContainer />
+          <SelectDoctorForm />
         </BoardCard>
       </StyledMain>
     </StyledWrapper>

@@ -6,7 +6,7 @@ export function Title({ ...props }) {
 }
 
 const StyledTitle = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   font-style: normal;
   font-weight: 600;
   font-size: 24px;

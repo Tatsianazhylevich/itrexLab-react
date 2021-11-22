@@ -38,7 +38,7 @@ const StyledDiv = styled.div`
 const StyledInput = styled.input`
     width: 368px;
     height: 56px;
-    margin: 0 0 20px 0;
+    margin: 0 0 40px 0;
     font-size: 17px;
     line-height: 24px;
     border: 1px solid #DCE0EC;
@@ -65,7 +65,7 @@ const StyledLabel = styled.label`
 const PasswordControl = styled.img`
   position: absolute;
   right: 20px;
-  top: 35px;
+  top: 17px;
   width: 24px;
   @media (max-width: 600px) {
     top: 20px;

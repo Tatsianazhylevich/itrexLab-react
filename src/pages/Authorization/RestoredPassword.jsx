@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Container } from '../../components/UI';
+import { Container, Title } from '../../components/UI';
 import arrowLeftIcon from '../../assets/icons/angle-left-b.png';
 import { SIGN_IN_PATH } from '../../components';
 
@@ -32,7 +32,7 @@ const StyledForm = styled.div`
       align-items: flex-start;
       width: 560px;
       min-height: 100vh;
-      padding: 178px 95px 0;
+      padding: 0 95px 0;
       background-color: #F9FAFF;
       @media (max-width: 600px) {
       justify-content: flex-start;
@@ -47,7 +47,7 @@ const ArrowLink = styled(Link)`
     width: 25px;
     background: url(${arrowLeftIcon}) no-repeat;
 `;
-const StyledTitle = styled.div`
+const StyledTitle = styled(Title)`
      display: flex;
 `;
 const StyledTitleText = styled.p`
@@ -56,7 +56,7 @@ const StyledTitleText = styled.p`
 const RestorePasswordText = styled.div`
     width: 368px;
     height: 38px;
-    margin: 32px 0 0;
+    margin-bottom: 395px;
     font-style: normal;
     font-weight: normal;
     font-size: 15px;

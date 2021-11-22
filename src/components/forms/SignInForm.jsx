@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 import styled from 'styled-components';
 import { Button, Input, Title } from '../UI';
 import { Footer } from '../UI/Footer';
-import { SIGN_IN_PATH, RESTORE_PASSWORD_PATH, DOCTOR_VIEW_PATH } from '../routes';
+import { SIGN_IN_PATH, RESTORE_PASSWORD_PATH, PATIENT_VIEW_PATH } from '../routes';
 import emailIcon from '../../assets/icons/Vector.png';
 import passwordIcon from '../../assets/icons/lock.png';
 
@@ -13,7 +13,7 @@ export function SignInForm() {
   const history = useHistory();
 
   function handleClick() {
-    history.push(DOCTOR_VIEW_PATH);
+    history.push(PATIENT_VIEW_PATH);
   }
   return (
     <Formik
@@ -105,3 +105,7 @@ const InputPassword = styled(Input)`
       background-color: #FFFFFF;
     }
 `;
+
+// const StyledLink = styled(Link)`
+//   margin-top: 230px;
+// `;

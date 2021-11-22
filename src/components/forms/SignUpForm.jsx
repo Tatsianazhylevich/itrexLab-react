@@ -9,7 +9,7 @@ import {
   Button, Input, Title,
 } from '../UI';
 import { Footer } from '../UI/Footer';
-import { SIGN_UP_PATH, DOCTOR_VIEW_PATH } from '../routes';
+import { SIGN_UP_PATH, PATIENT_VIEW_PATH } from '../routes';
 import nameIcon from '../../assets/icons/user.png';
 import emailIcon from '../../assets/icons/Vector.png';
 import passwordIcon from '../../assets/icons/lock.png';
@@ -19,7 +19,7 @@ export function SignUpForm() {
   const history = useHistory();
 
   function handleClick() {
-    history.push(DOCTOR_VIEW_PATH);
+    history.push(PATIENT_VIEW_PATH);
   }
 
   const validate = Yup.object({
@@ -98,7 +98,7 @@ export function SignUpForm() {
             placeholder="Confirm Password"
             fontSize="0"
           />
-          <Button type="submit">Submit</Button>
+          <Button type="submit">Sign Up</Button>
           <Footer link={SIGN_UP_PATH} />
         </StyledForm>
       )}
@@ -113,7 +113,7 @@ const StyledForm = styled(Form)`
     align-items: flex-start;
     width: 560px;
     min-height: 100vh;
-    padding: 0 95px;
+    padding: 172px 95px;
     background-color: #F9FAFF;
     @media (max-width: 600px) {
       justify-content: flex-start;

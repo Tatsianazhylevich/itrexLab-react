@@ -14,6 +14,7 @@ const StyledButton = styled.button`
   background: url(${arrowRightIcon}) no-repeat center right 20px, #7297FF;
   padding-right: 32px;
   color: #FFFFFF;
+  font-size: 17px;
   cursor: pointer;
   @media (max-width: 600px) {
     width: 123px;

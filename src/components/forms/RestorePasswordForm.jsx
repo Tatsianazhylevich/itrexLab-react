@@ -50,7 +50,7 @@ export function RestorePasswordForm() {
             placeholder="bart@gmail.com"
             fontSize="0"
           />
-          <Button type="submit">Send Reset Link</Button>
+          <StyledButtonForRestored type="submit">Send Reset Link</StyledButtonForRestored>
         </StyledForm>
       </Formik>
     </>
@@ -94,6 +94,7 @@ const ArrowLink = styled(Link)`
 
 const StyledTitle = styled(Title)`
      display: flex;
+     margin: 0;
 `;
 const StyledTitleText = styled.p`
       margin-left: 16px;
@@ -101,10 +102,14 @@ const StyledTitleText = styled.p`
 const RestorePasswordText = styled.div`
     width: 368px;
     height: 38px;
-    margin: 32px 0 0;
+    margin: 32px 0 32px;
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
     line-height: 130%; 
     color: #A1ABC9;
+`;
+const StyledButtonForRestored = styled(Button)`
+      width: 214px;
+      margin: 0px 0 350px;
 `;

@@ -33,7 +33,7 @@ export function Footer(props) {
 
 const StyledFooter = styled.div`
     display: flex;
-    margin-top: 85px;
+    margin-top: 70px;
     @media (max-width: 600px) {
       display: flex;
       flex-direction: column;

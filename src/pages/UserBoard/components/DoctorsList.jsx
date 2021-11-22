@@ -15,6 +15,7 @@ export function DoctorList() {
           position={doctor.position}
           reason={doctor.reason}
           time={doctor.time}
+          key={doctor.id}
         />
       ))}
 

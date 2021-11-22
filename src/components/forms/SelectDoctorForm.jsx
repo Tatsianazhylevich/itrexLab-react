@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import {
   Formik, Form, Field,
 } from 'formik';
@@ -7,8 +8,10 @@ import { doctors, timeList } from '../../mocks';
 import { Button, SectionHeader, StyledWarningText } from '../UI';
 import { StyledCalendar, RadioInput, MySelect } from '../../pages/Appointments/components';
 import { validate } from './ValidationForAppointment';
+import { PATIENT_VIEW_PATH } from '../routes';
 
 export function SelectDoctorForm() {
+  const history = useHistory();
   const [doctorsPosition, setDoctorsPosition] = useState('');
   const [doctorsName, setDoctorsName] = useState('');
   const [calendarValue, onChange] = useState(new Date());
@@ -38,6 +41,10 @@ export function SelectDoctorForm() {
     }));
   };
 
+  function handleClick() {
+    history.push(PATIENT_VIEW_PATH);
+  }
+
   return (
     <Formik
       initialValues={{
@@ -45,16 +52,20 @@ export function SelectDoctorForm() {
         doctorsName: '',
         reason: '',
         note: '',
-        date: { calendarValue },
+        date: calendarValue,
         time: '',
       }}
       validationSchema={validate}
-      onSubmit={(values) => {
-        console.log(values);
+      onSubmit={(values, { setSubmitting }) => {
+        setTimeout(() => {
+          console.log(values);
+          setSubmitting(false);
+          handleClick();
+        }, 400);
       }}
     >
       {({
-        values, errors, touched, setFieldValue, isValid, handleSubmit,
+        values, errors, touched, setFieldValue,
       }) => (
         <StyledAppointmentsForm>
           <StyledWrapper>
@@ -70,12 +81,11 @@ export function SelectDoctorForm() {
                   onChange={(value) => {
                     setDoctorsPosition(value);
                     setFieldValue('occupation', value.value);
-                    console.log(value);
                   }}
                   value={doctorsPosition}
                 />
                 {errors.occupation && touched.occupation
-                  ? <StyledWarningText>{errors.occupation}</StyledWarningText>
+                  ? <StyledWarnings>{errors.occupation}</StyledWarnings>
                   : null}
               </InputWrapper>
 
@@ -89,12 +99,11 @@ export function SelectDoctorForm() {
                   onChange={(value) => {
                     setDoctorsName(value);
                     setFieldValue('doctorsName', value.value);
-                    console.log(value);
                   }}
                   value={doctorsName}
                 />
                 {errors.doctorsName && touched.doctorsName
-                  ? <StyledWarningText>{errors.doctorsName}</StyledWarningText>
+                  ? <StyledWarnings>{errors.doctorsName}</StyledWarnings>
                   : null}
               </InputWrapper>
 
@@ -109,7 +118,7 @@ export function SelectDoctorForm() {
                 <StyledLabel>Note</StyledLabel>
                 <StyledFields type="text" name="note" placeholder="Leave a note if needed" />
                 {errors.note && touched.note
-                  ? <StyledWarningText>{errors.note}</StyledWarningText>
+                  ? <StyledWarnings>{errors.note}</StyledWarnings>
                   : null}
               </InputWrapper>
             </SectionWrapper>
@@ -123,7 +132,7 @@ export function SelectDoctorForm() {
               <SectionHeader number="3" text="Select an available timeslot" />
               <StyledRadioWrapper>
                 {errors.time && touched.time
-                  ? <StyledWarningText>{errors.time}</StyledWarningText>
+                  ? <StyledWarningsTime>{errors.time}</StyledWarningsTime>
                   : null}
                 {timeList.map((time) => (
                   <Field name="time" id={time} component={RadioInput} timeValue={time} selectedTime={values.time} key={time} />
@@ -131,7 +140,7 @@ export function SelectDoctorForm() {
               </StyledRadioWrapper>
             </SectionWrapper>
           </StyledWrapper>
-          <Button onClick={handleSubmit} isDisabled={isValid} type="submit">Submit</Button>
+          <Button type="submit">Submit</Button>
 
         </StyledAppointmentsForm>
       )}
@@ -196,7 +205,10 @@ const StyledLabel = styled.label`
   color: black;  
 `;
 
-// const ButtonWrapper = styled.div`
-//   display: flex;
-//   justify-content: flex-end;
-// `;
+const StyledWarnings = styled(StyledWarningText)`
+  bottom: 14px;
+`;
+const StyledWarningsTime = styled(StyledWarningText)`
+  bottom: -17px;
+  left: 23px;
+`;

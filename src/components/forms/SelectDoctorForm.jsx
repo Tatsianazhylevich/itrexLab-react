@@ -140,8 +140,9 @@ export function SelectDoctorForm() {
               </StyledRadioWrapper>
             </SectionWrapper>
           </StyledWrapper>
-          <Button type="submit">Submit</Button>
-
+          <StyledButtonWrapper>
+            <StyledButtonSubmit type="submit">Submit</StyledButtonSubmit>
+          </StyledButtonWrapper>
         </StyledAppointmentsForm>
       )}
     </Formik>
@@ -174,6 +175,7 @@ const InputWrapper = styled.div`
 const StyledRadioWrapper = styled.div`
   position: relative;
   display: flex;
+  gap: 16px;
   flex-wrap: wrap;
   width: 464px;
 `;
@@ -211,4 +213,13 @@ const StyledWarnings = styled(StyledWarningText)`
 const StyledWarningsTime = styled(StyledWarningText)`
   bottom: -17px;
   left: 23px;
+`;
+const StyledButtonWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
+
+const StyledButtonSubmit = styled(Button)`
+  padding: 0;
+  background: #7297FF;
 `;

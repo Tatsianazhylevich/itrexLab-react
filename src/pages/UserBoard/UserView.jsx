@@ -20,9 +20,9 @@ export function UserView() {
       <StyledMain>
         <NavMenu
           buttons={[
-            { title: 'Profile' },
-            { title: 'Appointments' },
-            { title: 'Resolutions' }]}
+            { title: 'Profile', id: '1' },
+            { title: 'Appointments', id: '2' },
+            { title: 'Resolutions', id: '3' }]}
         />
         <BoardCard>
           <BoardHeader title="My Appointments" getAppointment={getAppointment} isBtnVisible />

@@ -23,7 +23,7 @@ const StyledRadioLabel = styled.label`
     align-items: center;
     font-weight: 600;
     font-size: 15px;
-    background: '#F9FAFF';
+    background: #fff;
     color: ${({ isSelected }) => (isSelected ? '#7297FF' : '#202225')};
     border: ${({ isSelected }) => (isSelected ? '1px solid #7297FF' : 'none')};
     box-sizing: border-box;

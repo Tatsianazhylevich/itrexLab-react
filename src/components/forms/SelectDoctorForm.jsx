@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import {
   Formik, Form, Field,
 } from 'formik';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { doctors, timeList } from '../../mocks';
 import { Button, SectionHeader, StyledWarningText } from '../UI';
 import { StyledCalendar, RadioInput, MySelect } from '../../pages/Appointments/components';
@@ -15,6 +15,7 @@ export function SelectDoctorForm() {
   const [doctorsPosition, setDoctorsPosition] = useState('');
   const [doctorsName, setDoctorsName] = useState('');
   const [calendarValue, onChange] = useState(new Date());
+  // const [disabled, setDisabled] = useState(false);
   const occupations = doctors.reduce((acc, { position }) => {
     if (!acc.includes(position)) {
       return [...acc, position];
@@ -65,7 +66,7 @@ export function SelectDoctorForm() {
       }}
     >
       {({
-        values, errors, touched, setFieldValue,
+        values, errors, touched, setFieldValue, isValid, dirty,
       }) => (
         <StyledAppointmentsForm>
           <StyledWrapper>
@@ -141,7 +142,7 @@ export function SelectDoctorForm() {
             </SectionWrapper>
           </StyledWrapper>
           <StyledButtonWrapper>
-            <StyledButtonSubmit type="submit">Submit</StyledButtonSubmit>
+            <StyledButtonSubmit isDisabled={!isValid || !dirty} type="submit">Submit</StyledButtonSubmit>
           </StyledButtonWrapper>
         </StyledAppointmentsForm>
       )}
@@ -184,7 +185,7 @@ const StyledFields = styled(Field)`
     position: relative;
     width: 624px;
     height: 56px;
-    margin: 0 0 20px 0;
+    margin-bottom: 40px;
     padding: 0 24px;
     font-size: 17px;
     line-height: 24px;
@@ -222,4 +223,10 @@ const StyledButtonWrapper = styled.div`
 const StyledButtonSubmit = styled(Button)`
   padding: 0;
   background: #7297FF;
+  border: none;
+  ${(props) => props.isDisabled && css`
+    background: #d6ddf1;
+    cursor: not-allowed;
+    border: 1px solid gray;
+  `}
 `;

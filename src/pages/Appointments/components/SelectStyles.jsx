@@ -9,7 +9,7 @@ export const selectStyles = {
     fontWeight: '400',
     fontSize: '15px',
     lineHeight: '130%',
-    color: '#202225',
+    color: state.isSelected ? '#7297FF' : 'black',
   }),
   menuList: (provided) => ({
     ...provided,
@@ -21,6 +21,7 @@ export const selectStyles = {
     ...provided,
     height: '100%',
     marginBottom: '40px',
+    border: '1px solid #DCE0EC',
   }),
   input: (provided) => ({
     ...provided,

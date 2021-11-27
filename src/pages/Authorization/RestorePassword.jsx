@@ -1,7 +1,6 @@
 import React from 'react';
-import { Container } from '../../components/UI';
-
-import { RestorePasswordForm } from '../../components/forms';
+import { RestorePasswordForm } from '../../forms';
+import { Container } from '../../components';
 
 export function RestorePassword() {
   return (

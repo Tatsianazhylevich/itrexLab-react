@@ -1,5 +1,4 @@
 export * from './Authorization';
-export * from './PatientBoard';
-export * from './UserBoard';
-export * from './components';
+export * from './DoctorWiew';
+export * from './UserView';
 export * from './Appointments';

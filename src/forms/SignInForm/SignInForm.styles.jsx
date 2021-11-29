@@ -3,6 +3,7 @@ import { Form } from 'formik';
 import { Input } from '../../components';
 import emailIcon from '../../assets/icons/Vector.png';
 import passwordIcon from '../../assets/icons/lock.png';
+import { BREACKPOINTS, COLORS } from '../../theme';
 
 export const StyledForm = styled(Form)`
     display: flex;
@@ -12,8 +13,8 @@ export const StyledForm = styled(Form)`
     width: 560px;
     min-height: 100vh;
     padding: 0 95px;
-    background-color: #F9FAFF;
-    @media (max-width: 600px) {
+    background-color: ${COLORS.greylight};
+    @media (max-width: ${BREACKPOINTS.tablet}) {
       justify-content: flex-start;
         align-items: stretch;
         margin-top: 72px;
@@ -26,21 +27,21 @@ export const StyledForm = styled(Form)`
 export const InputEmail = styled(Input)`
     background: url(${emailIcon}) no-repeat center left 20px;
     padding-left: 63px;
-    background-color: #FFFFFF;
-    @media (max-width: 600px) {
+    background-color: ${COLORS.white};
+    @media (max-width: ${BREACKPOINTS.tablet}) {
       background: url(${emailIcon}) no-repeat center left 15px;
       padding-left: 48px;
-      background-color: #FFFFFF;
+      background-color: ${COLORS.white};
     }
 `;
 export const InputPassword = styled(Input)`
     position: relative;
     background: url(${passwordIcon}) no-repeat center left 20px;
     padding-left: 63px;
-    background-color: #FFFFFF;
-    @media (max-width: 600px) {
+    background-color: ${COLORS.white};
+    @media (max-width: ${BREACKPOINTS.tablet}) {
       background: url(${passwordIcon}) no-repeat center left 15px;
       padding-left: 48px;
-      background-color: #FFFFFF;
+      background-color: ${COLORS.white};
     }
 `;

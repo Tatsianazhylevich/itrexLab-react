@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import DateIcon from '../../../assets/icons/clock-three.png';
 import NoteIcon from '../../../assets/icons/clipboard-blank.png';
+import { BREACKPOINTS, COLORS } from '../../../theme';
 
 export const StyledCard = styled.li`
     width: 406px;
@@ -8,10 +9,10 @@ export const StyledCard = styled.li`
     margin-right: 20px;
     margin-bottom: 24px;
     padding: 24px 32px 40px;
-    background: white;
-    box-shadow: 0px 4px 32px rgba(218, 228, 255, 0.24);
+    background: ${COLORS.white};
+    box-shadow: 0px 4px 32px ${COLORS.darkgrey};
     border-radius: 12px;
-    @media(max-width: 1024px) {
+    @media(max-width: ${BREACKPOINTS.laptop}) {
       width: 100%;
     }
 `;
@@ -27,10 +28,10 @@ export const StyledCardHeader = styled.div`
     top: 75px;
     right: -32px;
     content: '';
-    background-color: #DCE0EC;
+    background-color: ${COLORS.solidgrey};
     width: 406px;
     height: 1px;
-    @media(max-width: 1024px) {
+    @media(max-width: ${BREACKPOINTS.laptop}) {
       right: 0px;
       width: 100%;;
     }
@@ -50,20 +51,20 @@ export const StyledHeaderAbout = styled.div`
 `;
 
 export const StyledName = styled.h4`
-        margin-bottom: 5px;
-        font-family: Poppins;
+    margin-bottom: 5px;
+    font-family: Poppins;
     font-style: normal;
     font-weight: 600;
     font-size: 17px;
     line-height: 130%;
-    color: #202225;
+    color: ${COLORS.black};
 `;
 
 export const Status = styled.div`
     width: 12px;
     height: 12px;
-    background: #34C197;
-    border: 3px solid #E3EBFF;
+    background: ${COLORS.aqua};
+    border: 3px solid ${COLORS.dirtywhite};
     border-radius: 50%;
 `;
 
@@ -74,14 +75,14 @@ export const StatusText = styled.div`
     font-weight: 500;
     font-size: 13px;
     line-height: 130%;
-    color: #a1abc9;
+    color: ${COLORS.mediumgrey};
 `;
 
 export const More = styled.div`
     position: relative;
     width: 5px;
     height: 5px;
-    background: #DCE0EC;
+    background: ${COLORS.solidgrey};
     border-radius: 50%;
     
     &:before {
@@ -90,7 +91,7 @@ export const More = styled.div`
     top: 7px;
     width: 5px;
     height: 5px;
-    background: #DCE0EC;
+    background: ${COLORS.solidgrey};
     border-radius: 50%;
     }
     &:after {
@@ -99,7 +100,7 @@ export const More = styled.div`
     bottom: 7px;
     width: 5px;
     height: 5px;
-    background: #DCE0EC;
+    background: ${COLORS.solidgrey};
     border-radius: 50%;
     }
 `;
@@ -125,7 +126,7 @@ export const DateText = styled.p`
     font-weight: 600;
     font-size: 15px;
     line-height: 130%;
-    color: #202225;
+    color: ${COLORS.black};
 `;
 export const StyledCardNote = styled.div`
     display: flex;
@@ -143,7 +144,7 @@ export const NoteText = styled.p`
     font-style: normal;
     font-size: 15px;
     line-height: 140%;
-    color: #202225;
+    color: ${COLORS.black};
 `;
 
 export const PatientStatus = styled.div`

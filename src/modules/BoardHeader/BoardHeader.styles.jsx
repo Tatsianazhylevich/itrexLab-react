@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import { Button } from '../../components';
 import plusIcon from '../../assets/icons/plus.png';
+import { BREACKPOINTS, COLORS } from '../../theme';
 
 export const StyledBoardTitle = styled.h2`
     display: flex;
-    color: #202225;
+    color: ${COLORS.black};
     font-size: 24px;
-    @media (max-width: 565px) {
+    @media (max-width: ${BREACKPOINTS.mobileL}) {
       font-size: 20px;
     }
 `;
@@ -25,6 +26,6 @@ export const CreateAnAppointmentBtn = styled(Button)`
   margin: 0;
   padding-left: 50px;
   width: 244px;
-  background: url(${plusIcon}) no-repeat center left 20px, #7297FF;
+  background: url(${plusIcon}) no-repeat center left 20px, ${COLORS.blue};
   border: none;
 `;

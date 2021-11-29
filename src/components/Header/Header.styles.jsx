@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import avatar from '../../assets/doctors/mirandaNelson.png';
+import { BREACKPOINTS, COLORS } from '../../theme';
 
 export const StyledHeader = styled.header`
     display: flex;
     justify-content: space-between;
     padding: 20px 0;
-    @media (max-width: 565px) {
+    @media (max-width: ${BREACKPOINTS.mobileL}) {
       margin: 0 24px;
       padding: 16px 0;
     }
@@ -38,7 +39,7 @@ export const HeaderUserInfo = styled.div`
     align-items: flex-end;
     flex-direction: column;
     margin-right: 16px;
-    @media (max-width: 565px) {
+    @media (max-width: ${BREACKPOINTS.mobileL}) {
       display: none;
     }
 `;
@@ -55,8 +56,8 @@ export const HeaderUserStatus = styled.div`
     right: 0px;
     width: 12px;
     height: 12px;
-    background: #34C197;
-    border: 3px solid #E3EBFF;
+    background: ${COLORS.aqua};
+    border: 3px solid ${COLORS.dirtywhite};
     border-radius: 50%;
 `;
 
@@ -66,7 +67,7 @@ export const HeaderUserName = styled.p`
     font-weight: 600;
     font-size: 15px;
     line-height: 130%;
-    color: #202225;
+    color: ${COLORS.black};
 `;
 
 export const HeaderUserProfession = styled.p`
@@ -75,5 +76,5 @@ export const HeaderUserProfession = styled.p`
     font-weight: 500;
     font-size: 13px;
     line-height: 130%;
-    color: #a1abc9;
+    color: ${COLORS.mediumgrey};
 `;

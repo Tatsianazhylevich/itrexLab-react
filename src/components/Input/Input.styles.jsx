@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { BREACKPOINTS, COLORS } from '../../theme';
 
 export const StyledDiv = styled.div`
   position: relative;
@@ -12,14 +13,14 @@ export const StyledInput = styled.input`
     margin: 0 0 40px 0;
     font-size: 17px;
     line-height: 24px;
-    border: 1px solid #DCE0EC;
+    border: 1px solid ${COLORS.mediumgrey};
     border-radius: 8px;
     outline: none;
     cursor: pointer;
     &:focus {
-        border: 1px solid #7297FF;
+        border: 1px solid ${COLORS.blue};
     }
-    @media (max-width: 600px) {
+    @media (max-width: ${BREACKPOINTS.tablet}) {
       width: 100%;
       height: 40px;
       font-size: 15px;
@@ -38,7 +39,7 @@ export const PasswordControl = styled.img`
   right: 20px;
   top: 17px;
   width: 24px;
-  @media (max-width: 600px) {
+  @media (max-width: ${BREACKPOINTS.tablet}) {
     top: 20px;
     right: 20px;
   }   

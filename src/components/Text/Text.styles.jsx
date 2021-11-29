@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { BREACKPOINTS, COLORS } from '../../theme';
 
 export const StyledTitle = styled.div`
   margin-bottom: 40px;
@@ -6,8 +7,8 @@ export const StyledTitle = styled.div`
   font-weight: 600;
   font-size: 24px;
   line-height: 110%;
-  color: #202225;
-  @media (max-width: 600px) {
+  color: ${COLORS.black};
+  @media (max-width: ${BREACKPOINTS.tablet}) {
     margin-top: 6vh;
         font-weight: 600;
         font-size: 20px;

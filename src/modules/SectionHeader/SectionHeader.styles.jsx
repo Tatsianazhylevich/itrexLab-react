@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { COLORS } from '../../theme';
 
 export const StyledContainer = styled.div`
     display: flex;
@@ -13,11 +14,11 @@ export const StyledNumber = styled.p`
     width: 32px;
     height: 32px;
     margin-right: 20px;
-    border: 1px solid #A1ABC9;
+    border: 1px solid ${COLORS.mediumgrey};
     border-radius: 50%;
     font-size: 17px;
     line-height: 24px;
-    color: #A1ABC9;
+    color: ${COLORS.mediumgrey};
 `;
 
 export const StyledText = styled.p`
@@ -26,5 +27,5 @@ export const StyledText = styled.p`
     align-items: center;
     font-size: 17px;
     line-height: 24px;
-    color: #A1ABC9;
+    color: ${COLORS.mediumgrey};
 `;

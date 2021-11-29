@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Title } from '../../components';
 import arrowLeftIcon from '../../assets/icons/angle-left-b.png';
+import { BREACKPOINTS, COLORS } from '../../theme';
 
 export const StyledForm = styled.div`
       display: flex;
@@ -11,8 +12,8 @@ export const StyledForm = styled.div`
       width: 560px;
       min-height: 100vh;
       padding: 0 95px 0;
-      background-color: #F9FAFF;
-      @media (max-width: 600px) {
+      background-color: ${COLORS.greylight};
+      @media (max-width: ${BREACKPOINTS.tablet}) {
       justify-content: flex-start;
         align-items: stretch;
         margin-top: 72px;
@@ -39,8 +40,8 @@ export const RestorePasswordText = styled.div`
     font-weight: normal;
     font-size: 15px;
     line-height: 130%; 
-    color: #A1ABC9;
-    @media (max-width: 600px) {
+    color: ${COLORS.mediumgrey};
+    @media (max-width: ${BREACKPOINTS.tablet}) {
       width: 100%;
         height: 38px;
         font-size: 12px;

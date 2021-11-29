@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { COLORS } from '../../theme';
 
 export const StyledRadioLabel = styled.label`
     display: flex;
@@ -9,15 +10,15 @@ export const StyledRadioLabel = styled.label`
     align-items: center;
     font-weight: 600;
     font-size: 15px;
-    background: #fff;
-    color: ${({ isSelected }) => (isSelected ? '#7297FF' : '#202225')};
-    border: ${({ isSelected }) => (isSelected ? '1px solid #7297FF' : 'none')};
+    background: ${COLORS.white};
+    color: ${({ isSelected }) => (isSelected ? COLORS.blue : COLORS.black)};
+    border: ${({ isSelected }) => (isSelected ? `1px solid ${COLORS.blue}` : 'none')};
     box-sizing: border-box;
-    box-shadow: 0px 4px 32px rgba(218, 228, 255, 0.24);
+    box-shadow: 0px 4px 32px ${COLORS.darkgrey};
     border-radius: 8px;
     cursor: pointer;
     &:hover {
-      border: 1px solid #7297FF;
+      border: 1px solid ${COLORS.blue};
     } 
 
 `;

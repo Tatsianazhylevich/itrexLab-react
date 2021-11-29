@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { Form, Field } from 'formik';
 import { Button, StyledWarningText } from '../../components';
+import { BREACKPOINTS, COLORS } from '../../theme';
 
 export const StyledSectionContainer = styled.div`
     display: flex;
@@ -48,12 +49,12 @@ export const StyledFields = styled(Field)`
     padding: 0 24px;
     font-size: 17px;
     line-height: 24px;
-    border: 1px solid #DCE0EC;
+    border: 1px solid ${COLORS.solidgrey};
     border-radius: 8px;
     outline: none;
     cursor: pointer;
     &:focus {
-        border: 1px solid #7297FF;
+        border: 1px solid ${COLORS.blue};
     }
 `;
 
@@ -64,7 +65,7 @@ export const StyledLabel = styled.label`
   font-weight: 500;
   font-size: 13px;
   line-height: 130%;
-  color: black;  
+  color: ${COLORS.black};  
 `;
 
 export const StyledWarnings = styled(StyledWarningText)`
@@ -81,10 +82,10 @@ export const StyledButtonWrapper = styled.div`
 
 export const StyledButtonSubmit = styled(Button)`
   padding: 0;
-  background: #7297FF;
+  background: ${COLORS.blue};
   border: none;
   ${(props) => props.isDisabled && css`
-    background: #d6ddf1;
+    background:  ${COLORS.solidgrey};
     cursor: not-allowed;
     border: 1px solid gray;
   `}

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Button } from '../../components';
 import plusIcon from '../../assets/icons/plus.png';
-import { BREACKPOINTS, COLORS } from '../../theme';
+import { BREACKPOINTS, COLORS } from '../../utils';
 
 export const BoardTitleStyles = styled.h2`
     display: flex;

@@ -4,7 +4,7 @@ import { Form } from 'formik';
 import { Button, Input, Title } from '../../components';
 import arrowLeftIcon from '../../assets/icons/angle-left-b.png';
 import emailIcon from '../../assets/icons/Vector.png';
-import { BREACKPOINTS, COLORS } from '../../theme';
+import { BREACKPOINTS, COLORS } from '../../utils';
 
 export const FormStyles = styled(Form)`
       display: flex;

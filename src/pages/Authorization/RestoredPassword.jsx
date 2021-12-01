@@ -4,7 +4,7 @@ import { SIGN_IN_PATH } from '../../routes';
 import {
   FormStyles, TitleStyles, ArrowLink, TitleTextStyles, RestorePasswordText,
 } from './RestoredPassword.styles';
-import { MESSAGES } from '../../theme';
+import { MESSAGES } from '../../utils';
 
 export function RestoredPassword() {
   return (

@@ -3,7 +3,7 @@ import { Header } from '../../components';
 import {
   NavMenu, BoardCard, BoardHeader, PatientCardList,
 } from '../../modules';
-import { MESSAGES } from '../../theme';
+import { MESSAGES } from '../../utils';
 import { WrapperStyles, MainStyles } from './DoctorView.styles';
 
 export function DoctorWiew() {

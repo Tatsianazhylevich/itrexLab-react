@@ -1,4 +1,4 @@
-import { COLORS } from '../../theme';
+import { COLORS } from '../../utils/theme';
 
 export const selectStyles = {
   option: (provided, state) => ({

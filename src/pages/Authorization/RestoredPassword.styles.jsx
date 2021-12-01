@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Title } from '../../components';
 import arrowLeftIcon from '../../assets/icons/angle-left-b.png';
-import { BREACKPOINTS, COLORS } from '../../theme';
+import { BREACKPOINTS, COLORS } from '../../utils/theme';
 
 export const FormStyles = styled.div`
       display: flex;

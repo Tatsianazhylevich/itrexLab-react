@@ -5,7 +5,7 @@ import nameIcon from '../../assets/icons/user.png';
 import emailIcon from '../../assets/icons/Vector.png';
 import passwordIcon from '../../assets/icons/lock.png';
 import confirmIcon from '../../assets/icons/check.png';
-import { BREACKPOINTS, COLORS } from '../../theme';
+import { BREACKPOINTS, COLORS } from '../../utils/theme';
 
 export const FormStyles = styled(Form)`
     display: flex;

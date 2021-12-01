@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import backgroud from '../../assets/bg.jpg';
 import mobileBackground from '../../assets/bg-mobile.jpg';
-import { BREACKPOINTS } from '../../theme';
+import { BREACKPOINTS } from '../../utils/theme';
 
 export const ContainerStyles = styled.div`
     display: flex;

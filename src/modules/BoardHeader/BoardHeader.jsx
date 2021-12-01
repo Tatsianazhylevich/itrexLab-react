@@ -2,7 +2,7 @@ import React from 'react';
 import {
   BoardHeaderStyles, BoardTitleStyles, CreateAnAppointmentBtn, ContainerStyles,
 } from './BoardHeader.styles';
-import { MESSAGES } from '../../theme';
+import { MESSAGES } from '../../utils';
 
 export function BoardHeader({ title, getAppointment, isBtnVisible }) {
   return (

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import DateIcon from '../../../assets/icons/clock-three.png';
 import NoteIcon from '../../../assets/icons/clipboard-blank.png';
-import { BREACKPOINTS, COLORS } from '../../../theme';
+import { BREACKPOINTS, COLORS } from '../../../utils/theme';
 
 export const CardStyles = styled.li`
     width: 406px;

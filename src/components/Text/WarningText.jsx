@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { COLORS } from '../../theme';
+import { COLORS } from '../../utils/theme';
 
 export const WarningTextStyles = styled.p`
     position: absolute;

@@ -7,7 +7,7 @@ import {
 import { ValidationForSignInForm } from './ValidationForSignInForm';
 import { SIGN_UP_PATH, RESTORE_PASSWORD_PATH, PATIENT_VIEW_PATH } from '../../routes/routes';
 import { FormStyles, InputEmail, InputPassword } from './SignInForm.styles';
-import { MESSAGES } from '../../theme';
+import { MESSAGES } from '../../utils';
 
 export function SignInForm() {
   const { push } = useHistory();

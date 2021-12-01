@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import arrowRightIcon from '../../assets/icons/angle-right-b.png';
-import { BREACKPOINTS, COLORS } from '../../theme';
+import { BREACKPOINTS, COLORS } from '../../utils/theme';
 
 export const ButtonStyles = styled.button`
   width: 146px;

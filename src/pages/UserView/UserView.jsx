@@ -5,7 +5,7 @@ import {
   NavMenu, BoardCard, BoardHeader, DoctorCardList,
 } from '../../modules';
 import { USER_APPOINTMENT_PATH } from '../../routes/routes';
-import { MESSAGES } from '../../theme';
+import { MESSAGES } from '../../utils';
 import { WrapperStyles, MainStyles } from './UserView.styles';
 
 export function UserView() {

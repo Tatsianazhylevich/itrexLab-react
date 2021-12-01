@@ -1,5 +1,5 @@
 import * as Yup from 'yup';
-import { ERRORMESSAGES } from '../../theme';
+import { ERRORMESSAGES } from '../../utils';
 
 export const ValidationForRestorePassForm = Yup.object({
   email: Yup.string()

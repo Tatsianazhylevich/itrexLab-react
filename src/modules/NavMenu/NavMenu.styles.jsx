@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BREACKPOINTS, COLORS } from '../../theme';
+import { BREACKPOINTS, COLORS } from '../../utils/theme';
 
 export const MenuStyles = styled.nav`
     display: flex;

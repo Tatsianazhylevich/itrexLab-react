@@ -13,7 +13,7 @@ import {
 } from './RestorePasswordForm.styles';
 
 import { SIGN_IN_PATH, RESTORED_PASSWORD_PATH } from '../../routes/routes';
-import { MESSAGES } from '../../theme';
+import { MESSAGES } from '../../utils';
 
 export function RestorePasswordForm() {
   const { push } = useHistory();

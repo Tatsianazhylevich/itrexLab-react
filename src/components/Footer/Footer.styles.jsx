@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { BREACKPOINTS } from '../../theme';
+import { BREACKPOINTS } from '../../utils/theme';
 
 export const FooterStyles = styled.div`
     display: flex;

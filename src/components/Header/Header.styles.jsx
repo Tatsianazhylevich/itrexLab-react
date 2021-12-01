@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import avatar from '../../assets/doctors/mirandaNelson.png';
-import { BREACKPOINTS, COLORS } from '../../theme';
+import { BREACKPOINTS, COLORS } from '../../utils/theme';
 
 export const HeaderStyles = styled.header`
     display: flex;

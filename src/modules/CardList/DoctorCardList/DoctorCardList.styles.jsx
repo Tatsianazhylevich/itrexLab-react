@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BREACKPOINTS } from '../../../theme';
+import { BREACKPOINTS } from '../../../utils/theme';
 
 export const CardListStyles = styled.ul`
     display: flex;

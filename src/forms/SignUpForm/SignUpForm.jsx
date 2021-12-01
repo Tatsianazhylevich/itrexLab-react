@@ -9,7 +9,7 @@ import {
 } from './SignUpForm.styles';
 import { ValidationForSignUpForm } from './ValidationForSignUpForm';
 import { SIGN_IN_PATH, PATIENT_VIEW_PATH } from '../../routes/routes';
-import { MESSAGES } from '../../theme';
+import { MESSAGES } from '../../utils';
 
 export function SignUpForm() {
   const { push } = useHistory();

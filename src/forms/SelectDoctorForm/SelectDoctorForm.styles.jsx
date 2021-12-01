@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { Form, Field } from 'formik';
 import { Button, WarningTextStyles } from '../../components';
-import { BREACKPOINTS, COLORS } from '../../theme';
+import { BREACKPOINTS, COLORS } from '../../utils/theme';
 
 export const SectionContainerStyles = styled.div`
     display: flex;

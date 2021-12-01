@@ -3,7 +3,7 @@ import { Form } from 'formik';
 import { Input } from '../../components';
 import emailIcon from '../../assets/icons/Vector.png';
 import passwordIcon from '../../assets/icons/lock.png';
-import { BREACKPOINTS, COLORS } from '../../theme';
+import { BREACKPOINTS, COLORS } from '../../utils/theme';
 
 export const FormStyles = styled(Form)`
     display: flex;

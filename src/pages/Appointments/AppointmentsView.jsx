@@ -3,7 +3,7 @@ import { Header } from '../../components';
 import { SelectDoctorForm } from '../../forms';
 import { BoardCard, BoardHeader } from '../../modules';
 import { WrapperStyles, MainStyles } from './AppointmentsView.styles';
-import { MESSAGES } from '../../theme';
+import { MESSAGES } from '../../utils';
 
 export function AppointmentsView() {
   return (

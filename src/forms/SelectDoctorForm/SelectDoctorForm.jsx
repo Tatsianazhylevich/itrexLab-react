@@ -10,7 +10,7 @@ import {
 } from '../../modules';
 import { validate } from './ValidationForAppointment';
 import { PATIENT_VIEW_PATH } from '../../routes/routes';
-import { MESSAGES } from '../../theme';
+import { MESSAGES } from '../../utils';
 import {
   SectionWrapper,
   AppointmentsFormStyles,

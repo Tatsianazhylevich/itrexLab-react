@@ -5,6 +5,7 @@ import {
 } from '../../modules';
 import { MESSAGES } from '../../utils';
 import { WrapperStyles, MainStyles } from './DoctorView.styles';
+import { navButtons } from '../../utils/navButtons';
 
 export function DoctorWiew() {
   return (
@@ -12,9 +13,7 @@ export function DoctorWiew() {
       <Header name="Miranda Nelson" position="Doctor" />
       <MainStyles>
         <NavMenu
-          buttons={[
-            { title: 'Patients', id: 1 },
-            { title: 'Resolutions', id: 2 }]}
+          buttons={navButtons.doctorsButtons}
         />
         <BoardCard>
           <BoardHeader title={MESSAGES.doctorViewTitle} />

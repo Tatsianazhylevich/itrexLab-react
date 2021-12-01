@@ -7,6 +7,7 @@ import {
 import { USER_APPOINTMENT_PATH } from '../../routes/routes';
 import { MESSAGES } from '../../utils';
 import { WrapperStyles, MainStyles } from './UserView.styles';
+import { navButtons } from '../../utils/navButtons';
 
 export function UserView() {
   const history = useHistory();
@@ -20,10 +21,7 @@ export function UserView() {
       <Header name="Larry Prinston" position="Patient" />
       <MainStyles>
         <NavMenu
-          buttons={[
-            { title: 'Profile', id: '1' },
-            { title: 'Appointments', id: '2' },
-            { title: 'Resolutions', id: '3' }]}
+          buttons={navButtons.usersButtons}
         />
         <BoardCard>
           <BoardHeader

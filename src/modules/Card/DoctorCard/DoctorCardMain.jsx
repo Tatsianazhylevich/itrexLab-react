@@ -1,31 +1,32 @@
 import React from 'react';
 import {
-  CardMainStyles,
-  CardDateStyles,
-  DateIconStyles,
+
+  CardDateStyled,
+  DateIconStyled,
   DateText,
-  CardNoteStyles,
-  NoteIconStyles,
+  CardNoteStyled,
+  NoteIconStyled,
   NoteText,
+  CardMainStyled,
 } from './DoctorCard.styles';
 
 export function DoctorCardMain({
   time, reason,
 }) {
   return (
-    <CardMainStyles>
-      <CardDateStyles>
-        <DateIconStyles />
+    <CardMainStyled>
+      <CardDateStyled>
+        <DateIconStyled />
         <DateText>
           {time}
         </DateText>
-      </CardDateStyles>
-      <CardNoteStyles>
-        <NoteIconStyles />
+      </CardDateStyled>
+      <CardNoteStyled>
+        <NoteIconStyled />
         <NoteText>
           {reason}
         </NoteText>
-      </CardNoteStyles>
-    </CardMainStyles>
+      </CardNoteStyled>
+    </CardMainStyled>
   );
 }

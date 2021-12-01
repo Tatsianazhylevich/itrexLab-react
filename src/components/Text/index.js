@@ -1,3 +1,3 @@
 export { Title } from './TitleText';
-export { WarningTextStyles } from './WarningText';
+export { WarningTextStyled } from './WarningText';
 export * from './Text.styles';

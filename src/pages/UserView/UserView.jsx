@@ -5,9 +5,8 @@ import {
   NavMenu, BoardCard, BoardHeader, DoctorCardList,
 } from '../../modules';
 import { USER_APPOINTMENT_PATH } from '../../routes/routes';
-import { MESSAGES } from '../../utils';
-import { WrapperStyles, MainStyles } from './UserView.styles';
-import { navButtons } from '../../utils/navButtons';
+import { messages, navButtons } from '../../shared';
+import { WrapperStyled, MainStyled } from './UserView.styles';
 
 export function UserView() {
   const history = useHistory();
@@ -17,21 +16,21 @@ export function UserView() {
   };
 
   return (
-    <WrapperStyles className="wrapper">
+    <WrapperStyled className="wrapper">
       <Header name="Larry Prinston" position="Patient" />
-      <MainStyles>
+      <MainStyled>
         <NavMenu
           buttons={navButtons.usersButtons}
         />
         <BoardCard>
           <BoardHeader
-            title={MESSAGES.userViewTitle}
+            title={messages.userViewTitle}
             getAppointment={getAppointment}
             isBtnVisible
           />
           <DoctorCardList />
         </BoardCard>
-      </MainStyles>
-    </WrapperStyles>
+      </MainStyled>
+    </WrapperStyled>
   );
 }

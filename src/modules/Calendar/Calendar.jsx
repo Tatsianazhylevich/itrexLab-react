@@ -4,7 +4,7 @@ import { daysArr } from '../../mocks';
 import 'react-calendar/dist/Calendar.css';
 import './calendarStyles/calendar.css';
 
-export function CalendarStyles({ value, onChange }) {
+export function CalendarStyled({ value, onChange }) {
   const getShortWeekday = useCallback((locale, date) => daysArr[date.getDay()], []);
   const minDate = useMemo(() => new Date(), []);
   return (

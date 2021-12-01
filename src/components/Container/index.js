@@ -1,2 +1,2 @@
 export { Container } from './Container';
-export { ContainerStyles } from './Container.styles';
+export { ContainerStyled } from './Container.styles';

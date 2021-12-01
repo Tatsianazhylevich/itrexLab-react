@@ -1,10 +1,10 @@
 import React from 'react';
 import {
-  CardHeaderStyles,
-  HeaderInfoStyles,
+  CardHeaderStyled,
+  HeaderInfoStyled,
   AvatarStyles,
-  HeaderAboutStyles,
-  NameStyles,
+  HeaderAboutStyled,
+  NameStyled,
   PatientStatus,
   StatusText,
   Status,
@@ -15,24 +15,24 @@ export function PatientCardHeader({
   avatar, firstName, lastName, status,
 }) {
   return (
-    <CardHeaderStyles>
-      <HeaderInfoStyles>
+    <CardHeaderStyled>
+      <HeaderInfoStyled>
         <AvatarStyles src={avatar} alt="avatar" />
-        <HeaderAboutStyles>
-          <NameStyles>
+        <HeaderAboutStyled>
+          <NameStyled>
             {firstName}
             {' '}
             {lastName}
-          </NameStyles>
+          </NameStyled>
           <PatientStatus>
             <Status />
             <StatusText>
               {status}
             </StatusText>
           </PatientStatus>
-        </HeaderAboutStyles>
-      </HeaderInfoStyles>
+        </HeaderAboutStyled>
+      </HeaderInfoStyled>
       <More />
-    </CardHeaderStyles>
+    </CardHeaderStyled>
   );
 }

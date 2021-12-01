@@ -1,10 +1,10 @@
 import React from 'react';
-import { BoardCardStyles } from './BoardCard.styles';
+import { BoardCardStyled } from './BoardCard.styles';
 
 export function BoardCard({ children }) {
   return (
-    <BoardCardStyles>
+    <BoardCardStyled>
       {children}
-    </BoardCardStyles>
+    </BoardCardStyled>
   );
 }

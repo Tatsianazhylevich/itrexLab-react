@@ -1,23 +1,23 @@
 import styled from 'styled-components';
 import DateIcon from '../../../assets/icons/clock-three.png';
 import NoteIcon from '../../../assets/icons/clipboard-blank.png';
-import { BREACKPOINTS, COLORS } from '../../../utils/theme';
+import { breackpoints, colors } from '../../../theme';
 
-export const CardStyles = styled.li`
+export const CardStyled = styled.li`
     width: 406px;
     height: 264px;
     margin-right: 20px;
     margin-bottom: 24px;
     padding: 24px 32px 40px;
-    background: ${COLORS.white};
-    box-shadow: 0px 4px 32px ${COLORS.darkgrey};
+    background: ${colors.white};
+    box-shadow: 0px 4px 32px ${colors.darkgrey};
     border-radius: 12px;
-    @media(max-width: ${BREACKPOINTS.laptop}) {
+    @media(max-width: ${breackpoints.laptop}) {
       width: 100%;
     }
 `;
 
-export const CardHeaderStyles = styled.div`
+export const CardHeaderStyled = styled.div`
     position: relative;
     display: flex;
     align-items: center;
@@ -28,16 +28,16 @@ export const CardHeaderStyles = styled.div`
     top: 75px;
     right: -32px;
     content: '';
-    background-color: ${COLORS.solidgrey};
+    background-color: ${colors.solidgrey};
     width: 406px;
     height: 1px;
-    @media(max-width: ${BREACKPOINTS.laptop}) {
+    @media(max-width: ${breackpoints.laptop}) {
       right: 0px;
       width: 100%;;
     }
     }
 `;
-export const HeaderInfoStyles = styled.div`
+export const HeaderInfoStyled = styled.div`
     display: flex;
 `;
 export const AvatarStyles = styled.img`
@@ -46,25 +46,25 @@ export const AvatarStyles = styled.img`
     height: 48px;
 `;
 
-export const HeaderAboutStyles = styled.div`
+export const HeaderAboutStyled = styled.div`
     margin: 11px 17px;
 `;
 
-export const NameStyles = styled.h4`
+export const NameStyled = styled.h4`
     margin-bottom: 5px;
     font-family: Poppins;
     font-style: normal;
     font-weight: 600;
     font-size: 17px;
     line-height: 130%;
-    color: ${COLORS.black};
+    color: ${colors.black};
 `;
 
 export const Status = styled.div`
     width: 12px;
     height: 12px;
-    background: ${COLORS.aqua};
-    border: 3px solid ${COLORS.dirtywhite};
+    background: ${colors.aqua};
+    border: 3px solid ${colors.dirtywhite};
     border-radius: 50%;
 `;
 
@@ -75,14 +75,14 @@ export const StatusText = styled.div`
     font-weight: 500;
     font-size: 13px;
     line-height: 130%;
-    color: ${COLORS.mediumgrey};
+    color: ${colors.mediumgrey};
 `;
 
 export const More = styled.div`
     position: relative;
     width: 5px;
     height: 5px;
-    background: ${COLORS.solidgrey};
+    background: ${colors.solidgrey};
     border-radius: 50%;
     
     &:before {
@@ -91,7 +91,7 @@ export const More = styled.div`
     top: 7px;
     width: 5px;
     height: 5px;
-    background: ${COLORS.solidgrey};
+    background: ${colors.solidgrey};
     border-radius: 50%;
     }
     &:after {
@@ -100,20 +100,20 @@ export const More = styled.div`
     bottom: 7px;
     width: 5px;
     height: 5px;
-    background: ${COLORS.solidgrey};
+    background: ${colors.solidgrey};
     border-radius: 50%;
     }
 `;
 
-export const CardMainStyles = styled.div`
+export const CardMainStyled = styled.div`
      display: flex;
     flex-direction: column;
     margin: 55px 0px 40px;
 `;
-export const CardDateStyles = styled.div`
+export const CardDateStyled = styled.div`
     display: flex;
 `;
-export const DateIconStyles = styled.div`
+export const DateIconStyled = styled.div`
     width: 24px;
     height: 24px;
     background: url(${DateIcon}) no-repeat center;
@@ -126,13 +126,13 @@ export const DateText = styled.p`
     font-weight: 600;
     font-size: 15px;
     line-height: 130%;
-    color: ${COLORS.black};
+    color: ${colors.black};
 `;
-export const CardNoteStyles = styled.div`
+export const CardNoteStyled = styled.div`
     display: flex;
      margin-top: 15px;
 `;
-export const NoteIconStyles = styled.div`
+export const NoteIconStyled = styled.div`
     width: 69px;
     height: 24px;
     background: url(${NoteIcon}) no-repeat center;
@@ -144,7 +144,7 @@ export const NoteText = styled.p`
     font-style: normal;
     font-size: 15px;
     line-height: 140%;
-    color: ${COLORS.black};
+    color: ${colors.black};
 `;
 
 export const PatientStatus = styled.div`

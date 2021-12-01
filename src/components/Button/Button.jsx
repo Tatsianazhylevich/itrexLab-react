@@ -1,6 +1,6 @@
 import React from 'react';
-import { ButtonStyles } from './Button.styles';
+import { ButtonStyled } from './Button.styles';
 
 export function Button({ ...props }) {
-  return <ButtonStyles {...props}>{props.children}</ButtonStyles>;
+  return <ButtonStyled {...props}>{props.children}</ButtonStyled>;
 }

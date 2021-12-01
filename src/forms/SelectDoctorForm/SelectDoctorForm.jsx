@@ -4,25 +4,25 @@ import {
   Formik, Field,
 } from 'formik';
 import { doctors, timeList } from '../../mocks';
-import { WarningTextStyles } from '../../components';
+import { WarningTextStyled } from '../../components';
 import {
-  CalendarStyles, RadioInput, CustomSelect, SectionHeader,
+  CalendarStyled, RadioInput, CustomSelect, SectionHeader,
 } from '../../modules';
 import { validate } from './ValidationForAppointment';
 import { PATIENT_VIEW_PATH } from '../../routes/routes';
-import { MESSAGES } from '../../utils';
+import { messages } from '../../shared';
 import {
   SectionWrapper,
-  AppointmentsFormStyles,
-  ButtonSubmitStyles,
-  ButtonWrapperStyles,
-  FieldsStyles,
-  LabelStyles,
-  RadioWrapperStyles,
-  SectionContainerStyles,
-  WarningsStyles,
-  WarningsTimeStyles,
-  WrapperStyles,
+  AppointmentsFormStyled,
+  ButtonSubmitStyled,
+  ButtonWrapperStyled,
+  FieldsStyled,
+  LabelStyled,
+  RadioWrapperStyled,
+  SectionContainerStyled,
+  WarningsStyled,
+  WarningsTimeStyled,
+  WrapperStyled,
   InputWrapper,
 } from './SelectDoctorForm.styles';
 
@@ -76,13 +76,13 @@ export function SelectDoctorForm() {
       {({
         values, errors, touched, setFieldValue, isValid, dirty,
       }) => (
-        <SectionContainerStyles>
-          <AppointmentsFormStyles>
-            <WrapperStyles>
+        <SectionContainerStyled>
+          <AppointmentsFormStyled>
+            <WrapperStyled>
               <SectionWrapper>
-                <SectionHeader sectionNumber="1" sectionText={MESSAGES.firstSectionText} />
+                <SectionHeader sectionNumber="1" sectionText={messages.firstSectionText} />
                 <InputWrapper>
-                  <LabelStyles>Occupation</LabelStyles>
+                  <LabelStyled>Occupation</LabelStyled>
                   <Field
                     component={CustomSelect}
                     name="occupation"
@@ -95,12 +95,12 @@ export function SelectDoctorForm() {
                     value={doctorsPosition}
                   />
                   {errors.occupation && touched.occupation
-                    ? <WarningsStyles>{errors.occupation}</WarningsStyles>
+                    ? <WarningsStyled>{errors.occupation}</WarningsStyled>
                     : null}
                 </InputWrapper>
 
                 <InputWrapper>
-                  <LabelStyles>Doctors Name</LabelStyles>
+                  <LabelStyled>Doctors Name</LabelStyled>
                   <Field
                     component={CustomSelect}
                     name="doctorsName"
@@ -113,48 +113,48 @@ export function SelectDoctorForm() {
                     value={doctorsName}
                   />
                   {errors.doctorsName && touched.doctorsName
-                    ? <WarningsStyles>{errors.doctorsName}</WarningsStyles>
+                    ? <WarningsStyled>{errors.doctorsName}</WarningsStyled>
                     : null}
                 </InputWrapper>
 
                 <InputWrapper>
-                  <LabelStyles>Reason for the visit</LabelStyles>
-                  <FieldsStyles type="text" name="reason" placeholder="Reason" />
+                  <LabelStyled>Reason for the visit</LabelStyled>
+                  <FieldsStyled type="text" name="reason" placeholder="Reason" />
                   {errors.reason && touched.reason
-                    ? <WarningTextStyles>{errors.reason}</WarningTextStyles>
+                    ? <WarningTextStyled>{errors.reason}</WarningTextStyled>
                     : null}
                 </InputWrapper>
                 <InputWrapper>
-                  <LabelStyles>Note</LabelStyles>
-                  <FieldsStyles type="text" name="note" placeholder="Leave a note if needed" />
+                  <LabelStyled>Note</LabelStyled>
+                  <FieldsStyled type="text" name="note" placeholder="Leave a note if needed" />
                   {errors.note && touched.note
-                    ? <WarningsStyles>{errors.note}</WarningsStyles>
+                    ? <WarningsStyled>{errors.note}</WarningsStyled>
                     : null}
                 </InputWrapper>
               </SectionWrapper>
 
               <SectionWrapper>
-                <SectionHeader sectionNumber="2" sectionText={MESSAGES.secondSectionText} />
-                <Field name="date" id="date" component={CalendarStyles} onChange={setCalendarValue} value={calendarValue} />
+                <SectionHeader sectionNumber="2" sectionText={messages.secondSectionText} />
+                <Field name="date" id="date" component={CalendarStyled} onChange={setCalendarValue} value={calendarValue} />
               </SectionWrapper>
 
               <SectionWrapper>
-                <SectionHeader SectioNumber="3" secionText={MESSAGES.thirdSectionText} />
-                <RadioWrapperStyles>
+                <SectionHeader sectionNumber="3" sectionText={messages.thirdSectionText} />
+                <RadioWrapperStyled>
                   {errors.time && touched.time
-                    ? <WarningsTimeStyles>{errors.time}</WarningsTimeStyles>
+                    ? <WarningsTimeStyled>{errors.time}</WarningsTimeStyled>
                     : null}
                   {timeList.map((time) => (
                     <Field name="time" id={time} component={RadioInput} timeValue={time} selectedTime={values.time} key={time} />
                   ))}
-                </RadioWrapperStyles>
+                </RadioWrapperStyled>
               </SectionWrapper>
-            </WrapperStyles>
-            <ButtonWrapperStyles>
-              <ButtonSubmitStyles isDisabled={!isValid || !dirty} type="submit">Submit</ButtonSubmitStyles>
-            </ButtonWrapperStyles>
-          </AppointmentsFormStyles>
-        </SectionContainerStyles>
+            </WrapperStyled>
+            <ButtonWrapperStyled>
+              <ButtonSubmitStyled isDisabled={!isValid || !dirty} type="submit">Submit</ButtonSubmitStyled>
+            </ButtonWrapperStyled>
+          </AppointmentsFormStyled>
+        </SectionContainerStyled>
 
       )}
     </Formik>

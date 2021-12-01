@@ -1,11 +1,11 @@
 import React from 'react';
 import {
-  CardMainStyles,
-  DateIconStyles,
-  CardDateStyles,
+  CardMainStyled,
+  DateIconStyled,
+  CardDateStyled,
   DateText,
-  CardNoteStyles,
-  NoteIconStyles,
+  CardNoteStyled,
+  NoteIconStyled,
   NoteText,
 } from './PatientCard.styles';
 
@@ -13,19 +13,19 @@ export function PatientCardMain({
   time, description,
 }) {
   return (
-    <CardMainStyles>
-      <CardDateStyles>
-        <DateIconStyles />
+    <CardMainStyled>
+      <CardDateStyled>
+        <DateIconStyled />
         <DateText>
           {time}
         </DateText>
-      </CardDateStyles>
-      <CardNoteStyles>
-        <NoteIconStyles />
+      </CardDateStyled>
+      <CardNoteStyled>
+        <NoteIconStyled />
         <NoteText>
           {description}
         </NoteText>
-      </CardNoteStyles>
-    </CardMainStyles>
+      </CardNoteStyled>
+    </CardMainStyled>
   );
 }

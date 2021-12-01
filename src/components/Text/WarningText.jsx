@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { COLORS } from '../../utils/theme';
+import { colors } from '../../theme';
 
-export const WarningTextStyles = styled.p`
+export const WarningTextStyled = styled.p`
     position: absolute;
     bottom: 15px;
     max-width: 368px;
     font-size: 13px;
     letter-spacing: -0.24px;
-    color: ${COLORS.red};
+    color: ${colors.red};
 `;

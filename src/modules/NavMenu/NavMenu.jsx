@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MenuStyles, MenuContainerStyles, MenuItemStyles } from './NavMenu.styles';
+import { MenuStyled, MenuContainerStyled, MenuItemStyled } from './NavMenu.styles';
 
 export function NavMenu({ buttons }) {
   const [activeButton, setActiveButton] = useState(buttons[0].title);
@@ -7,20 +7,20 @@ export function NavMenu({ buttons }) {
     setActiveButton(title);
   };
   return (
-    <MenuStyles>
-      <MenuContainerStyles>
+    <MenuStyled>
+      <MenuContainerStyled>
         {
         buttons.map((button) => (
-          <MenuItemStyles
+          <MenuItemStyled
             onClick={() => handleOnClick(button.title)}
             isActive={button.title === activeButton}
             key={button.id}
           >
             {button.title}
-          </MenuItemStyles>
+          </MenuItemStyled>
         ))
         }
-      </MenuContainerStyles>
-    </MenuStyles>
+      </MenuContainerStyled>
+    </MenuStyled>
   );
 }

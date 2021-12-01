@@ -1,11 +1,11 @@
 import React from 'react';
-import { ContainerStyles, TextStyles, NumberStyles } from './SectionHeader.styles';
+import { ContainerStyled, TextStyled, NumberStyled } from './SectionHeader.styles';
 
 export function SectionHeader({ sectionNumber, sectionText }) {
   return (
-    <ContainerStyles>
-      <NumberStyles>{sectionNumber}</NumberStyles>
-      <TextStyles>{sectionText}</TextStyles>
-    </ContainerStyles>
+    <ContainerStyled>
+      <NumberStyled>{sectionNumber}</NumberStyled>
+      <TextStyled>{sectionText}</TextStyled>
+    </ContainerStyled>
   );
 }

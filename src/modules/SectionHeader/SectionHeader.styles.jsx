@@ -1,31 +1,31 @@
 import styled from 'styled-components';
-import { COLORS } from '../../utils/theme';
+import { colors } from '../../theme';
 
-export const ContainerStyles = styled.div`
+export const ContainerStyled = styled.div`
     display: flex;
     margin-bottom: 40px;
 
 `;
 
-export const NumberStyles = styled.p`
+export const NumberStyled = styled.p`
     display: flex;
     align-items: center;
     justify-content: center;
     width: 32px;
     height: 32px;
     margin-right: 20px;
-    border: 1px solid ${COLORS.mediumgrey};
+    border: 1px solid ${colors.mediumgrey};
     border-radius: 50%;
     font-size: 17px;
     line-height: 24px;
-    color: ${COLORS.mediumgrey};
+    color: ${colors.mediumgrey};
 `;
 
-export const TextStyles = styled.p`
+export const TextStyled = styled.p`
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 17px;
     line-height: 24px;
-    color: ${COLORS.mediumgrey};
+    color: ${colors.mediumgrey};
 `;

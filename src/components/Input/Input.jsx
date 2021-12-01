@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { ErrorMessage, useField } from 'formik';
 import {
-  DivStyles, LabelStyles, InputStyles, PasswordControl,
+  InputStyled, InputLabelStyled, InputInnerStyled, PasswordControl,
 } from './Input.styles';
-import { WarningTextStyles } from '../Text/WarningText';
+import { WarningTextStyled } from '../Text/WarningText';
 import eye from '../../assets/icons/eye.png';
 import eyeSlash from '../../assets/icons/eye-slash.png';
 
@@ -18,15 +18,15 @@ export const Input = ({
   };
 
   return (
-    <DivStyles>
-      <LabelStyles fontSize={fontSize} htmlFor={field.name}>{label}</LabelStyles>
+    <InputStyled>
+      <InputLabelStyled fontSize={fontSize} htmlFor={field.name}>{label}</InputLabelStyled>
       {isEyeVisible
-        ? <InputStyles {...field} {...props} autoComplete="off" type={visible ? 'text' : 'password'} />
-        : <InputStyles {...field} {...props} autoComplete="off" />}
+        ? <InputInnerStyled {...field} {...props} autoComplete="off" type={visible ? 'text' : 'password'} />
+        : <InputInnerStyled {...field} {...props} autoComplete="off" />}
       { isEyeVisible
         ? (<PasswordControl onClick={changeVisibility} src={visible ? eye : eyeSlash} />)
         : null}
-      <ErrorMessage component={WarningTextStyles} name={field.name} />
-    </DivStyles>
+      <ErrorMessage component={WarningTextStyled} name={field.name} />
+    </InputStyled>
   );
 };

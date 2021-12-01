@@ -2,19 +2,19 @@ import React from 'react';
 import { Header } from '../../components';
 import { SelectDoctorForm } from '../../forms';
 import { BoardCard, BoardHeader } from '../../modules';
-import { WrapperStyles, MainStyles } from './AppointmentsView.styles';
-import { MESSAGES } from '../../utils';
+import { WrapperStyled, MainStyled } from './AppointmentsView.styles';
+import { messages } from '../../shared';
 
 export function AppointmentsView() {
   return (
-    <WrapperStyles className="wrapper">
+    <WrapperStyled className="wrapper">
       <Header name="Larry Prinston" position="Patient" />
-      <MainStyles>
+      <MainStyled>
         <BoardCard>
-          <BoardHeader title={MESSAGES.appointmentsViewTitle} />
+          <BoardHeader title={messages.appointmentsViewTitle} />
           <SelectDoctorForm />
         </BoardCard>
-      </MainStyles>
-    </WrapperStyles>
+      </MainStyled>
+    </WrapperStyled>
   );
 }

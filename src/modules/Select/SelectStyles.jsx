@@ -1,17 +1,17 @@
-import { COLORS } from '../../utils/theme';
+import { colors } from '../../theme';
 
-export const selectStyles = {
+export const selectStyled = {
   option: (provided, state) => ({
     ...provided,
     height: '40px',
-    background: state.isSelected ? COLORS.greylight : COLORS.white,
+    background: state.isSelected ? colors.greylight : colors.white,
     borderRadius: '6px',
     fontFamily: 'Poppins',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: '15px',
     lineHeight: '130%',
-    color: state.isSelected ? COLORS.blue : COLORS.black,
+    color: state.isSelected ? colors.blue : colors.black,
   }),
   menuList: (provided) => ({
     ...provided,
@@ -22,7 +22,7 @@ export const selectStyles = {
     ...provided,
     height: '100%',
     marginBottom: '40px',
-    border: `1px solid ${COLORS.solidgrey}`,
+    border: `1px solid ${colors.solidgrey}`,
   }),
   input: (provided) => ({
     ...provided,
@@ -35,10 +35,10 @@ export const selectStyles = {
   container: (provided) => ({
     ...provided,
     height: '56px',
-    background: COLORS.white,
-    border: `1px solid ${COLORS.solidgrey}`,
+    background: colors.white,
+    border: `1px solid ${colors.solidgrey}`,
     boxSizing: 'border-box',
-    boxShadow: `0px 4px 32px ${COLORS.darkgrey}`,
+    boxShadow: `0px 4px 32px ${colors.darkgrey}`,
     borderRadius: '8px',
     marginBottom: '40px',
   }),

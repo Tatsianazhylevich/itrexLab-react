@@ -5,11 +5,11 @@ import {
   Button, Title, Footer,
 } from '../../components';
 import {
-  FormStyles, InputName, InputEmail, InputPassword, InputConfirmPassword,
+  FormStyled, InputName, InputEmail, InputPassword, InputConfirmPassword,
 } from './SignUpForm.styles';
 import { ValidationForSignUpForm } from './ValidationForSignUpForm';
 import { SIGN_IN_PATH, PATIENT_VIEW_PATH } from '../../routes/routes';
-import { MESSAGES } from '../../utils';
+import { messages } from '../../shared';
 
 export function SignUpForm() {
   const { push } = useHistory();
@@ -37,7 +37,7 @@ export function SignUpForm() {
       }}
     >
       { () => (
-        <FormStyles>
+        <FormStyled>
           <Title>
             <p>Sign Up</p>
           </Title>
@@ -77,8 +77,8 @@ export function SignUpForm() {
             fontSize="0"
           />
           <Button type="submit">Sign Up</Button>
-          <Footer footerText={MESSAGES.signUpFooterText} footerLink={SIGN_IN_PATH} footerLinkText="Sign In" />
-        </FormStyles>
+          <Footer footerText={messages.signUpFooterText} footerLink={SIGN_IN_PATH} footerLinkText="Sign In" />
+        </FormStyled>
       )}
     </Formik>
   );

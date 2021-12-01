@@ -2,22 +2,22 @@ import React from 'react';
 import { Container } from '../../components';
 import { SIGN_IN_PATH } from '../../routes';
 import {
-  FormStyles, TitleStyles, ArrowLink, TitleTextStyles, RestorePasswordText,
+  FormStyled, TitleStyled, ArrowLink, TitleTextStyled, RestorePasswordText,
 } from './RestoredPassword.styles';
-import { MESSAGES } from '../../utils';
+import { messages } from '../../shared';
 
 export function RestoredPassword() {
   return (
     <Container>
-      <FormStyles>
-        <TitleStyles>
+      <FormStyled>
+        <TitleStyled>
           <ArrowLink to={SIGN_IN_PATH} />
-          <TitleTextStyles>Restore Password</TitleTextStyles>
-        </TitleStyles>
+          <TitleTextStyled>Restore Password</TitleTextStyled>
+        </TitleStyled>
         <RestorePasswordText>
-          <p>{MESSAGES.restoredPasswordText}</p>
+          <p>{messages.restoredPasswordText}</p>
         </RestorePasswordText>
-      </FormStyles>
+      </FormStyled>
     </Container>
   );
 }

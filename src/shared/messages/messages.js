@@ -1,4 +1,4 @@
-export const MESSAGES = {
+export const messages = {
   signUpFooterText: 'Don\'t have an account?',
   signInFooterText: 'Already have an account?',
   restorePasswordText: 'Please use your email address, and we’ll send you the link to reset your password',
@@ -13,7 +13,7 @@ export const MESSAGES = {
   userViewTitle: 'My Appointments',
 };
 
-export const ERRORMESSAGES = {
+export const errorMessages = {
   min: 'Must be at least 3 characters.',
   max: 'Must be no more than 100 characters',
   required: 'Required',
@@ -21,5 +21,4 @@ export const ERRORMESSAGES = {
   passwordMin: 'Must be at least 4 characters.',
   passwordMatched: 'Password must match',
   confirmPassword: 'Confirm password is required',
-
 };

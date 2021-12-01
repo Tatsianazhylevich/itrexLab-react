@@ -1,18 +1,18 @@
 import * as Yup from 'yup';
-import { ERRORMESSAGES } from '../../utils';
+import { errorMessages } from '../../shared';
 
 export const validate = Yup.object({
   occupation: Yup.string()
-    .required(ERRORMESSAGES.required),
+    .required(errorMessages.required),
   doctorsName: Yup.string()
-    .required(ERRORMESSAGES.required),
+    .required(errorMessages.required),
   reason: Yup.string()
-    .required(ERRORMESSAGES.required)
-    .min(3, ERRORMESSAGES.min),
+    .required(errorMessages.required)
+    .min(3, errorMessages.min),
   note: Yup.string()
-    .max(100, ERRORMESSAGES.max),
+    .max(100, errorMessages.max),
   date: Yup.string()
-    .required(ERRORMESSAGES.required),
+    .required(errorMessages.required),
   time: Yup.string()
-    .required(ERRORMESSAGES.required),
+    .required(errorMessages.required),
 });

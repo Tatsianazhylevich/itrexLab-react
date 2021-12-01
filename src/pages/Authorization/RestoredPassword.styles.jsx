@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Title } from '../../components';
 import arrowLeftIcon from '../../assets/icons/angle-left-b.png';
-import { BREACKPOINTS, COLORS } from '../../utils/theme';
+import { breackpoints, colors } from '../../theme';
 
-export const FormStyles = styled.div`
+export const FormStyled = styled.div`
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -12,8 +12,8 @@ export const FormStyles = styled.div`
       width: 560px;
       min-height: 100vh;
       padding: 0 95px 0;
-      background-color: ${COLORS.greylight};
-      @media (max-width: ${BREACKPOINTS.tablet}) {
+      background-color: ${colors.greylight};
+      @media (max-width: ${breackpoints.tablet}) {
       justify-content: flex-start;
         align-items: stretch;
         margin-top: 72px;
@@ -26,24 +26,25 @@ export const ArrowLink = styled(Link)`
     width: 25px;
     background: url(${arrowLeftIcon}) no-repeat;
 `;
-export const TitleStyles = styled(Title)`
+export const TitleStyled = styled(Title)`
      display: flex;
+     @media (max-width: ${breackpoints.tablet}) {
+      margin: 32px 0 0;
+    }
 `;
-export const TitleTextStyles = styled.p`
+export const TitleTextStyled = styled.p`
       margin-left: 16px;
 `;
 export const RestorePasswordText = styled.div`
     width: 368px;
-    height: 38px;
     margin-bottom: 395px;
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
     line-height: 130%; 
-    color: ${COLORS.mediumgrey};
-    @media (max-width: ${BREACKPOINTS.tablet}) {
-      width: 100%;
-        height: 38px;
-        font-size: 12px;
+    color: ${colors.mediumgrey};
+    @media (max-width: ${breackpoints.tablet}) {
+        width: 100%;
+        margin-top: 24px;
     }
 `;

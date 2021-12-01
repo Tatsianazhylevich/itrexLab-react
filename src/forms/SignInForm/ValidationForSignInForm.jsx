@@ -1,11 +1,11 @@
 import * as Yup from 'yup';
-import { ERRORMESSAGES } from '../../utils';
+import { errorMessages } from '../../shared';
 
 export const ValidationForSignInForm = Yup.object({
   email: Yup.string()
-    .email(ERRORMESSAGES.email)
-    .required(ERRORMESSAGES.required),
+    .email(errorMessages.email)
+    .required(errorMessages.required),
   password: Yup.string()
-    .min(4, ERRORMESSAGES.passwordMin)
-    .required(ERRORMESSAGES.passwordMin),
+    .min(4, errorMessages.passwordMin)
+    .required(errorMessages.passwordMin),
 });

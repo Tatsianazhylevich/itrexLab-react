@@ -1,20 +1,20 @@
 import * as Yup from 'yup';
-import { ERRORMESSAGES } from '../../utils';
+import { errorMessages } from '../../shared';
 
 export const ValidationForSignUpForm = Yup.object({
   name: Yup.string()
-    .min(3, ERRORMESSAGES.min)
-    .required(ERRORMESSAGES.required),
+    .min(3, errorMessages.min)
+    .required(errorMessages.required),
   lastName: Yup.string()
-    .min(3, ERRORMESSAGES.min)
-    .required(ERRORMESSAGES.required),
+    .min(3, errorMessages.min)
+    .required(errorMessages.required),
   email: Yup.string()
-    .email(ERRORMESSAGES.email)
-    .required(ERRORMESSAGES.required),
+    .email(errorMessages.email)
+    .required(errorMessages.required),
   password: Yup.string()
-    .min(4, ERRORMESSAGES.passwordMin)
-    .required(ERRORMESSAGES.required),
+    .min(4, errorMessages.passwordMin)
+    .required(errorMessages.required),
   confirmPassword: Yup.string()
-    .oneOf([Yup.ref('password'), null], ERRORMESSAGES.passwordMatched)
-    .required(ERRORMESSAGES.required),
+    .oneOf([Yup.ref('password'), null], errorMessages.passwordMatched)
+    .required(errorMessages.required),
 });

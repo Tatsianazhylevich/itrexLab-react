@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../../assets/logo.png';
 import {
-  HeaderStyles,
+  HeaderStyled,
   HeaderLogo,
   LogoImg,
   LogoText,
@@ -15,7 +15,7 @@ import {
 
 export function Header({ name, position }) {
   return (
-    <HeaderStyles>
+    <HeaderStyled>
       <HeaderLogo>
         <LogoImg src={logo} alt="logo" />
         <LogoText>palm clinic</LogoText>
@@ -29,6 +29,6 @@ export function Header({ name, position }) {
           <HeaderUserStatus />
         </HeaderUserFoto>
       </HeaderUser>
-    </HeaderStyles>
+    </HeaderStyled>
   );
 }

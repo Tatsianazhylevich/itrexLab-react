@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { BREACKPOINTS } from '../../utils/theme';
+import { breackpoints } from '../../theme';
 
-export const BoardCardStyles = styled.section`
+export const BoardCardStyled = styled.section`
     margin-top: 56px;
-    @media (max-width: ${BREACKPOINTS.mobileL}) {
+    @media (max-width: ${breackpoints.mobileL}) {
         margin-top: 45px;
     }
     

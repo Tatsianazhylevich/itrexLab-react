@@ -1,12 +1,12 @@
 import React from 'react';
 import { PatientCard } from '../../Card';
 import { patients } from '../../../mocks/patientsMock';
-import { CardListStyles } from './PatientCardList.styles';
+import { CardListStyled } from './PatientCardList.styles';
 import anneteBlack from '../../../assets/patients/annete_black.png';
 
 export function PatientCardList() {
   return (
-    <CardListStyles>
+    <CardListStyled>
       {patients.map((patient) => (
         <PatientCard
           avatar={anneteBlack}
@@ -19,6 +19,6 @@ export function PatientCardList() {
         />
       ))}
 
-    </CardListStyles>
+    </CardListStyled>
   );
 }

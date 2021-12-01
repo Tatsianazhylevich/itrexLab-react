@@ -4,19 +4,19 @@ import { Form } from 'formik';
 import { Button, Input, Title } from '../../components';
 import arrowLeftIcon from '../../assets/icons/angle-left-b.png';
 import emailIcon from '../../assets/icons/Vector.png';
-import { BREACKPOINTS, COLORS } from '../../utils';
+import { breackpoints, colors } from '../../theme';
 
-export const FormStyles = styled(Form)`
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: flex-start;
-      width: 560px;
-      min-height: 100vh;
-      padding: 178px 95px 0;
-      background-color: ${COLORS.greylight};
-      @media (max-width: ${BREACKPOINTS.tablet}) {
-      justify-content: flex-start;
+export const FormStyled = styled(Form)`
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 560px;
+    min-height: 100vh;
+    padding: 178px 95px 0;
+    background-color: ${colors.greylight};
+    @media (max-width: ${breackpoints.tablet}) {
+        justify-content: flex-start;
         align-items: stretch;
         margin-top: 72px;
         width: 100%;
@@ -26,13 +26,15 @@ export const FormStyles = styled(Form)`
 `;
 
 export const InputEmail = styled(Input)`
+    margin-bottom: 64px;
     background: url(${emailIcon}) no-repeat center left 20px;
     padding-left: 63px;
-    background-color: #FFFFFF;
-    @media (max-width: ${BREACKPOINTS.tablet}) {
-      background: url(${emailIcon}) no-repeat center left 15px;
-      padding-left: 48px;
-      background-color: #FFFFFF;
+    background-color: ${colors.white};
+    @media (max-width: ${breackpoints.tablet}) {
+        margin-bottom: 32px;
+        background: url(${emailIcon}) no-repeat center left 15px;
+        padding-left: 48px;
+        background-color: ${colors.white};
     }
 `;
 
@@ -41,24 +43,30 @@ export const ArrowLink = styled(Link)`
     background: url(${arrowLeftIcon}) no-repeat;
 `;
 
-export const TitleStyles = styled(Title)`
-     display: flex;
-     margin: 0;
+export const TitleStyled = styled(Title)`
+    display: flex;
+    margin: 0;
+    @media (max-width: ${breackpoints.tablet}) {
+      margin-top: 32px;
+    }
 `;
-export const TitleTextStyles = styled.p`
-      margin-left: 16px;
+export const TitleTextStyled = styled.p`
+    margin-left: 16px;
 `;
 export const RestorePasswordText = styled.div`
     width: 368px;
-    height: 38px;
-    margin: 32px 0 32px;
+    margin: 32px 0 40px;
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
     line-height: 130%; 
-    color: #A1ABC9;
+    color: ${colors.mediumgrey};
+    @media (max-width: ${breackpoints.tablet}) {
+        width: 100%;
+        margin: 24px 0;
+    }
 `;
-export const ButtonForRestoredStyles = styled(Button)`
+export const ButtonForRestoredStyled = styled(Button)`
       width: 214px;
-      margin: 0px 0 350px;
+      margin: 0;
 `;

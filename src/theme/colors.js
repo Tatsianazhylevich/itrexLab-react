@@ -1,4 +1,4 @@
-export const COLORS = {
+export const colors = {
   wrapperblue: '#E4EBFF',
   greylight: '#F9FAFF',
   mediumgrey: '#A1ABC9',

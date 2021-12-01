@@ -3,23 +3,22 @@ import { Header } from '../../components';
 import {
   NavMenu, BoardCard, BoardHeader, PatientCardList,
 } from '../../modules';
-import { MESSAGES } from '../../utils';
-import { WrapperStyles, MainStyles } from './DoctorView.styles';
-import { navButtons } from '../../utils/navButtons';
+import { messages, navButtons } from '../../shared';
+import { WrapperStyled, MainStyled } from './DoctorView.styles';
 
 export function DoctorWiew() {
   return (
-    <WrapperStyles className="wrapper">
+    <WrapperStyled className="wrapper">
       <Header name="Miranda Nelson" position="Doctor" />
-      <MainStyles>
+      <MainStyled>
         <NavMenu
           buttons={navButtons.doctorsButtons}
         />
         <BoardCard>
-          <BoardHeader title={MESSAGES.doctorViewTitle} />
+          <BoardHeader title={messages.doctorViewTitle} />
           <PatientCardList />
         </BoardCard>
-      </MainStyles>
-    </WrapperStyles>
+      </MainStyled>
+    </WrapperStyled>
   );
 }

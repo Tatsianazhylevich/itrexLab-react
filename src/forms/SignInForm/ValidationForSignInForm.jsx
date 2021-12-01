@@ -1,5 +1,5 @@
 import * as Yup from 'yup';
-import { ERRORMESSAGES } from '../../utils/theme';
+import { ERRORMESSAGES } from '../../utils';
 
 export const ValidationForSignInForm = Yup.object({
   email: Yup.string()

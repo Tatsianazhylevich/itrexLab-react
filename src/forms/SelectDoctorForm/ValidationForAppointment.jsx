@@ -1,5 +1,5 @@
 import * as Yup from 'yup';
-import { ERRORMESSAGES } from '../../utils/theme';
+import { ERRORMESSAGES } from '../../utils';
 
 export const validate = Yup.object({
   occupation: Yup.string()

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import avatar from '../../assets/doctors/mirandaNelson.png';
 import { BREACKPOINTS, COLORS } from '../../theme';
 
-export const StyledHeader = styled.header`
+export const HeaderStyles = styled.header`
     display: flex;
     justify-content: space-between;
     padding: 20px 0;

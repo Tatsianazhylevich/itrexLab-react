@@ -4,7 +4,7 @@ import { Title } from '../../components';
 import arrowLeftIcon from '../../assets/icons/angle-left-b.png';
 import { BREACKPOINTS, COLORS } from '../../theme';
 
-export const StyledForm = styled.div`
+export const FormStyles = styled.div`
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -26,10 +26,10 @@ export const ArrowLink = styled(Link)`
     width: 25px;
     background: url(${arrowLeftIcon}) no-repeat;
 `;
-export const StyledTitle = styled(Title)`
+export const TitleStyles = styled(Title)`
      display: flex;
 `;
-export const StyledTitleText = styled.p`
+export const TitleTextStyles = styled.p`
       margin-left: 16px;
 `;
 export const RestorePasswordText = styled.div`

@@ -5,10 +5,11 @@ import {
   Button, Title, Footer,
 } from '../../components';
 import {
-  StyledForm, InputName, InputEmail, InputPassword, InputConfirmPassword,
+  FormStyles, InputName, InputEmail, InputPassword, InputConfirmPassword,
 } from './SignUpForm.styles';
 import { ValidationForSignUpForm } from './ValidationForSignUpForm';
 import { SIGN_IN_PATH, PATIENT_VIEW_PATH } from '../../routes/routes';
+import { MESSAGES } from '../../theme';
 
 export function SignUpForm() {
   const { push } = useHistory();
@@ -16,7 +17,7 @@ export function SignUpForm() {
   const initialValues = {
     name: '',
     lastName: '',
-    email: '',
+    userName: '',
     password: '',
     confirmPassword: '',
   };
@@ -36,7 +37,7 @@ export function SignUpForm() {
       }}
     >
       { () => (
-        <StyledForm>
+        <FormStyles>
           <Title>
             <p>Sign Up</p>
           </Title>
@@ -56,7 +57,7 @@ export function SignUpForm() {
           />
           <InputEmail
             label="Email"
-            name="email"
+            name="userName"
             type="email"
             placeholder="email@gmail.com"
             fontSize="0"
@@ -76,8 +77,8 @@ export function SignUpForm() {
             fontSize="0"
           />
           <Button type="submit">Sign Up</Button>
-          <Footer footerText="Dont have an account?" footerLink={SIGN_IN_PATH} footerLinkText="Sign In" />
-        </StyledForm>
+          <Footer footerText={MESSAGES.signUpFooterText} footerLink={SIGN_IN_PATH} footerLinkText="Sign In" />
+        </FormStyles>
       )}
     </Formik>
   );

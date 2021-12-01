@@ -1,11 +1,11 @@
 import React from 'react';
-import { StyledFooter, StyledFooterLink, StyledFooterText } from './Footer.styles';
+import { FooterStyles, FooterTextStyles, FooterLinkStyles } from './Footer.styles';
 
 export function Footer({ footerText, footerLink, footerLinkText }) {
   return (
-    <StyledFooter>
-      <StyledFooterText>{footerText}</StyledFooterText>
-      <StyledFooterLink to={footerLink}>{footerLinkText}</StyledFooterLink>
-    </StyledFooter>
+    <FooterStyles>
+      <FooterTextStyles>{footerText}</FooterTextStyles>
+      <FooterLinkStyles to={footerLink}>{footerLinkText}</FooterLinkStyles>
+    </FooterStyles>
   );
 }

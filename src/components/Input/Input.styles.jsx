@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { BREACKPOINTS, COLORS } from '../../theme';
 
-export const StyledDiv = styled.div`
+export const DivStyles = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
 `;
 
-export const StyledInput = styled.input`
+export const InputStyles = styled.input`
     width: 368px;
     height: 56px;
     margin: 0 0 40px 0;
@@ -29,7 +29,7 @@ export const StyledInput = styled.input`
     }
 `;
 
-export const StyledLabel = styled.label`
+export const LabelStyles = styled.label`
     font-size: ${(props) => props.fontSize}px;
 
 `;

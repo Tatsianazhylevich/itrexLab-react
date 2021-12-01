@@ -3,7 +3,7 @@ import backgroud from '../../assets/bg.jpg';
 import mobileBackground from '../../assets/bg-mobile.jpg';
 import { BREACKPOINTS } from '../../theme';
 
-export const StyledContainer = styled.div`
+export const ContainerStyles = styled.div`
     display: flex;
     justify-content: flex-end;
     height: 100%;

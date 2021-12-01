@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { BREACKPOINTS, COLORS } from '../../theme';
 
-export const StyledWrapper = styled.div`
+export const WrapperStyles = styled.div`
   position: relative;
     max-width: 1920px;
     height: 1024px;
@@ -12,7 +12,7 @@ export const StyledWrapper = styled.div`
     }
 `;
 
-export const StyledMain = styled.div`
+export const MainStyles = styled.div`
   padding: 40px 0 40px 48px;
   max-width: 1792px;
   height: 896px;

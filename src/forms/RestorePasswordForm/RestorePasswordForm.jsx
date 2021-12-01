@@ -3,16 +3,17 @@ import { useHistory } from 'react-router-dom';
 import { Formik } from 'formik';
 import { ValidationForRestorePassForm } from './ValidationForRestorePass';
 import {
-  StyledForm,
-  StyledTitle,
-  StyledTitleText,
+  FormStyles,
+  TitleStyles,
+  TitleTextStyles,
   ArrowLink,
   RestorePasswordText,
   InputEmail,
-  StyledButtonForRestored,
+  ButtonForRestoredStyles,
 } from './RestorePasswordForm.styles';
 
 import { SIGN_IN_PATH, RESTORED_PASSWORD_PATH } from '../../routes/routes';
+import { MESSAGES } from '../../theme';
 
 export function RestorePasswordForm() {
   const { push } = useHistory();
@@ -30,13 +31,13 @@ export function RestorePasswordForm() {
         validationSchema={ValidationForRestorePassForm}
         onSubmit={handleClick}
       >
-        <StyledForm>
-          <StyledTitle>
+        <FormStyles>
+          <TitleStyles>
             <ArrowLink to={SIGN_IN_PATH} />
-            <StyledTitleText>Restore Password</StyledTitleText>
-          </StyledTitle>
+            <TitleTextStyles>Restore Password</TitleTextStyles>
+          </TitleStyles>
           <RestorePasswordText>
-            <p>Please use your email address, and we’ll send you the link to reset your password</p>
+            <p>{MESSAGES.restorePasswordText}</p>
           </RestorePasswordText>
           <InputEmail
             label="Email"
@@ -45,8 +46,8 @@ export function RestorePasswordForm() {
             placeholder="bart@gmail.com"
             fontSize="0"
           />
-          <StyledButtonForRestored type="submit">Send Reset Link</StyledButtonForRestored>
-        </StyledForm>
+          <ButtonForRestoredStyles type="submit">Send Reset Link</ButtonForRestoredStyles>
+        </FormStyles>
       </Formik>
     </>
   );

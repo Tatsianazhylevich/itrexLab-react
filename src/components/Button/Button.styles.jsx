@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import arrowRightIcon from '../../assets/icons/angle-right-b.png';
 import { BREACKPOINTS, COLORS } from '../../theme';
 
-export const StyledButton = styled.button`
+export const ButtonStyles = styled.button`
   width: 146px;
   height: 56px;
   margin: 44px 0 32px;

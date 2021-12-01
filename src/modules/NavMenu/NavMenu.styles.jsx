@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { BREACKPOINTS, COLORS } from '../../theme';
 
-export const StyledMenu = styled.nav`
+export const MenuStyles = styled.nav`
     display: flex;
     
 `;
 
-export const StyledMenuContainer = styled.div`
+export const MenuContainerStyles = styled.div`
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
@@ -15,7 +15,7 @@ export const StyledMenuContainer = styled.div`
     }
 `;
 
-export const StyledMenuItem = styled.button`
+export const MenuItemStyles = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;

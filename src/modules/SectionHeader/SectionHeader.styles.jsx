@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { COLORS } from '../../theme';
 
-export const StyledContainer = styled.div`
+export const ContainerStyles = styled.div`
     display: flex;
     margin-bottom: 40px;
 
 `;
 
-export const StyledNumber = styled.p`
+export const NumberStyles = styled.p`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,7 +21,7 @@ export const StyledNumber = styled.p`
     color: ${COLORS.mediumgrey};
 `;
 
-export const StyledText = styled.p`
+export const TextStyles = styled.p`
     display: flex;
     justify-content: center;
     align-items: center;

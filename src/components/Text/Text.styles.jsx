@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { BREACKPOINTS, COLORS } from '../../theme';
 
-export const StyledTitle = styled.div`
+export const TitleStyles = styled.div`
   margin-bottom: 40px;
   font-style: normal;
   font-weight: 600;

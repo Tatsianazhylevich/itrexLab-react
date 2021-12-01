@@ -1,23 +1,24 @@
 import React from 'react';
 import {
-  StyledBoardHeader, StyledBoardTitle, CreateAnAppointmentBtn, StyledContainer,
+  BoardHeaderStyles, BoardTitleStyles, CreateAnAppointmentBtn, ContainerStyles,
 } from './BoardHeader.styles';
+import { MESSAGES } from '../../theme';
 
 export function BoardHeader({ title, getAppointment, isBtnVisible }) {
   return (
-    <StyledBoardHeader className="board_header card-header">
-      <StyledBoardTitle>{title}</StyledBoardTitle>
+    <BoardHeaderStyles className="board_header card-header">
+      <BoardTitleStyles>{title}</BoardTitleStyles>
       { isBtnVisible
         ? (
-          <StyledContainer>
+          <ContainerStyles>
             <CreateAnAppointmentBtn
               onClick={getAppointment}
             >
-              Create an appointment
+              {MESSAGES.createAnAppointment}
             </CreateAnAppointmentBtn>
-          </StyledContainer>
+          </ContainerStyles>
         )
         : null}
-    </StyledBoardHeader>
+    </BoardHeaderStyles>
   );
 }

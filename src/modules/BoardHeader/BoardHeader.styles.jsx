@@ -3,7 +3,7 @@ import { Button } from '../../components';
 import plusIcon from '../../assets/icons/plus.png';
 import { BREACKPOINTS, COLORS } from '../../theme';
 
-export const StyledBoardTitle = styled.h2`
+export const BoardTitleStyles = styled.h2`
     display: flex;
     color: ${COLORS.black};
     font-size: 24px;
@@ -12,13 +12,13 @@ export const StyledBoardTitle = styled.h2`
     }
 `;
 
-export const StyledBoardHeader = styled.div`
+export const BoardHeaderStyles = styled.div`
   display: flex;
   justify-content: space-between;
   padding-bottom: 30px;
 `;
 
-export const StyledContainer = styled.div`
+export const ContainerStyles = styled.div`
   margin: 0 60px;
 `;
 

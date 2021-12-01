@@ -1,10 +1,11 @@
 import * as Yup from 'yup';
+import { ERRORMESSAGES } from '../../theme';
 
 export const ValidationForSignInForm = Yup.object({
   email: Yup.string()
-    .email('Invalid email address')
-    .required('Email is required'),
+    .email(ERRORMESSAGES.email)
+    .required(ERRORMESSAGES.required),
   password: Yup.string()
-    .min(4, 'Must be at least 4 characters.')
-    .required('Password is required'),
+    .min(4, ERRORMESSAGES.passwordMin)
+    .required(ERRORMESSAGES.passwordMin),
 });

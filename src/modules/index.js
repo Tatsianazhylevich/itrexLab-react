@@ -1,7 +1,7 @@
 export { BoardHeader } from './BoardHeader';
 export { NavMenu } from './NavMenu';
 export { BoardCard } from './BoardCard';
-export { StyledCalendar } from './Calendar';
+export { CalendarStyles } from './Calendar';
 export { RadioInput } from './RadioInput';
 export { CustomSelect } from './Select';
 export { SectionHeader } from './SectionHeader';

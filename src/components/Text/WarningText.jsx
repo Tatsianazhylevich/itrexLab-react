@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { COLORS } from '../../theme';
 
-export const StyledWarningText = styled.p`
+export const WarningTextStyles = styled.p`
     position: absolute;
     bottom: 15px;
     max-width: 368px;

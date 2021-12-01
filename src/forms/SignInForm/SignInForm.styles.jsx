@@ -5,7 +5,7 @@ import emailIcon from '../../assets/icons/Vector.png';
 import passwordIcon from '../../assets/icons/lock.png';
 import { BREACKPOINTS, COLORS } from '../../theme';
 
-export const StyledForm = styled(Form)`
+export const FormStyles = styled(Form)`
     display: flex;
     justify-content: center;
     flex-direction: column;

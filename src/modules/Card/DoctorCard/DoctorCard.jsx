@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledCard } from './DoctorCard.styles';
+import { CardStyles } from './DoctorCard.styles';
 
 import { DoctorCardHeader, DoctorCardMain } from '.';
 
@@ -7,7 +7,7 @@ export function DoctorCard({
   avatar, firstName, lastName, position, reason, time,
 }) {
   return (
-    <StyledCard>
+    <CardStyles>
       <DoctorCardHeader
         avatar={avatar}
         firstName={firstName}
@@ -15,6 +15,6 @@ export function DoctorCard({
         position={position}
       />
       <DoctorCardMain reason={reason} time={time} />
-    </StyledCard>
+    </CardStyles>
   );
 }

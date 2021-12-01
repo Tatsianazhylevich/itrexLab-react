@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { BREACKPOINTS } from '../../../theme';
 
-export const StyledCardList = styled.ul`
+export const CardListStyles = styled.ul`
     display: flex;
     flex-wrap: wrap;
     max-height: 680px;

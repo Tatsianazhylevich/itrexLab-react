@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyledLink } from './Link.styles';
+import { LinkStyles } from './Link.styles';
 
 export function Link({ ...props }) {
-  return <StyledLink {...props}>{props.children}</StyledLink>;
+  return <LinkStyles {...props}>{props.children}</LinkStyles>;
 }

@@ -6,7 +6,8 @@ import {
 } from '../../components';
 import { ValidationForSignInForm } from './ValidationForSignInForm';
 import { SIGN_UP_PATH, RESTORE_PASSWORD_PATH, PATIENT_VIEW_PATH } from '../../routes/routes';
-import { StyledForm, InputEmail, InputPassword } from './SignInForm.styles';
+import { FormStyles, InputEmail, InputPassword } from './SignInForm.styles';
+import { MESSAGES } from '../../theme';
 
 export function SignInForm() {
   const { push } = useHistory();
@@ -31,7 +32,7 @@ export function SignInForm() {
       }}
     >
       {() => (
-        <StyledForm>
+        <FormStyles>
           <Title>
             <p>Sign In</p>
           </Title>
@@ -51,8 +52,8 @@ export function SignInForm() {
           />
           <Button type="submit">Submit</Button>
           <Link to={RESTORE_PASSWORD_PATH}>Forgot password?</Link>
-          <Footer footerText="Already have an account?" footerLink={SIGN_UP_PATH} footerLinkText="Sign Up" />
-        </StyledForm>
+          <Footer footerText={MESSAGES.signInFooterText} footerLink={SIGN_UP_PATH} footerLinkText="Sign Up" />
+        </FormStyles>
       )}
     </Formik>
   );

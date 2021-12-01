@@ -6,7 +6,7 @@ import arrowLeftIcon from '../../assets/icons/angle-left-b.png';
 import emailIcon from '../../assets/icons/Vector.png';
 import { BREACKPOINTS, COLORS } from '../../theme';
 
-export const StyledForm = styled(Form)`
+export const FormStyles = styled(Form)`
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -41,11 +41,11 @@ export const ArrowLink = styled(Link)`
     background: url(${arrowLeftIcon}) no-repeat;
 `;
 
-export const StyledTitle = styled(Title)`
+export const TitleStyles = styled(Title)`
      display: flex;
      margin: 0;
 `;
-export const StyledTitleText = styled.p`
+export const TitleTextStyles = styled.p`
       margin-left: 16px;
 `;
 export const RestorePasswordText = styled.div`
@@ -58,7 +58,7 @@ export const RestorePasswordText = styled.div`
     line-height: 130%; 
     color: #A1ABC9;
 `;
-export const StyledButtonForRestored = styled(Button)`
+export const ButtonForRestoredStyles = styled(Button)`
       width: 214px;
       margin: 0px 0 350px;
 `;

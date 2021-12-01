@@ -2,25 +2,22 @@ import React from 'react';
 import { Container } from '../../components';
 import { SIGN_IN_PATH } from '../../routes';
 import {
-  StyledForm, StyledTitle, ArrowLink, StyledTitleText, RestorePasswordText,
+  FormStyles, TitleStyles, ArrowLink, TitleTextStyles, RestorePasswordText,
 } from './RestoredPassword.styles';
+import { MESSAGES } from '../../theme';
 
 export function RestoredPassword() {
   return (
     <Container>
-      <StyledForm>
-        <StyledTitle>
+      <FormStyles>
+        <TitleStyles>
           <ArrowLink to={SIGN_IN_PATH} />
-          <StyledTitleText>Restore Password</StyledTitleText>
-        </StyledTitle>
+          <TitleTextStyles>Restore Password</TitleTextStyles>
+        </TitleStyles>
         <RestorePasswordText>
-          <p>
-            An email has been sent to example@exam.com.
-            Check your inbox, and click the reset link provided.
-
-          </p>
+          <p>{MESSAGES.restoredPasswordText}</p>
         </RestorePasswordText>
-      </StyledForm>
+      </FormStyles>
     </Container>
   );
 }

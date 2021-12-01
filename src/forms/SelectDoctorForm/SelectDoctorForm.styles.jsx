@@ -1,21 +1,21 @@
 import styled, { css } from 'styled-components';
 import { Form, Field } from 'formik';
-import { Button, StyledWarningText } from '../../components';
+import { Button, WarningTextStyles } from '../../components';
 import { BREACKPOINTS, COLORS } from '../../theme';
 
-export const StyledSectionContainer = styled.div`
+export const SectionContainerStyles = styled.div`
     display: flex;
     margin: 10px 0;
 `;
 
-export const StyledWrapper = styled.div`
+export const WrapperStyles = styled.div`
   display:flex;
   flex-direction: raw;
   flex-wrap: wrap;
   justify-content: space-between;
 `;
 
-export const StyledAppointmentsForm = styled(Form)`
+export const AppointmentsFormStyles = styled(Form)`
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -33,7 +33,7 @@ export const InputWrapper = styled.div`
   flex-direction: column;
 `;
 
-export const StyledRadioWrapper = styled.div`
+export const RadioWrapperStyles = styled.div`
   position: relative;
   display: flex;
   gap: 16px;
@@ -41,7 +41,7 @@ export const StyledRadioWrapper = styled.div`
   width: 464px;
 `;
 
-export const StyledFields = styled(Field)`
+export const FieldsStyles = styled(Field)`
     position: relative;
     width: 624px;
     height: 56px;
@@ -58,7 +58,7 @@ export const StyledFields = styled(Field)`
     }
 `;
 
-export const StyledLabel = styled.label`
+export const LabelStyles = styled.label`
   margin-bottom: 16px;
   font-family: Poppins;
   font-style: normal;
@@ -68,19 +68,19 @@ export const StyledLabel = styled.label`
   color: ${COLORS.black};  
 `;
 
-export const StyledWarnings = styled(StyledWarningText)`
+export const WarningsStyles = styled(WarningTextStyles)`
   bottom: 14px;
 `;
-export const StyledWarningsTime = styled(StyledWarningText)`
+export const WarningsTimeStyles = styled(WarningTextStyles)`
   bottom: -17px;
   left: 23px;
 `;
-export const StyledButtonWrapper = styled.div`
+export const ButtonWrapperStyles = styled.div`
   display: flex;
   justify-content: flex-end;
 `;
 
-export const StyledButtonSubmit = styled(Button)`
+export const ButtonSubmitStyles = styled(Button)`
   padding: 0;
   background: ${COLORS.blue};
   border: none;

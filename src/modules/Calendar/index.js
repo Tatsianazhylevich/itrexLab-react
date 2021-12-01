@@ -1,1 +1,1 @@
-export { StyledCalendar } from './Calendar';
+export { CalendarStyles } from './Calendar';

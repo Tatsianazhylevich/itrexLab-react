@@ -3,7 +3,7 @@ import DateIcon from '../../../assets/icons/clock-three.png';
 import NoteIcon from '../../../assets/icons/clipboard-blank.png';
 import { BREACKPOINTS, COLORS } from '../../../theme';
 
-export const StyledCard = styled.li`
+export const CardStyles = styled.li`
     width: 406px;
     height: 264px;
     margin-right: 20px;
@@ -17,7 +17,7 @@ export const StyledCard = styled.li`
     }
 `;
 
-export const StyledCardHeader = styled.div`
+export const CardHeaderStyles = styled.div`
     position: relative;
     display: flex;
     align-items: center;
@@ -37,20 +37,20 @@ export const StyledCardHeader = styled.div`
     }
     }
 `;
-export const StyledHeaderInfo = styled.div`
+export const HeaderInfoStyles = styled.div`
     display: flex;
 `;
-export const StyledAvatar = styled.img`
+export const AvatarStyles = styled.img`
     position: relative;
     width: 48px;
     height: 48px;
 `;
 
-export const StyledHeaderAbout = styled.div`
+export const HeaderAboutStyles = styled.div`
     margin: 11px 17px;
 `;
 
-export const StyledName = styled.h4`
+export const NameStyles = styled.h4`
     margin-bottom: 5px;
     font-family: Poppins;
     font-style: normal;
@@ -105,15 +105,15 @@ export const More = styled.div`
     }
 `;
 
-export const StyledCardMain = styled.div`
+export const CardMainStyles = styled.div`
      display: flex;
     flex-direction: column;
     margin: 55px 0px 40px;
 `;
-export const StyledCardDate = styled.div`
+export const CardDateStyles = styled.div`
     display: flex;
 `;
-export const StyledDateIcon = styled.div`
+export const DateIconStyles = styled.div`
     width: 24px;
     height: 24px;
     background: url(${DateIcon}) no-repeat center;
@@ -128,11 +128,11 @@ export const DateText = styled.p`
     line-height: 130%;
     color: ${COLORS.black};
 `;
-export const StyledCardNote = styled.div`
+export const CardNoteStyles = styled.div`
     display: flex;
      margin-top: 15px;
 `;
-export const StyledNoteIcon = styled.div`
+export const NoteIconStyles = styled.div`
     width: 69px;
     height: 24px;
     background: url(${NoteIcon}) no-repeat center;

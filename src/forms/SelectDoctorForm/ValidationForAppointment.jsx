@@ -1,17 +1,18 @@
 import * as Yup from 'yup';
+import { ERRORMESSAGES } from '../../theme';
 
 export const validate = Yup.object({
   occupation: Yup.string()
-    .required('Required'),
+    .required(ERRORMESSAGES.required),
   doctorsName: Yup.string()
-    .required('Required'),
+    .required(ERRORMESSAGES.required),
   reason: Yup.string()
-    .required('Required')
-    .min(3, 'Must be at least 3 characters'),
+    .required(ERRORMESSAGES.required)
+    .min(3, ERRORMESSAGES.min),
   note: Yup.string()
-    .max(100, 'Must be no more than 100 characters'),
+    .max(100, ERRORMESSAGES.max),
   date: Yup.string()
-    .required('Required'),
+    .required(ERRORMESSAGES.required),
   time: Yup.string()
-    .required('Required'),
+    .required(ERRORMESSAGES.required),
 });

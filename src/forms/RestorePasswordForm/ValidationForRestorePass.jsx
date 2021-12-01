@@ -1,7 +1,8 @@
 import * as Yup from 'yup';
+import { ERRORMESSAGES } from '../../theme';
 
 export const ValidationForRestorePassForm = Yup.object({
   email: Yup.string()
-    .email('Invalid email address')
-    .required('Email is required'),
+    .email(ERRORMESSAGES.email)
+    .required(ERRORMESSAGES.required),
 });

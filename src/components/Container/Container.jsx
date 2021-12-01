@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyledContainer } from './Container.styles';
+import { ContainerStyles } from './Container.styles';
 
 export function Container({ children, ...props }) {
   return (
-    <StyledContainer {...props}>
+    <ContainerStyles {...props}>
       {children}
-    </StyledContainer>
+    </ContainerStyles>
   );
 }

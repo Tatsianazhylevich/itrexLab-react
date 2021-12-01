@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { COLORS } from '../../theme';
 
-export const StyledRadioLabel = styled.label`
+export const RadioLabelStyles = styled.label`
     display: flex;
     width: 104px;
     height: 40px;
@@ -23,6 +23,6 @@ export const StyledRadioLabel = styled.label`
 
 `;
 
-export const StyledRadioInput = styled.input`
+export const RadioInputStyles = styled.input`
     width: 0px;
 `;

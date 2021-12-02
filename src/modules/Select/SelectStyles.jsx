@@ -38,7 +38,6 @@ export const selectStyled = {
     background: colors.white,
     border: `1px solid ${colors.solidgrey}`,
     boxSizing: 'border-box',
-    boxShadow: `0px 4px 32px ${colors.darkgrey}`,
     borderRadius: '8px',
     marginBottom: '40px',
   }),

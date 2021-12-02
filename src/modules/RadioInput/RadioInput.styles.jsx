@@ -14,7 +14,6 @@ export const RadioLabelStyled = styled.label`
     color: ${({ isSelected }) => (isSelected ? colors.blue : colors.black)};
     border: ${({ isSelected }) => (isSelected ? `1px solid ${colors.blue}` : 'none')};
     box-sizing: border-box;
-    box-shadow: 0px 4px 32px ${colors.darkgrey};
     border-radius: 8px;
     cursor: pointer;
     &:hover {

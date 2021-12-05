@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { Formik } from 'formik';
 import {
   Button, Title, Footer,
@@ -7,37 +8,43 @@ import {
 import {
   FormStyled, InputName, InputEmail, InputPassword, InputConfirmPassword,
 } from './SignUpForm.styles';
+import { createUser, userProfile } from '../../pages/Authorization/redux';
 import { ValidationForSignUpForm } from './ValidationForSignUpForm';
 import { SIGN_IN_PATH, PATIENT_VIEW_PATH } from '../../routes/routes';
 import { messages } from '../../shared';
 
 export function SignUpForm() {
   const { push } = useHistory();
+  const dispatch = useDispatch();
 
   const initialValues = {
     name: '',
     lastName: '',
-    userName: '',
+    email: '',
     password: '',
     confirmPassword: '',
   };
-
-  function handleClick() {
-    push(PATIENT_VIEW_PATH);
-  }
 
   return (
     <Formik
       initialValues={initialValues}
       validationSchema={ValidationForSignUpForm}
-      onSubmit={(values, { setSubmitting }) => {
+      onSubmit={(values) => {
         console.log(values);
-        setSubmitting(false);
-        handleClick();
+        const userData = {
+          userName: values.email,
+          password: values.password,
+          firstName: values.name,
+          lastName: values.lastName,
+        };
+        console.log(userData);
+        dispatch(createUser(userData));
+        dispatch(userProfile());
+        push(SIGN_IN_PATH);
       }}
     >
-      { () => (
-        <FormStyled>
+      { ({ handleSubmit }) => (
+        <FormStyled onSubmit={handleSubmit}>
           <Title>
             <p>Sign Up</p>
           </Title>
@@ -57,7 +64,7 @@ export function SignUpForm() {
           />
           <InputEmail
             label="Email"
-            name="userName"
+            name="email"
             type="email"
             placeholder="email@gmail.com"
             fontSize="0"

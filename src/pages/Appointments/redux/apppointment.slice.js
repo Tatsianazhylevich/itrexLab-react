@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import {
   specializations, doctorsBySpecialization, allPatientAppointments, freeTime, appointments,
-} from '../../../services';
+} from '../../../api';
 
 export const getSpecializations = createAsyncThunk(
   'appointment/getSpecializations',
@@ -53,19 +53,6 @@ export const createNewAppointment = createAsyncThunk(
   },
 );
 
-export const getAllAppointmentsforPatient = createAsyncThunk(
-  'appointment/getAllAppointmentsforPatient',
-  async (_, { rejectWithValue }) => {
-    try {
-      const response = await allPatientAppointments();
-      console.log(response.data);
-      return response.data;
-    } catch (error) {
-      return rejectWithValue(error.response.data);
-    }
-  },
-);
-
 const appointmentSlice = createSlice({
   name: 'appointment',
   initialState: {
@@ -75,7 +62,6 @@ const appointmentSlice = createSlice({
     doctors: [],
     time: [],
     newAppointment: {},
-    appointments: [],
   },
   extraReducers: (builder) => {
     builder.addCase(getSpecializations.pending, (state) => ({ ...state, loading: true }));
@@ -129,20 +115,6 @@ const appointmentSlice = createSlice({
       loading: false,
       newAppointment: {},
       error: action.error.message,
-    }));
-
-    builder.addCase(getAllAppointmentsforPatient.pending, (state) => ({ ...state, loading: true }));
-    builder.addCase(getAllAppointmentsforPatient.fulfilled, (state, action) => ({
-      ...state,
-      loading: false,
-      appointments: action.payload,
-    }));
-    builder.addCase(getAllAppointmentsforPatient.rejected, (state, action) => ({
-      ...state,
-      loading: false,
-      appointments: [],
-      error: action.error.message,
-
     }));
   },
 });

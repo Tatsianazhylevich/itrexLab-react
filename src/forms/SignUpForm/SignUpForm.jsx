@@ -25,25 +25,26 @@ export function SignUpForm() {
     confirmPassword: '',
   };
 
+  const sumbitSignUn = (values) => {
+    const userData = {
+      userName: values.email,
+      password: values.password,
+      firstName: values.name,
+      lastName: values.lastName,
+    };
+    console.log(userData);
+    dispatch(createUser(userData));
+    dispatch(userProfile());
+    push(SIGN_IN_PATH);
+  };
+
   return (
     <Formik
       initialValues={initialValues}
       validationSchema={ValidationForSignUpForm}
-      onSubmit={(values) => {
-        console.log(values);
-        const userData = {
-          userName: values.email,
-          password: values.password,
-          firstName: values.name,
-          lastName: values.lastName,
-        };
-        console.log(userData);
-        dispatch(createUser(userData));
-        dispatch(userProfile());
-        push(SIGN_IN_PATH);
-      }}
+      onSubmit={sumbitSignUn}
     >
-      { ({ handleSubmit }) => (
+      { ({ handleSubmit, isValid, dirty }) => (
         <FormStyled onSubmit={handleSubmit}>
           <Title>
             <p>Sign Up</p>
@@ -83,7 +84,7 @@ export function SignUpForm() {
             placeholder="Confirm Password"
             fontSize="0"
           />
-          <Button type="submit">Sign Up</Button>
+          <Button isDisabled={!isValid || !dirty} type="submit">Sign Up</Button>
           <Footer footerText={messages.signUpFooterText} footerLink={SIGN_IN_PATH} footerLinkText="Sign In" />
         </FormStyled>
       )}

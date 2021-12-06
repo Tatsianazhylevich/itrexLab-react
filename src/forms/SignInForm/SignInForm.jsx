@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Formik } from 'formik';
 import {
   Button, Title, Footer,
@@ -14,34 +14,30 @@ import { messages } from '../../shared';
 export function SignInForm() {
   const { push } = useHistory();
   const dispatch = useDispatch();
-  // dispatch();
 
   const initialValues = {
     email: '',
     password: '',
   };
 
-  // function handleClick() {
-  //   push(PATIENT_VIEW_PATH);
-  // }
+  const submitSignInForm = (values) => {
+    const userData = {
+      userName: values.email,
+      password: values.password,
+    };
+    console.log(userData);
+    dispatch(loginUser(userData));
+    dispatch(userProfile());
+    push(PATIENT_VIEW_PATH);
+  };
 
   return (
     <Formik
       initialValues={initialValues}
       validationSchema={ValidationForSignInForm}
-      onSubmit={(values) => {
-        console.log(values);
-        const userData = {
-          userName: values.email,
-          password: values.password,
-        };
-        console.log(userData);
-        dispatch(loginUser(userData));
-        dispatch(userProfile());
-        push(PATIENT_VIEW_PATH);
-      }}
+      onSubmit={submitSignInForm}
     >
-      {({ handleSubmit }) => (
+      {({ handleSubmit, isValid, dirty }) => (
         <FormStyled onSubmit={handleSubmit}>
           <Title>
             <p>Sign In</p>
@@ -60,7 +56,7 @@ export function SignInForm() {
             placeholder="Password"
             fontSize="0"
           />
-          <Button type="submit">Submit</Button>
+          <Button isDisabled={!isValid || !dirty} type="submit">Sign In</Button>
           <Link to={RESTORE_PASSWORD_PATH}>Forgot password?</Link>
           <Footer footerText={messages.signInFooterText} footerLink={SIGN_UP_PATH} footerLinkText="Sign Up" />
         </FormStyled>

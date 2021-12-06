@@ -8,7 +8,7 @@ import {
 import { USER_APPOINTMENT_PATH } from '../../routes/routes';
 import { messages, navButtons } from '../../shared';
 import { userProfile } from '../Authorization/redux';
-import { getUserProfile } from '../Authorization/redux/userSelector';
+import { getUserProfile } from '../Authorization/redux/user/user.selector';
 import { WrapperStyled, MainStyled } from './UserView.styles';
 
 export function UserView() {

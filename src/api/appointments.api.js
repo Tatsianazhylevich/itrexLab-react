@@ -1,4 +1,4 @@
-import { instance } from './instance';
+import { instance } from './instance.api';
 
 export const specializations = () => instance
   .get('specializations');

@@ -1,4 +1,4 @@
-import { instance } from './instance';
+import { instance } from './instance.api';
 
 export const registration = (body) => instance
   .post('auth/registration', body);

@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { format } from 'date-fns';
+import Calendar from 'react-calendar';
 import {
   Formik, Field,
 } from 'formik';
@@ -51,13 +53,25 @@ export function SelectDoctorForm() {
   const timeForVisit = useSelector(freeTimeForVisit).map((item) => ({ label: format(new Date(item), 'h:mm aaa'), value: item }));
   console.log(timeForVisit);
 
+  const getDateFormat = (value) => new Date(value.getTime()
+ - (value.getTimezoneOffset() * 60000)).toISOString();
+
   useEffect(() => {
     dispatch(getSpecializations());
   }, []);
 
+  const initialValue = {
+    occupation: '',
+    doctorsName: '',
+    reason: '',
+    note: '',
+    date: '',
+    time: '',
+  };
+
   const createAppointment = (values) => {
     const valuesForAppointment = {
-      date: values.date,
+      date: values.time,
       reason: values.reason,
       note: values.note,
       doctorID: values.doctorsName,
@@ -65,15 +79,6 @@ export function SelectDoctorForm() {
     console.log(valuesForAppointment);
     dispatch(createNewAppointment(valuesForAppointment));
     push(PATIENT_VIEW_PATH);
-  };
-
-  const initialValue = {
-    occupation: '',
-    doctorsName: '',
-    reason: '',
-    note: '',
-    date: new Date(),
-    time: '',
   };
 
   return (
@@ -153,7 +158,7 @@ export function SelectDoctorForm() {
                   id="date"
                   component={CalendarStyled}
                   onChange={(value) => {
-                    const dateFormat = value.toISOString();
+                    const dateFormat = getDateFormat(value);
                     setFieldValue('date', dateFormat);
                     dispatch(getFreeTime({ date: dateFormat, doctorId: values.doctorsName }));
                   }}

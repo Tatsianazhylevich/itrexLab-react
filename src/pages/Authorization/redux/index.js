@@ -1,2 +1,2 @@
-export * from './user.slice';
-export * from './authorization.slice';
+export * from './authorization';
+export * from './user';

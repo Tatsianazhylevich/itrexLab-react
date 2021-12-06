@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { registration, login } from '../../../services';
-import * as tokenRepository from '../../../services';
+import { registration, login } from '../../../../api';
+import * as tokenRepository from '../../../../api';
 
 export const createUser = createAsyncThunk(
   'login/createUser',
@@ -43,7 +43,7 @@ const authorizationSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(createUser.fulfilled, (state, action) => ({
       ...state,
-      status: action.payload,
+      status: 'fulfilled',
     }));
     builder.addCase(createUser.rejected,
       (state) => ({
@@ -53,7 +53,7 @@ const authorizationSlice = createSlice({
 
     builder.addCase(loginUser.fulfilled, (state, action) => ({
       ...state,
-      status: action.payload,
+      status: action.meta,
     }));
     builder.addCase(loginUser.rejected,
       (state) => ({

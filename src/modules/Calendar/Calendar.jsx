@@ -5,8 +5,10 @@ import 'react-calendar/dist/Calendar.css';
 import './calendarStyles/calendar.css';
 
 export function CalendarStyled({ value, onChange }) {
+  // const [calendarValue, setCalendarValue] = useState(new Date());
   const getShortWeekday = useCallback((locale, date) => daysArr[date.getDay()], []);
   const minDate = useMemo(() => new Date(), []);
+
   return (
     <div className="calendar-container">
       <Calendar

@@ -10,8 +10,10 @@ export const CardStyled = styled.li`
     margin-bottom: 24px;
     padding: 24px 32px 40px;
     background: ${colors.white};
-    box-shadow: 0px 4px 32px ${colors.darkgrey};
     border-radius: 12px;
+    &:hover {
+        box-shadow: 0px 4px 32px ${colors.darkgrey};
+    }
     @media(max-width: ${breackpoints.laptop}) {
       width: 100%;
     }

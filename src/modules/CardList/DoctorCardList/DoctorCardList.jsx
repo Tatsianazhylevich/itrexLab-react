@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { DoctorCard } from '../../Card/DoctorCard/DoctorCard';
-// import { doctors } from '../../../mocks/doctorsMock';
 import { CardListStyled } from './DoctorCardList.styles';
 import anneteBlack from '../../../assets/patients/annete_black.png';
-import { allApppointmentsOfPatient, getAllAppointmentsforPatient } from '../../../pages/Appointments/redux';
+import { allApppointmentsOfPatient, getAllAppointmentsforPatient } from '../../../pages/UserView/redux';
+import { getDateFormat } from '../../../shared';
 
 export function DoctorCardList() {
   const dispatch = useDispatch();
@@ -25,10 +25,10 @@ export function DoctorCardList() {
           lastName={doctor.doctor.last_name}
           position={doctor.doctor.specialization_name}
           reason={doctor.reason}
-          time={doctor.visit_date}
+          time={getDateFormat(doctor.visit_date)}
           key={doctor.id}
         />
-      )) : <p>There are no posts here yet</p>}
+      )) : <h3>You don't have an appointment with a doctor yet</h3>}
 
     </CardListStyled>
   );

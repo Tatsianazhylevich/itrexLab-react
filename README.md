@@ -1,3 +1,3 @@
 # PALM CLINIC
 
-## React-project created by Zhilevich Tatiana for the ITRex-group internship
+## React-project created by Zhylevich Tatiana for the ITRex-group internship

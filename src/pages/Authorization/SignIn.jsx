@@ -1,7 +1,6 @@
 import React from 'react';
-import { Container } from '../../components/UI';
-
-import { SignInForm } from '../../components/forms';
+import { Container } from '../../components';
+import { SignInForm } from '../../forms';
 
 export function SignIn() {
   return (

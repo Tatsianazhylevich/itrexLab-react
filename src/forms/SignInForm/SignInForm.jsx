@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Formik } from 'formik';
 import {
   Button, Title, Footer,
 } from '../../components';
 import { ValidationForSignInForm } from './ValidationForSignInForm';
-import { loginUser, userProfile } from '../../pages/Authorization/redux';
+import { loginUser, userProfile, getStatus } from '../../pages/Authorization/redux';
 import { SIGN_UP_PATH, RESTORE_PASSWORD_PATH, PATIENT_VIEW_PATH } from '../../routes/routes';
 import { FormStyled, InputEmail, InputPassword } from './SignInForm.styles';
 import { messages } from '../../shared';
@@ -14,6 +14,13 @@ import { messages } from '../../shared';
 export function SignInForm() {
   const { push } = useHistory();
   const dispatch = useDispatch();
+  const loginStatus = useSelector(getStatus);
+
+  useEffect(() => {
+    if (loginStatus === 'OK') {
+      push(PATIENT_VIEW_PATH);
+    }
+  }, [push, loginStatus]);
 
   const initialValues = {
     email: '',
@@ -28,7 +35,6 @@ export function SignInForm() {
     console.log(userData);
     dispatch(loginUser(userData));
     dispatch(userProfile());
-    push(PATIENT_VIEW_PATH);
   };
 
   return (

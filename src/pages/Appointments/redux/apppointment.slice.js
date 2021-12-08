@@ -32,7 +32,6 @@ export const getFreeTime = createAsyncThunk(
   async (params, { rejectWithValue }) => {
     try {
       const response = await freeTime(params);
-      console.log(response.data);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -45,7 +44,6 @@ export const createNewAppointment = createAsyncThunk(
   async (params, { rejectWithValue }) => {
     try {
       const response = await appointments(params);
-      console.log(response.data);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -57,6 +55,7 @@ const appointmentSlice = createSlice({
   name: 'appointment',
   initialState: {
     loading: false,
+    status: '',
     error: null,
     specializations: [],
     doctors: [],
@@ -108,6 +107,7 @@ const appointmentSlice = createSlice({
     builder.addCase(createNewAppointment.fulfilled, (state, action) => ({
       ...state,
       loading: false,
+      status: 'Created',
       newAppointment: action.payload,
     }));
     builder.addCase(createNewAppointment.rejected, (state, action) => ({

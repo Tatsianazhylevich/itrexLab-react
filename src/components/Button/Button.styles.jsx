@@ -25,14 +25,3 @@ export const ButtonStyled = styled.button`
     padding-right: 30px;
   }
 `;
-
-// export const ButtonSubmitStyled = styled(Button)`
-//   padding: 0;
-//   background: ${colors.blue};
-//   border: none;
-//   ${(props) => props.isDisabled && css`
-//     background:  ${colors.solidgrey};
-//     cursor: not-allowed;
-//     border: 1px solid gray;
-//   `}
-// `;

@@ -17,5 +17,5 @@ export const freeTime = ({ date, doctorId }) => instance
 export const appointments = (body) => instance
   .post('appointments', body);
 
-export const allPatientAppointments = () => instance
-  .get('appointments/patient/me/?offset=0&limit=10');
+export const allPatientAppointments = (offset, limit) => instance
+  .get(`appointments/patient/me/?offset=${offset}&limit=${limit}`);

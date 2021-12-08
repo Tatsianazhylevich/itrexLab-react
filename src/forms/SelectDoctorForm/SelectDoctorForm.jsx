@@ -1,9 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { format } from 'date-fns';
-import Calendar from 'react-calendar';
 import {
   Formik, Field,
 } from 'formik';
@@ -22,6 +21,7 @@ import {
   freeTimeForVisit,
   getFreeTime,
   createNewAppointment,
+  newAppointment,
 } from '../../pages/Appointments/redux';
 import {
   SectionWrapper,
@@ -44,14 +44,14 @@ export function SelectDoctorForm() {
 
   const allOccupations = useSelector(allSpecializations)
     .map((occupation) => ({ value: occupation.id, label: occupation.specialization_name }));
-  console.log(allOccupations);
 
   const doctorsByOccupation = useSelector(allDoctorsBySpecializationsID).map((doctor) => ({
     value: doctor.id, label: `${doctor.first_name} ${doctor.last_name}`,
   }));
 
   const timeForVisit = useSelector(freeTimeForVisit).map((item) => ({ label: format(new Date(item), 'h:mm aaa'), value: item }));
-  console.log(timeForVisit);
+
+  const isNewAppointment = useSelector(newAppointment);
 
   const getDateFormat = (value) => new Date(value.getTime()
  - (value.getTimezoneOffset() * 60000)).toISOString();
@@ -70,15 +70,17 @@ export function SelectDoctorForm() {
   };
 
   const createAppointment = (values) => {
+    const formatTimetoISO = new Date(values.time).toISOString();
     const valuesForAppointment = {
-      date: values.time,
+      date: formatTimetoISO,
       reason: values.reason,
       note: values.note,
       doctorID: values.doctorsName,
     };
-    console.log(valuesForAppointment);
     dispatch(createNewAppointment(valuesForAppointment));
-    push(PATIENT_VIEW_PATH);
+    if (isNewAppointment) {
+      push(PATIENT_VIEW_PATH);
+    }
   };
 
   return (
@@ -86,7 +88,6 @@ export function SelectDoctorForm() {
       initialValues={initialValue}
       validationSchema={validate}
       onSubmit={(values, { setSubmitting }) => {
-        console.log(values);
         setSubmitting(false);
         createAppointment(values);
       }}
@@ -125,7 +126,6 @@ export function SelectDoctorForm() {
                     id="doctorsName"
                     options={doctorsByOccupation}
                     onChange={(value) => {
-                      console.log(value);
                       setFieldValue('doctorsName', value.value);
                     }}
                     handleReset={setFieldValue}
@@ -173,7 +173,7 @@ export function SelectDoctorForm() {
                     ? <WarningsTimeStyled>{errors.time}</WarningsTimeStyled>
                     : null}
                   {timeForVisit.map((time) => (
-                    <Field name="time" component={RadioInput} timeValue={time.label} selectedTime={values.time} key={time.value} />
+                    <Field name="time" component={RadioInput} timeValue={time.label} selectedTime={values.time} stateValue={time.value} key={time.value} />
                   ))}
                 </RadioWrapperStyled>
               </SectionWrapper>

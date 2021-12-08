@@ -13,7 +13,6 @@ export function DoctorCardList() {
   }, [dispatch]);
 
   const { appointments } = useSelector(allApppointmentsOfPatient);
-  console.log(appointments);
 
   return (
     <CardListStyled>

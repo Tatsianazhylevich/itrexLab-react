@@ -1,12 +1,11 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { allAppointmentsForDoctor } from '../../../services';
+import { allAppointmentsForDoctor } from '../../../api';
 
 export const getPatients = createAsyncThunk(
-  'patients/getPatients',
+  'doctorAppointments/getPatients',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await allAppointmentsForDoctor();
-      console.log(response.data);
+      const response = await allAppointmentsForDoctor(0, 20);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -14,8 +13,8 @@ export const getPatients = createAsyncThunk(
   },
 );
 
-const patientsSlice = createSlice({
-  name: 'patient',
+const allDoctorAppointments = createSlice({
+  name: 'doctorAppointments',
   initialState: {
     loading: false,
     error: null,
@@ -41,4 +40,4 @@ const patientsSlice = createSlice({
   },
 });
 
-export const patientsReducer = patientsSlice.reducer;
+export const allDoctorAppointmentsReducer = allDoctorAppointments.reducer;

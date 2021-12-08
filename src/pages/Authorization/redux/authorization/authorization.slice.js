@@ -43,7 +43,7 @@ const authorizationSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(createUser.fulfilled, (state, action) => ({
       ...state,
-      status: 'fulfilled',
+      status: action.payload,
     }));
     builder.addCase(createUser.rejected,
       (state) => ({
@@ -53,7 +53,7 @@ const authorizationSlice = createSlice({
 
     builder.addCase(loginUser.fulfilled, (state, action) => ({
       ...state,
-      status: action.meta,
+      status: action.payload,
     }));
     builder.addCase(loginUser.rejected,
       (state) => ({

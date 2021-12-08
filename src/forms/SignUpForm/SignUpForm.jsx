@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Formik } from 'formik';
 import {
   Button, Title, Footer,
@@ -8,7 +8,7 @@ import {
 import {
   FormStyled, InputName, InputEmail, InputPassword, InputConfirmPassword,
 } from './SignUpForm.styles';
-import { createUser, userProfile } from '../../pages/Authorization/redux';
+import { createUser, userProfile, getStatus } from '../../pages/Authorization/redux';
 import { ValidationForSignUpForm } from './ValidationForSignUpForm';
 import { SIGN_IN_PATH, PATIENT_VIEW_PATH } from '../../routes/routes';
 import { messages } from '../../shared';
@@ -16,6 +16,13 @@ import { messages } from '../../shared';
 export function SignUpForm() {
   const { push } = useHistory();
   const dispatch = useDispatch();
+  const loginStatus = useSelector(getStatus);
+
+  useEffect(() => {
+    if (loginStatus === 'Created') {
+      push(PATIENT_VIEW_PATH);
+    }
+  }, [push, loginStatus]);
 
   const initialValues = {
     name: '',
@@ -25,7 +32,7 @@ export function SignUpForm() {
     confirmPassword: '',
   };
 
-  const sumbitSignUn = (values) => {
+  const sumbitSignUp = (values) => {
     const userData = {
       userName: values.email,
       password: values.password,
@@ -35,14 +42,13 @@ export function SignUpForm() {
     console.log(userData);
     dispatch(createUser(userData));
     dispatch(userProfile());
-    push(SIGN_IN_PATH);
   };
 
   return (
     <Formik
       initialValues={initialValues}
       validationSchema={ValidationForSignUpForm}
-      onSubmit={sumbitSignUn}
+      onSubmit={sumbitSignUp}
     >
       { ({ handleSubmit, isValid, dirty }) => (
         <FormStyled onSubmit={handleSubmit}>

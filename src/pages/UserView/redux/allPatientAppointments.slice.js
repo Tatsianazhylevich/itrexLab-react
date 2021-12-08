@@ -5,8 +5,7 @@ export const getAllAppointmentsforPatient = createAsyncThunk(
   'patientAppointments/getAllAppointmentsforPatient',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await allPatientAppointments();
-      console.log(response.data);
+      const response = await allPatientAppointments(0, 20);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);

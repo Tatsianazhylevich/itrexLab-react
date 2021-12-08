@@ -3,14 +3,15 @@ import * as tokenRepository from './tokenRepository';
 
 export const instance = axios.create({
   baseURL: 'https://reactlabapi.herokuapp.com/api/',
-  timeout: 1000,
 });
 
 instance.interceptors.request.use((request) => {
-  request.headers = {
-    Authorization: `Bearer ${tokenRepository.getToken()}`,
-    accept: 'application/json',
-    'Content-Type': 'application/json',
-  };
+  const token = tokenRepository.getToken();
+  if (token) {
+    request.headers = {
+      ...request.headers,
+      Authorization: `Bearer ${token}`,
+    };
+  }
   return request;
 });

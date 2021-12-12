@@ -1,1 +1,1 @@
-export { DoctorWiew } from './DoctorWiew';
+export { DoctorView } from './DoctorView';

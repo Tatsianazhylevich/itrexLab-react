@@ -4,7 +4,7 @@ import { Form } from 'formik';
 import { Button, Input, Title } from '../../components';
 import arrowLeftIcon from '../../assets/icons/angle-left-b.png';
 import emailIcon from '../../assets/icons/Vector.png';
-import { breackpoints, colors } from '../../theme';
+import { breakpoints, colors } from '../../theme';
 
 export const FormStyled = styled(Form)`
     display: flex;
@@ -15,7 +15,7 @@ export const FormStyled = styled(Form)`
     min-height: 100vh;
     padding: 178px 95px 0;
     background-color: ${colors.greylight};
-    @media (max-width: ${breackpoints.tablet}) {
+    @media (max-width: ${breakpoints.tablet}) {
         justify-content: flex-start;
         align-items: stretch;
         margin-top: 72px;
@@ -30,7 +30,7 @@ export const InputEmail = styled(Input)`
     background: url(${emailIcon}) no-repeat center left 20px;
     padding-left: 63px;
     background-color: ${colors.white};
-    @media (max-width: ${breackpoints.tablet}) {
+    @media (max-width: ${breakpoints.tablet}) {
         margin-bottom: 32px;
         background: url(${emailIcon}) no-repeat center left 15px;
         padding-left: 48px;
@@ -46,7 +46,7 @@ export const ArrowLink = styled(Link)`
 export const TitleStyled = styled(Title)`
     display: flex;
     margin: 0;
-    @media (max-width: ${breackpoints.tablet}) {
+    @media (max-width: ${breakpoints.tablet}) {
       margin-top: 32px;
     }
 `;
@@ -61,7 +61,7 @@ export const RestorePasswordText = styled.div`
     font-size: 15px;
     line-height: 130%; 
     color: ${colors.mediumgrey};
-    @media (max-width: ${breackpoints.tablet}) {
+    @media (max-width: ${breakpoints.tablet}) {
         width: 100%;
         margin: 24px 0;
     }

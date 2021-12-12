@@ -26,8 +26,9 @@ export function DoctorCardList() {
           reason={doctor.reason}
           time={getDateFormat(doctor.visit_date)}
           key={doctor.id}
+          dataTestId="doctorCard"
         />
-      )) : <h3>You don't have an appointment with a doctor yet</h3>}
+      )) : <div>no doctors</div>}
 
     </CardListStyled>
   );

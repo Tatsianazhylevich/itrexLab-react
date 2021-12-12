@@ -14,7 +14,6 @@ export function PatientCardList() {
   }, [dispatch]);
 
   const { appointments } = useSelector(doctorsAppointments);
-  console.log(appointments);
 
   return (
     <CardListStyled>
@@ -27,8 +26,9 @@ export function PatientCardList() {
           description={patient.reason}
           time={getDateFormat(patient.visit_date)}
           key={patient.id}
+          dataTestId="patientCard"
         />
-      )) : <h3>not</h3>}
+      )) : <h3>no doctors</h3>}
 
     </CardListStyled>
   );

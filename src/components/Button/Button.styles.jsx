@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import arrowRightIcon from '../../assets/icons/angle-right-b.png';
-import { breackpoints, colors } from '../../theme';
+import { breakpoints, colors } from '../../theme';
 
 export const ButtonStyled = styled.button`
   width: 146px;
@@ -17,7 +17,7 @@ export const ButtonStyled = styled.button`
     cursor: not-allowed;
     border: 1px solid gray;
   `}
-  @media (max-width: ${breackpoints.tablet}) {
+  @media (max-width: ${breakpoints.tablet}) {
     width: 123px;
     height: 46px;
     margin-top: 20px;

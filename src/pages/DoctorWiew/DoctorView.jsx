@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Header } from '../../components';
+import { Wrapper } from '../../components';
 import {
   NavMenu, BoardCard, BoardHeader, PatientCardList,
 } from '../../modules';
 import { messages, navButtons } from '../../shared';
-import { WrapperStyled, MainStyled } from './DoctorView.styles';
+import { MainStyled } from './DoctorView.styles';
 import { userProfile } from '../Authorization/redux';
 import { getUserProfile } from '../Authorization/redux/user/user.selector';
 
-export function DoctorWiew() {
+export function DoctorView() {
   const dispatch = useDispatch();
   const user = useSelector(getUserProfile);
 
@@ -19,8 +19,7 @@ export function DoctorWiew() {
     }
   }, [dispatch, user.role_name]);
   return (
-    <WrapperStyled className="wrapper">
-      <Header name="Miranda Nelson" position="Doctor" />
+    <Wrapper>
       <MainStyled>
         <NavMenu
           buttons={navButtons.doctorsButtons}
@@ -30,6 +29,6 @@ export function DoctorWiew() {
           <PatientCardList />
         </BoardCard>
       </MainStyled>
-    </WrapperStyled>
+    </Wrapper>
   );
 }

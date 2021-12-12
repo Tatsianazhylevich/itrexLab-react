@@ -1,2 +1,2 @@
-export { breackpoints } from './breackpoints';
+export { breakpoints } from './breakpoints';
 export { colors } from './colors';

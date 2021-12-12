@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Header } from '../../components';
+import { Wrapper } from '../../components';
 import { SelectDoctorForm } from '../../forms';
 import { BoardCard, BoardHeader } from '../../modules';
 import { userProfile, getUserProfile } from '../Authorization/redux';
@@ -17,14 +17,13 @@ export function AppointmentsView() {
   }, []);
 
   return (
-    <WrapperStyled className="wrapper">
-      <Header name={`${user.first_name} ${user.last_name}`} position={`${user.role_name}`} />
+    <Wrapper>
       <MainStyled>
         <BoardCard>
           <BoardHeader title={messages.appointmentsViewTitle} />
           <SelectDoctorForm />
         </BoardCard>
       </MainStyled>
-    </WrapperStyled>
+    </Wrapper>
   );
 }

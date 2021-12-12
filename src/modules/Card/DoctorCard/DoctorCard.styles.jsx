@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import DateIcon from '../../../assets/icons/clock-three.png';
 import ReasonIcon from '../../../assets/icons/reason.png';
-import { breackpoints, colors } from '../../../theme';
+import { breakpoints, colors } from '../../../theme';
 
 export const CardStyled = styled.li`
     width: 406px;
@@ -14,7 +14,7 @@ export const CardStyled = styled.li`
     &:hover {
         box-shadow: 0px 4px 32px ${colors.darkgrey};
     }
-    @media(max-width: ${breackpoints.laptop}) {
+    @media(max-width: ${breakpoints.laptop}) {
       width: 100%;
     }
 `;
@@ -33,7 +33,7 @@ export const CardHeaderStyled = styled.div`
     background-color: ${colors.solidgrey};
     width: 406px;
     height: 1px;
-    @media(max-width: ${breackpoints.laptop}) {
+    @media(max-width: ${breakpoints.laptop}) {
       right: 0px;
       width: 100%;;
     }

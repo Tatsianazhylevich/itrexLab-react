@@ -14,15 +14,15 @@ import { SIGN_IN_PATH, PATIENT_VIEW_PATH } from '../../routes/routes';
 import { messages } from '../../shared';
 
 export function SignUpForm() {
-  const { push } = useHistory();
+  const history = useHistory();
   const dispatch = useDispatch();
   const loginStatus = useSelector(getStatus);
 
   useEffect(() => {
     if (loginStatus === 'Created') {
-      push(PATIENT_VIEW_PATH);
+      history.push(PATIENT_VIEW_PATH);
     }
-  }, [push, loginStatus]);
+  }, [history, loginStatus]);
 
   const initialValues = {
     name: '',

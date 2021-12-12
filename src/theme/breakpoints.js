@@ -1,4 +1,4 @@
-export const breackpoints = {
+export const breakpoints = {
   mobileS: '320px',
   mobileM: '375px',
   mobileL: '565px',

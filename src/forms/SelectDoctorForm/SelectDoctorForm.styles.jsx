@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { Form, Field } from 'formik';
 import { Button, WarningTextStyled } from '../../components';
-import { breackpoints, colors } from '../../theme';
+import { breakpoints, colors } from '../../theme';
 
 export const SectionContainerStyled = styled.div`
     display: flex;
@@ -56,7 +56,7 @@ export const FieldsStyled = styled(Field)`
     &:focus {
         border: 1px solid ${colors.blue};
     }
-    @media (max-width: ${breackpoints.tablet}) {
+    @media (max-width: ${breakpoints.tablet}) {
       width: 100%;
     }
 `;

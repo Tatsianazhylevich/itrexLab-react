@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { breackpoints } from '../../../theme';
+import { breakpoints } from '../../../theme';
 
 export const CardListStyled = styled.ul`
     display: flex;
@@ -7,7 +7,7 @@ export const CardListStyled = styled.ul`
     max-height: 680px;
     list-style-type: none;
     overflow-y: auto;
-    @media(max-width: ${breackpoints.laptop}) {
+    @media(max-width: ${breakpoints.laptop}) {
         display: flex; 
         justify-content: center;
     }

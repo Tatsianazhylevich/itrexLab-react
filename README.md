@@ -6,8 +6,8 @@ Added tests for components:
 
 #### `SignUpForm` => SignUpForm.test.jsx
 
-#### `SignInForm` => SignUpForm.test.jsx
+#### `SignInForm` => SignInForm.test.jsx
 
-#### `DoctorCardList` => SignUpForm.test.jsx
+#### `DoctorCardList` => DoctorCardList.test.jsx
 
-#### `PatientCardList` => SignUpForm.test.jsx
+#### `PatientCardList` => PatientCardList.test.jsx

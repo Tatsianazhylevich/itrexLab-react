@@ -1,13 +1,3 @@
-# "Palm Clinic" by Tatsiana Zhylevich for ITRex-lab
+# PALM CLINIC
 
-## What's new?
-
-Added tests for components:
-
-#### `SignUpForm` => SignUpForm.test.jsx
-
-#### `SignInForm` => SignInForm.test.jsx
-
-#### `DoctorCardList` => DoctorCardList.test.jsx
-
-#### `PatientCardList` => PatientCardList.test.jsx
+## React-project created by Zhylevich Tatiana for the ITRex-group internship

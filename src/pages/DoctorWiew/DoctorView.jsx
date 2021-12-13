@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Wrapper } from '../../components';
+import { MainPage } from '../Main';
 import {
-  NavMenu, BoardCard, BoardHeader, PatientCardList,
+  NavMenu, BoardCard, BoardHeader,
 } from '../../modules';
+import { PatientCardList } from './components';
 import { messages, navButtons } from '../../shared';
 import { MainStyled } from './DoctorView.styles';
 import { userProfile } from '../Authorization/redux';
@@ -19,7 +20,7 @@ export function DoctorView() {
     }
   }, [dispatch, user.role_name]);
   return (
-    <Wrapper>
+    <MainPage>
       <MainStyled>
         <NavMenu
           buttons={navButtons.doctorsButtons}
@@ -29,6 +30,6 @@ export function DoctorView() {
           <PatientCardList />
         </BoardCard>
       </MainStyled>
-    </Wrapper>
+    </MainPage>
   );
 }

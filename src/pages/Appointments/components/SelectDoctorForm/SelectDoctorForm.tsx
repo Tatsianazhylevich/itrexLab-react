@@ -154,7 +154,6 @@ export function SelectDoctorForm() {
                     ? <WarningsStyled>{errors.doctorsName}</WarningsStyled>
                     : null}
                 </InputWrapper>
-                {console.log(values)}
 
                 <InputWrapper>
                   <LabelStyled>Reason for the visit</LabelStyled>

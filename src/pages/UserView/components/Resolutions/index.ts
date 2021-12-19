@@ -1,0 +1,1 @@
+export { ResolutionsForUser } from './ResolutionsForUser';

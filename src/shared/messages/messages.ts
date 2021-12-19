@@ -11,8 +11,11 @@ export const messages = {
   appointmentsViewTitle: 'Make an appointment',
   doctorViewTitle: 'My Patients',
   userViewTitle: 'My Appointments',
+  userProfileTitle: 'My Profile',
+  userResolutionsTitle: 'My Resolutions',
   emptyPagePatientText: 'You have no appointments yet.',
   emptyPageDoctorText1: 'You have no patients yet.',
+  emptyPageResolutionsText: 'You have no resolutions yet.',
   emptyPageDoctorText2: 'To create a patient profile, please contact your administrator.',
 };
 

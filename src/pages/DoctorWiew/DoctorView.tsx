@@ -9,6 +9,7 @@ import { messages, navButtons } from '../../shared';
 import { MainStyled } from './DoctorView.styles';
 import { userProfile } from '../Authorization/redux';
 import { getUserProfile } from '../Authorization/redux/user/user.selector';
+import { InnerDoctorRoute } from 'routes/innerRoute';
 
 export function DoctorView() {
   const dispatch = useAppDispatch();
@@ -22,13 +23,7 @@ export function DoctorView() {
   return (
     <MainPage>
       <MainStyled>
-        <NavMenu
-          buttons={navButtons.doctorsButtons}
-        />
-        <BoardCard>
-          <BoardHeader title={messages.doctorViewTitle} />
-          <PatientCardList />
-        </BoardCard>
+        <InnerDoctorRoute /> 
       </MainStyled>
     </MainPage>
   );

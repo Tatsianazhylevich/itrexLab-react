@@ -1,34 +1,33 @@
-import { Button } from 'components';
+
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { MenuStyled, MenuContainerStyled, MenuItemStyled, MenuLinkStyled } from './NavMenu.styles';
+import { MenuStyled, MenuContainerStyled, MenuLinkStyled } from './NavMenu.styles';
+import { colors } from 'theme';
 
 export type ButtonType = {
   title: string,
   id: string,
   path: string,
-  key?: string
+  exact?: boolean,
 }
 export type NavMenuProps = {
   buttons: ButtonType[],
 }
 
 export function NavMenu({ buttons }: NavMenuProps ) {
-  const [activeButton, setActiveButton] = useState(buttons[0].title);
-  const handleOnClick = (title: string) => {
-    setActiveButton(title);
-  };
+  // const [activeButton, setActiveButton] = useState(buttons[0].title);
+  // const handleOnClick = (title: string) => {
+  //   setActiveButton(title);
+  // };
   return (
     <MenuStyled>
       <MenuContainerStyled>
         {
-        buttons.map(({title, id, path}: ButtonType) => (
-          <MenuLinkStyled to={path} key={id}>
-            <MenuItemStyled
-              key={id}
-            >
-              {title}
-            </MenuItemStyled>
+        buttons.map(({title, id, path, exact}: ButtonType) => (
+          <MenuLinkStyled exact={exact} to={path} key={id} activeStyle={{
+            background: colors.blue,
+            color: colors.white
+          }}>
+            {title}
           </MenuLinkStyled>
         ))
         }

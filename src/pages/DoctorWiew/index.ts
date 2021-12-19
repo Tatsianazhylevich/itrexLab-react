@@ -1,2 +1,3 @@
 export { DoctorView } from './DoctorView';
-export { PatientCardList } from './components';
+export { PatientCardList, Patients, DoctorsResolutions } from './components';
+

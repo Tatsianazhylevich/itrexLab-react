@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 import avatar from '../../assets/doctors/mirandaNelson.png';
 import { breakpoints, colors } from '../../theme';
 
@@ -18,9 +19,9 @@ export const HeaderLogo = styled.div`
 `;
 
 export const LogoImg = styled.img`
-     width: 29px;
-        height: 32px;
-        margin-right: 10px;
+    width: 29px;
+    height: 32px;
+    margin-right: 10px;
 `;
 
 export const LogoText = styled.h2`
@@ -29,6 +30,17 @@ export const LogoText = styled.h2`
     text-transform: uppercase;
     font-size: 15px;
 `;
+export const LogoLink = styled(NavLink)`
+    color: ${colors.black};
+    outline: none;
+    text-decoration: none;
+    &:visited {
+        color: ${colors.black};
+        outline: none;
+        text-decoration: none;
+    }
+`
+
 export const HeaderUser = styled.div`
     display: flex;
     align-items: center;

@@ -1,12 +1,17 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { allAppointmentsForDoctor } from '../../../api';
-import { AppointmentForDoctor } from '../../types'
+import { allDoctorAppointmentsTypes, AppointmentForDoctor } from '../../types'
+
+type AllAppointmentsType = {
+  offset: number,
+  limit: number
+}
 
 export const getPatients = createAsyncThunk(
   'doctorAppointments/getPatients',
-  async (_, { rejectWithValue }) => {
+  async (params: AllAppointmentsType, { rejectWithValue }) => {
     try {
-      const response = await allAppointmentsForDoctor(0, 20);
+      const response = await allAppointmentsForDoctor(params);
       return response.data;
     } catch (error: any) {
       return rejectWithValue(error.response.data);
@@ -14,16 +19,20 @@ export const getPatients = createAsyncThunk(
   },
 );
 
+type AppointmentsType = {
+  appointments: AppointmentForDoctor[]
+}
+
 interface InitialStateTypes {
   loading: boolean,
   error: string | null,
-  patients: AppointmentForDoctor[] | []
+  patients: AppointmentsType | { appointments: [] },
 }
 
 const initialState = {
   loading: false,
   error: null,
-  patients: [],
+  patients: { appointments: [] },
 } as InitialStateTypes
 
 const allDoctorAppointments = createSlice({
@@ -31,12 +40,8 @@ const allDoctorAppointments = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(getPatients.pending, (state) => ({
-      ...state,
-      loading: true,
-      patients: [],
-    }));
-    builder.addCase(getPatients.fulfilled, (state, action) => ({
+    builder.addCase(getPatients.pending, (state) => ({ ...state, loading: true, }));
+    builder.addCase(getPatients.fulfilled, (state, action: PayloadAction<AppointmentsType>) => ({
       ...state,
       loading: false,
       patients: action.payload,
@@ -45,7 +50,7 @@ const allDoctorAppointments = createSlice({
       ...state,
       loading: false,
       error: action.payload,
-      patients: [],
+      patients: { appointments: [] },
     }));
   },
 });

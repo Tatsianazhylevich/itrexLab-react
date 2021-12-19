@@ -4,11 +4,12 @@ import { breakpoints, colors } from '../../theme';
 import { ButtonProps } from './Button';
 
 export const ButtonStyled = styled.button<ButtonProps>`
-  width: 146px;
-  height: 56px;
-  margin: 44px 0 32px;
+  min-width: 146px;
+  /* height: 56px; */
+  margin: 34px 0px;
+  padding: 15px 0px 15px 15px;
   border-radius: 8px;
-  background: url(${arrowRightIcon}) no-repeat center right 20px, ${colors.blue};
+  background: url(${arrowRightIcon}) no-repeat center right 15px, ${colors.blue};
   padding-right: 32px;
   color: ${colors.white};
   font-size: 17px;

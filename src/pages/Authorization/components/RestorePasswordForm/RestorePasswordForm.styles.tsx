@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Form } from 'formik';
 import { Button, Input, Title } from '../../../../components';
 import arrowLeftIcon from '../../../../assets/icons/angle-left-b.png';
@@ -13,7 +13,7 @@ export const FormStyled = styled(Form)`
     align-items: flex-start;
     width: 560px;
     min-height: 100vh;
-    padding: 178px 95px 0;
+    padding: 0px 95px 0;
     background-color: ${colors.greylight};
     @media (max-width: ${breakpoints.tablet}) {
         justify-content: flex-start;
@@ -38,16 +38,24 @@ export const InputEmail = styled(Input)`
     }
 `;
 
-export const ArrowLink = styled(Link)`
-    width: 25px;
-    background: url(${arrowLeftIcon}) no-repeat;
+export const ArrowLink = styled(NavLink)`
+    padding: 10px;
+    background: url(${arrowLeftIcon}) no-repeat 100%;
 `;
 
-export const TitleStyled = styled(Title)`
+export const TitleStyled = styled.div`
     display: flex;
-    margin: 0;
+    margin-bottom: 40px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 110%;
+    color: ${colors.black};
     @media (max-width: ${breakpoints.tablet}) {
-      margin-top: 32px;
+        margin-top: 32px;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
     }
 `;
 export const TitleTextStyled = styled.p`

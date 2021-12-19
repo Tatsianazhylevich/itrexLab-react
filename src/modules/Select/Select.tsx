@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from 'react-select';
+import Select, { SingleValue } from 'react-select';
 import { selectStyled } from './SelectStyles';
 
 type OptionsType = {
@@ -10,18 +10,26 @@ type OptionsType = {
 
 type CustomSelectProps = {
   field: any,
-  options: Array<string>,
+  options: OptionsType[],
+  value: string,
   component: JSX.Element,
   name: string,
   id: string,
   placeholder: string,
-  onChange: (value: OptionsType)=> void,
+  onChange: (newValue: SingleValue<string | OptionsType>) => void,
 }
  
-export const CustomSelect = ({field, ...props}: CustomSelectProps) => (
-  <Select
+export const CustomSelect = ({field, options, value, ...props}: CustomSelectProps) => {
+  const defaultValue = (optionsArr:OptionsType[], val: string) => (optionsArr ? options.find((option) => option.value === val) : '');
+
+  return (
+    <Select
     {...field}
     {... props}
+    value={defaultValue(options, value)}
     styles={selectStyled}
+    options={options}
   />
-);
+  )
+
+};

@@ -23,13 +23,22 @@ export const FormStyled = styled.div`
     }
 `;
 export const ArrowLink = styled(Link)`
-    width: 25px;
-    background: url(${arrowLeftIcon}) no-repeat;
+    padding: 10px;
+    background: url(${arrowLeftIcon}) no-repeat 100%;
 `;
-export const TitleStyled = styled(Title)`
-     display: flex;
-     @media (max-width: ${breakpoints.tablet}) {
-      margin: 32px 0 0;
+export const TitleStyled = styled.div`
+    display: flex;
+    margin-bottom: 40px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 110%;
+    color: ${colors.black};
+    @media (max-width: ${breakpoints.tablet}) {
+        margin-top: 32px;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
     }
 `;
 export const TitleTextStyled = styled.p`

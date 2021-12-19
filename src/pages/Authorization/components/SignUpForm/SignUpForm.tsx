@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useAppDispatch, useAppSelector } from '../../../../shared/hooks/hooks';
 import { Formik } from 'formik';
 import {
   Button, Title, Footer,
@@ -12,17 +12,18 @@ import { createUser, userProfile, getStatus } from '../../redux';
 import { ValidationForSignUpForm } from './ValidationForSignUpForm';
 import { SIGN_IN_PATH, PATIENT_VIEW_PATH } from '../../../../routes/routes';
 import { messages } from '../../../../shared';
+import { SignUpType } from './SignUpForm.type'
 
 export function SignUpForm() {
   const history = useHistory();
-  const dispatch = useDispatch();
-  const loginStatus = useSelector(getStatus);
+  const dispatch = useAppDispatch();
+  const loginStatus = useAppSelector(getStatus);
 
   useEffect(() => {
     if (loginStatus === 'Created') {
       history.push(PATIENT_VIEW_PATH);
     }
-  }, [history, loginStatus]);
+  }, [loginStatus]);
 
   const initialValues = {
     name: '',
@@ -32,7 +33,7 @@ export function SignUpForm() {
     confirmPassword: '',
   };
 
-  const sumbitSignUp = (values) => {
+  const sumbitSignUp = (values: SignUpType) => {
     const userData = {
       userName: values.email,
       password: values.password,
@@ -41,7 +42,7 @@ export function SignUpForm() {
     };
     console.log(userData);
     dispatch(createUser(userData));
-    dispatch(userProfile());
+    // dispatch(userProfile());
   };
 
   return (

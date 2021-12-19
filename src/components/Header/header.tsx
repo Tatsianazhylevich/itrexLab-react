@@ -1,10 +1,12 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 import {
   HeaderStyled,
   HeaderLogo,
   LogoImg,
   LogoText,
+  LogoLink,
   HeaderUser,
   HeaderUserFoto,
   HeaderUserInfo,
@@ -16,16 +18,19 @@ import {
 export type HeaderProps = {
   name: string,
   position: string,
-  avatar: string
+  avatar: string,
+  path: string 
 }
 
-export function Header({ name, position, avatar }: HeaderProps) {
+export function Header({ name, position, avatar, path }: HeaderProps) {
   return (
     <HeaderStyled>
-      <HeaderLogo>
-        <LogoImg src={logo} alt="logo" />
-        <LogoText>palm clinic</LogoText>
-      </HeaderLogo>
+      <LogoLink to={path}>
+        <HeaderLogo>
+          <LogoImg src={logo} alt="logo" />
+          <LogoText>palm clinic</LogoText>
+        </HeaderLogo>
+      </LogoLink>
       <HeaderUser>
         <HeaderUserInfo>
           <HeaderUserName>{name}</HeaderUserName>

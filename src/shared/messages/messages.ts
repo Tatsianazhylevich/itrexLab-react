@@ -11,6 +11,9 @@ export const messages = {
   appointmentsViewTitle: 'Make an appointment',
   doctorViewTitle: 'My Patients',
   userViewTitle: 'My Appointments',
+  emptyPagePatientText: 'You have no appointments yet.',
+  emptyPageDoctorText1: 'You have no patients yet.',
+  emptyPageDoctorText2: 'To create a patient profile, please contact your administrator.',
 };
 
 export const errorMessages = {
@@ -21,4 +24,13 @@ export const errorMessages = {
   passwordMin: 'Must be at least 4 characters.',
   passwordMatched: 'Password must match',
   confirmPassword: 'Confirm password is required',
+};
+
+export const notifyMessages = {
+  succesCreateAppointment: 'The appointment has been successfully created!',
+  failedCreateAppointment: 'Something going wrong. Try again.',
+  signIn: 'Login completed successfully',
+  failedSignin: 'Something went wrong. Check the correctness of the entered data',
+  signUp: 'Your account has been successfully created. Congratulations!',
+  failedSignUp: 'Something went wrong. Check the correctness of the entered data',
 };

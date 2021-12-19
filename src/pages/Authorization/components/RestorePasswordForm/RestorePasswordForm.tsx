@@ -11,6 +11,7 @@ import {
   InputEmail,
   ButtonForRestoredStyled,
 } from './RestorePasswordForm.styles';
+import arrowLeftIcon from '../../../../assets/icons/angle-left-b.png';
 
 import { SIGN_IN_PATH, RESTORED_PASSWORD_PATH } from '../../../../routes/routes';
 import { messages } from '../../../../shared';

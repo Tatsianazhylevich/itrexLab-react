@@ -1,15 +1,16 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 import { Button } from '../../components';
 import plusIcon from '../../assets/icons/plus.png';
 import { breakpoints, colors } from '../../theme';
 
 export const BoardTitleStyled = styled.h2`
-    display: flex;
-    color: ${colors.black};
-    font-size: 24px;
-    @media (max-width: ${breakpoints.mobileL}) {
-      font-size: 20px;
-    }
+  display: flex;
+  color: ${colors.black};
+  font-size: 24px;
+  @media (max-width: ${breakpoints.mobileL}) {
+    font-size: 20px;
+  }
 `;
 
 export const BoardHeaderStyled = styled.div`
@@ -22,10 +23,29 @@ export const ContainerStyled = styled.div`
   margin: 0 60px;
 `;
 
-export const CreateAnAppointmentBtn = styled(Button)`
+export const CreateAnAppointmentBtn = styled.button`
   margin: 0;
+  border-radius: 8px;
   padding-left: 50px;
   width: 244px;
   background: url(${plusIcon}) no-repeat center left 20px, ${colors.blue};
   border: none;
+  padding-right: 32px;
+  color: ${colors.white};
+  font-size: 17px;
+  cursor: pointer;
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 123px;
+    height: 46px;
+    margin-top: 20px;
+    background: url(${plusIcon}) no-repeat center right 16px, ${colors.blue};
+    padding-right: 30px;
+  }
 `;
+
+export const NewAppointmentLink = styled(NavLink)`
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+}
+`

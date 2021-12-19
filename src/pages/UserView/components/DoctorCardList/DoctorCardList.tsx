@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useAppDispatch, useAppSelector, getDateFormat, messages } from 'shared';
 import { DoctorCard } from '../../../../modules/Card/DoctorCard/DoctorCard';
 import { CardListStyled } from './DoctorCardList.styles';
 import anneteBlack from '../../../../assets/patients/annete_black.png';
 import { allApppointmentsOfPatient, getAllAppointmentsforPatient } from '../../redux';
-import { getDateFormat } from '../../../../shared';
+import { EmptyPage } from 'pages';
 
 export interface Appointment {
   id: 'string',
@@ -27,17 +27,18 @@ export interface AppointmentForPatient extends Appointment {
 }
 
 export function DoctorCardList() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(getAllAppointmentsforPatient());
+    dispatch(getAllAppointmentsforPatient({ offset: 0, limit: 20 }));
   }, [dispatch]);
 
-  const { appointments } = useSelector(allApppointmentsOfPatient);
+  const { appointments } = useAppSelector(allApppointmentsOfPatient);
+  
 
   return (
     <CardListStyled>
 
-      {appointments ? appointments.map((doctor: AppointmentForPatient) => (
+      { appointments.length ? appointments.map((doctor: AppointmentForPatient) => (
         <DoctorCard
           avatar={anneteBlack}
           firstName={doctor.doctor.first_name}
@@ -48,7 +49,7 @@ export function DoctorCardList() {
           key={doctor.id}
           dataTestId="doctorCard"
         />
-      )) : <div>no doctors</div>}
+      )) : <EmptyPage text1={messages.emptyPagePatientText} />}
 
     </CardListStyled>
   );

@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { getUserProfile } from '../../../../api';
 
 export const userProfile = createAsyncThunk(
@@ -7,41 +7,55 @@ export const userProfile = createAsyncThunk(
     try {
       const response = await getUserProfile();
       return response.data;
-    } catch (error) {
+    } catch (error: any) {
       return rejectWithValue(error.message);
     }
   },
 
 );
 
+interface UserProfileType {
+  id: string,
+  first_name: string,
+  last_name: string,
+  photo: string,
+  role_name: string
+}
+
+interface InitialStateTypes {
+  loading: boolean,
+  status: string,
+  profile?: UserProfileType,
+  error: string,
+}
+const initialState = {
+  loading: false,
+  status: 'idle',
+  profile: {},
+  error: '',
+} as InitialStateTypes
+
 const userSlice = createSlice({
   name: 'user',
-  initialState: {
-    loading: false,
-    status: 'idle',
-    profile: {},
-    error: '',
-  },
+  initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(userProfile.pending, (state, action) => ({
+    builder.addCase(userProfile.pending, (state) => ({
       ...state,
       loading: true,
       status: 'pending',
-      profile: {},
     }));
-    builder.addCase(userProfile.fulfilled, (state, action) => ({
+    builder.addCase(userProfile.fulfilled, (state, action: PayloadAction<UserProfileType>) => ({
       ...state,
       loading: false,
       status: 'fulfilled',
       profile: action.payload,
     }));
     builder.addCase(userProfile.rejected,
-      (state, action) => ({
+      (state, action: PayloadAction<any>) => ({
         ...state,
         status: 'rejected',
-        profile: {},
-        error: action.error.message,
+        error: action.payload,
       }));
   },
 });

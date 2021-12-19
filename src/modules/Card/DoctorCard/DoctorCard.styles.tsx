@@ -124,7 +124,7 @@ export const DateText = styled.p`
 `;
 export const CardNoteStyled = styled.div`
     display: flex;
-     margin-top: 15px;
+    margin-top: 15px;
 `;
 export const NoteIconStyled = styled.div`
     width: 24px;

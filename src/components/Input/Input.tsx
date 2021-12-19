@@ -9,7 +9,9 @@ import eyeSlash from '../../assets/icons/eye-slash.png';
 
 export type InputProps = {
   label: string,
-  isEyeVisible: boolean,
+  type?: string;
+  placeholder?: string,
+  isEyeVisible?: boolean,
   fontSize?: number | string,
   name: string
 }

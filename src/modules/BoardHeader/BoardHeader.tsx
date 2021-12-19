@@ -1,29 +1,27 @@
-import React from 'react';
 import {
-  BoardHeaderStyled, BoardTitleStyled, CreateAnAppointmentBtn, ContainerStyled,
+  BoardHeaderStyled, BoardTitleStyled, CreateAnAppointmentBtn, ContainerStyled, NewAppointmentLink
 } from './BoardHeader.styles';
-import { messages } from '../../shared';
+import { messages } from 'shared';
+import { USER_APPOINTMENT_PATH } from 'routes'
 
 interface BoardHeaderProps {
   title: string,
-  getAppointment?: () => void,
   isBtnVisible?: boolean
 }
 
 
-export function BoardHeader({ title, getAppointment, isBtnVisible }: BoardHeaderProps) {
+export function BoardHeader({ title, isBtnVisible }: BoardHeaderProps) {
   return (
     <BoardHeaderStyled className="board_header card-header">
       <BoardTitleStyled>{title}</BoardTitleStyled>
       { isBtnVisible
         ? (
           <ContainerStyled>
-            <CreateAnAppointmentBtn
-              type='button'
-              onClick={getAppointment}
-            >
-              {messages.createAnAppointment}
-            </CreateAnAppointmentBtn>
+            <div>
+            <NewAppointmentLink to={USER_APPOINTMENT_PATH}>
+            <CreateAnAppointmentBtn type='button'>{messages.createAnAppointment}</CreateAnAppointmentBtn>
+            </NewAppointmentLink>
+            </div>
           </ContainerStyled>
         )
         : null}

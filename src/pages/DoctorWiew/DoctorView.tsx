@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useAppDispatch, useAppSelector} from '../../shared/hooks/hooks'
 import { MainPage } from '../Main';
 import {
   NavMenu, BoardCard, BoardHeader,
@@ -11,14 +11,14 @@ import { userProfile } from '../Authorization/redux';
 import { getUserProfile } from '../Authorization/redux/user/user.selector';
 
 export function DoctorView() {
-  const dispatch = useDispatch();
-  const user = useSelector(getUserProfile);
+  const dispatch = useAppDispatch();
+  const user = useAppSelector(getUserProfile);
 
   useEffect(() => {
-    if (user.role_name === 'Doctor') {
+    if (!user) {
       dispatch(userProfile());
     }
-  }, [dispatch, user.role_name]);
+  }, []);
   return (
     <MainPage>
       <MainStyled>

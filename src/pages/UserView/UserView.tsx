@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '../../shared';
 import { useHistory } from 'react-router-dom';
 import { MainPage } from '../Main';
 import {
@@ -13,15 +13,11 @@ import { MainStyled } from './UserView.styles';
 
 export function UserView() {
   const history = useHistory();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(userProfile());
   }, [dispatch]);
-
-  const getAppointment = () => {
-    history.push(USER_APPOINTMENT_PATH);
-  };
 
   return (
     <MainPage>
@@ -32,12 +28,11 @@ export function UserView() {
         <BoardCard>
           <BoardHeader
             title={messages.userViewTitle}
-            getAppointment={getAppointment}
             isBtnVisible
           />
           <DoctorCardList />
         </BoardCard>
-      </MainStyled>
+      </MainStyled> 
     </MainPage>
   );
 }

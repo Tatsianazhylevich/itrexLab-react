@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { useAppDispatch, useAppSelector } from '../../../../shared'
 import { useHistory } from 'react-router-dom';
 import { format } from 'date-fns';
+import { SingleValue } from 'react-select';
 import {
   Formik, Field,
 } from 'formik';
@@ -37,7 +37,16 @@ import {
   WrapperStyled,
   InputWrapper,
 } from './SelectDoctorForm.styles';
-import {OccupationType} from '../../../types'
+import { OccupationType, OptionType } from '../../../types'
+
+export interface SelectDoctorFormTypes {
+  date: string,
+  time: string,
+  occupation: {},
+  doctorsName: string,
+  reason: string,
+  note: string,
+}
 
 export function SelectDoctorForm() {
   const { push } = useHistory();
@@ -54,7 +63,7 @@ export function SelectDoctorForm() {
 
   const isNewAppointment = useAppSelector(newAppointment);
 
-  const getDateFormat = (value) => new Date(value.getTime()
+  const getDateFormat = (value: any) => new Date(value.getTime()
  - (value.getTimezoneOffset() * 60000)).toISOString();
 
   useEffect(() => {
@@ -62,7 +71,7 @@ export function SelectDoctorForm() {
   }, []);
 
   const initialValue = {
-    occupation: '',
+    occupation: {},
     doctorsName: '',
     reason: '',
     note: '',
@@ -70,13 +79,15 @@ export function SelectDoctorForm() {
     time: '',
   };
 
-  const createAppointment = (values) => {
-    const formatTimetoISO = new Date(values.time).toISOString();
+
+
+  const createAppointment = ({reason, note, doctorsName, time}: SelectDoctorFormTypes) => {
+    const formatTimetoISO = new Date(time).toISOString();
     const valuesForAppointment = {
       date: formatTimetoISO,
-      reason: values.reason,
-      note: values.note,
-      doctorID: values.doctorsName,
+      reason: reason,
+      note: note,
+      doctorID: doctorsName,
     };
     dispatch(createNewAppointment(valuesForAppointment));
     if (isNewAppointment) {
@@ -108,11 +119,17 @@ export function SelectDoctorForm() {
                     name="occupation"
                     id="occupation"
                     options={allOccupations}
-                    onChange={(value) => {
-                      setFieldValue('occupation', value.label);
-                      dispatch(getDoctorsBySpecializations(value.value));
+                    value={values.occupation}
+                    onChange={(value: SingleValue<string | OptionType>): void => {
+                      if (typeof value === 'string') {
+                        setFieldValue('occupation', value);
+                        dispatch(getDoctorsBySpecializations(value));
+                      } else if (value) {
+                        setFieldValue('occupation', value.label);
+                        dispatch(getDoctorsBySpecializations(value.value));
+                      }
                     }}
-                    handleReset={setFieldValue}
+                    // handleReset={setFieldValue}
                   />
                   {errors.occupation && touched.occupation
                     ? <WarningsStyled>{errors.occupation}</WarningsStyled>
@@ -126,15 +143,18 @@ export function SelectDoctorForm() {
                     name="doctorsName"
                     id="doctorsName"
                     options={doctorsByOccupation}
-                    onChange={(value) => {
+                    
+                    onChange={(value: { value: string, label: string }) => {
                       setFieldValue('doctorsName', value.value);
                     }}
-                    handleReset={setFieldValue}
+                    value={values.doctorsName}
+                    // handleReset={setFieldValue}
                   />
                   {errors.doctorsName && touched.doctorsName
                     ? <WarningsStyled>{errors.doctorsName}</WarningsStyled>
                     : null}
                 </InputWrapper>
+                {console.log(values)}
 
                 <InputWrapper>
                   <LabelStyled>Reason for the visit</LabelStyled>
@@ -158,7 +178,7 @@ export function SelectDoctorForm() {
                   name="date"
                   id="date"
                   component={CalendarStyled}
-                  onChange={(value) => {
+                  onChange={(value: OptionType) => {
                     const dateFormat = getDateFormat(value);
                     setFieldValue('date', dateFormat);
                     dispatch(getFreeTime({ date: dateFormat, doctorId: values.doctorsName }));

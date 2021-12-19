@@ -1,5 +1,4 @@
 import { instance } from './instance.api';
-import { FreeTimeType} from '../pages/types'
 
 export const specializations = () => instance
   .get('specializations');
@@ -8,7 +7,10 @@ export const doctorsBySpecialization = (param: string) => instance
   .get(`doctors/specialization/${param}`);
 
 
-
+type FreeTimeType = {
+    date: string,
+    doctorId: string
+}
 export const freeTime = ({ date, doctorId}: FreeTimeType) => instance
   .get('appointments/time/free', {
     params: {
@@ -20,5 +22,15 @@ export const freeTime = ({ date, doctorId}: FreeTimeType) => instance
 export const appointments = (body: {}) => instance
   .post('appointments', body);
 
-export const allPatientAppointments = (offset: number, limit: number) => instance
-  .get(`appointments/patient/me/?offset=${offset}&limit=${limit}`);
+type AllAppointmentsType = {
+  offset: number,
+  limit: number
+}
+
+export const allPatientAppointments = ({offset, limit}: AllAppointmentsType) => instance
+  .get('appointments/patient/me', {
+    params: {
+      offset,
+      limit
+    }
+  });

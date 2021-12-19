@@ -2,7 +2,8 @@ import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {
   specializations, doctorsBySpecialization, allPatientAppointments, freeTime, appointments,
 } from '../../../api';
-import { FreeTimeType} from '../../types'
+import { responceNotify, errorNotify } from '../../../components/Toast';
+import { notifyMessages } from 'shared';
 
 export const getSpecializations = createAsyncThunk(
   'appointment/getSpecializations',
@@ -33,20 +34,26 @@ export const getFreeTime = createAsyncThunk(
   async (params: FreeTimeType, { rejectWithValue }) => {
     try {
       const response = await freeTime(params);
+      
       return response.data;
     } catch (error: any) {
       return rejectWithValue(error.response.data);
     }
   },
 );
-
+type FreeTimeType = {
+  date: string,
+  doctorId: string
+}
 export const createNewAppointment = createAsyncThunk(
   'appointment/createNewAppointment',
   async (params: {}, { rejectWithValue }) => {
     try {
       const response = await appointments(params);
+      responceNotify(notifyMessages.succesCreateAppointment);
       return response.data;
     } catch (error: any) {
+      errorNotify(notifyMessages.failedCreateAppointment)
       return rejectWithValue(error.response.data);
     }
   },
@@ -56,10 +63,21 @@ export interface SpecializationType {
   specialization_name: string,
   id: string
 }
+
 export interface DoctorType {
   first_name: string,
   last_name: string,
   id: string
+}
+
+interface AppointmentType {
+  id: string,
+  patient_id: string,
+  doctor_id: string,
+  visit_date: string,
+  reason: string,
+  note: string,
+  status: string
 }
 
 interface InitialStateTypes {
@@ -68,8 +86,8 @@ interface InitialStateTypes {
   error: string | null,
   specializations: SpecializationType[] | [],
   doctors: DoctorType[] | [],
-  time: FreeTimeType[] | [],
-  newAppointment: {},
+  time: string[] | [],
+  newAppointment: AppointmentType | {},
 }
 
 const initialState = {
@@ -116,7 +134,7 @@ const appointmentSlice = createSlice({
     }));
 
     builder.addCase(getFreeTime.pending, (state) => ({ ...state, loading: true }));
-    builder.addCase(getFreeTime.fulfilled, (state, action) => ({
+    builder.addCase(getFreeTime.fulfilled, (state, action: PayloadAction<string[]>) => ({
       ...state,
       loading: false,
       time: action.payload,
@@ -129,7 +147,7 @@ const appointmentSlice = createSlice({
     }));
 
     builder.addCase(createNewAppointment.pending, (state) => ({ ...state, loading: true }));
-    builder.addCase(createNewAppointment.fulfilled, (state, action) => ({
+    builder.addCase(createNewAppointment.fulfilled, (state, action: PayloadAction<AppointmentType>) => ({
       ...state,
       loading: false,
       status: 'Created',

@@ -135,14 +135,15 @@ export const CardNoteStyled = styled.div`
      margin-top: 15px;
 `;
 export const NoteIconStyled = styled.div`
-    width: 69px;
+    width: 24px;
     height: 24px;
+    padding: 12px;
     background: url(${NoteIcon}) no-repeat center;
 `;
 
 export const NoteText = styled.p`
     margin-left: 15px;
-    font-family: Poppins;
+    width: 50px;
     font-style: normal;
     font-size: 15px;
     line-height: 140%;

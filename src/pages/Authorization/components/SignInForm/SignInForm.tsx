@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useAppDispatch, useAppSelector } from '../../../../shared';
 import { Formik } from 'formik';
 import {
   Button, Title, Footer,
@@ -11,10 +11,15 @@ import { SIGN_UP_PATH, RESTORE_PASSWORD_PATH, PATIENT_VIEW_PATH } from '../../..
 import { FormStyled, InputEmail, InputPassword } from './SignInForm.styles';
 import { messages } from '../../../../shared';
 
+export interface SignInFormTypes {
+  email: string,
+  password: string,
+};
+
 export function SignInForm() {
   const { push } = useHistory();
-  const dispatch = useDispatch();
-  const loginStatus = useSelector(getStatus);
+  const dispatch = useAppDispatch();
+  const loginStatus = useAppSelector(getStatus);
 
   useEffect(() => {
     if (loginStatus === 'OK') {
@@ -22,12 +27,13 @@ export function SignInForm() {
     }
   }, [push, loginStatus]);
 
+
   const initialValues = {
     email: '',
     password: '',
   };
 
-  const submitSignInForm = (values) => {
+  const submitSignInForm = (values: SignInFormTypes) => {
     const userData = {
       userName: values.email,
       password: values.password,
@@ -59,6 +65,7 @@ export function SignInForm() {
             label="Password"
             name="password"
             type="password"
+            isEyeVisible
             placeholder="Password"
             fontSize="0"
           />

@@ -2,11 +2,16 @@ import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { allPatientAppointments } from '../../../api';
 import { AppointmentForPatient } from '../../types'
 
+type AllAppointmentsType = {
+  offset: number,
+  limit: number
+}
+
 export const getAllAppointmentsforPatient = createAsyncThunk(
   'patientAppointments/getAllAppointmentsforPatient',
-  async (_, { rejectWithValue }) => {
+  async (params: AllAppointmentsType, { rejectWithValue }) => {
     try {
-      const response = await allPatientAppointments(0, 20);
+      const response = await allPatientAppointments(params);
       return response.data;
     } catch (error: any) {
       return rejectWithValue(error.response.data);
@@ -14,16 +19,20 @@ export const getAllAppointmentsforPatient = createAsyncThunk(
   },
 );
 
+type AppointmentsType = {
+  appointments: AppointmentForPatient[]
+}
+
 interface InitialStateTypes {
   loading: boolean,
   error: string | null,
-  appointments: AppointmentForPatient[] | [],
+  appointments: AppointmentsType | { appointments:[] },
 }
 
 const initialState = {
   loading: false,
   error: null,
-  appointments: [],
+  appointments: { appointments:[] },
 } as InitialStateTypes
 
 const allPatientAppointmentsSlice = createSlice({
@@ -32,7 +41,7 @@ const allPatientAppointmentsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getAllAppointmentsforPatient.pending, (state) => ({ ...state, loading: true }));
-    builder.addCase(getAllAppointmentsforPatient.fulfilled, (state, action) => ({
+    builder.addCase(getAllAppointmentsforPatient.fulfilled, (state, action: PayloadAction<AppointmentsType>) => ({
       ...state,
       loading: false,
       appointments: action.payload,
@@ -40,7 +49,7 @@ const allPatientAppointmentsSlice = createSlice({
     builder.addCase(getAllAppointmentsforPatient.rejected, (state, action: PayloadAction<any> ) => ({
       ...state,
       loading: false,
-      appointments: [],
+      appointments: { appointments:[] },
       error: action.payload,
 
     }));

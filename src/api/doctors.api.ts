@@ -1,4 +1,15 @@
 import { instance } from './instance.api';
 
-export const allAppointmentsForDoctor = (offset: number, limit: number) => instance
-  .get(`/appointments/doctor/me?offset=${offset}&limit=${limit}`);
+type AllAppointmentsType = {
+  offset: number,
+  limit: number
+}
+
+export const allAppointmentsForDoctor = ({offset, limit}: AllAppointmentsType) => instance
+  .get('/appointments/doctor/me', {
+    params: {
+      offset,
+      limit
+    }
+  });
+  

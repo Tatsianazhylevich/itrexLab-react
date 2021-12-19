@@ -2,7 +2,7 @@ import React from 'react';
 import {
   screen, render, waitFor,
 } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import userEvent, { TargetElement } from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import '@testing-library/jest-dom/extend-expect';
 import configureStore from 'redux-mock-store';
@@ -15,12 +15,12 @@ describe('SignUpForm', () => {
   const initialState = { login: { status: 'Created' } };
   const mockStore = configureStore();
   const store = mockStore(initialState);
-  let firstNameInput;
-  let lastNameInput;
-  let emailInput;
-  let passwordInput;
-  let confirmPasswordInput;
-  let submitButton;
+  let firstNameInput: TargetElement;
+  let lastNameInput: TargetElement;
+  let emailInput: TargetElement;
+  let passwordInput: TargetElement;
+  let confirmPasswordInput: TargetElement;
+  let submitButton: TargetElement;
 
   beforeEach(() => {
     render(

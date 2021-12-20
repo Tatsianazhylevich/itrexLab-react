@@ -12,7 +12,7 @@ import { createUser, userProfile, getStatus } from '../../redux';
 import { ValidationForSignUpForm } from './ValidationForSignUpForm';
 import { SIGN_IN_PATH, PATIENT_VIEW_PATH } from '../../../../routes/routes';
 import { messages } from '../../../../shared';
-import { SignUpType } from './SignUpForm.type'
+import { SignUpTypes } from 'pages';
 
 export function SignUpForm() {
   const history = useHistory();
@@ -33,7 +33,7 @@ export function SignUpForm() {
     confirmPassword: '',
   };
 
-  const sumbitSignUp = (values: SignUpType) => {
+  const sumbitSignUp = (values: SignUpTypes) => {
     const userData = {
       userName: values.email,
       password: values.password,
@@ -42,7 +42,6 @@ export function SignUpForm() {
     };
     console.log(userData);
     dispatch(createUser(userData));
-    // dispatch(userProfile());
   };
 
   return (

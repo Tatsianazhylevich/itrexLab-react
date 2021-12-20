@@ -8,11 +8,11 @@ import { MainStyled } from './AppointmentsView.styles';
 import { messages } from '../../shared';
 
 export function AppointmentsView() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(userProfile());
-  // }, []);
+  useEffect(() => {
+    dispatch(userProfile());
+  }, []);
 
   return (
     <MainPage>

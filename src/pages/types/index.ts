@@ -1,1 +1,3 @@
-export * from './Appointments.type';
+export * from './Appointments.types';
+export * from './Authorization.types';
+

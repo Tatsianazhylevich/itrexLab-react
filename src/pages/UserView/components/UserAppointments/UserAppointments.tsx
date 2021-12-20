@@ -4,6 +4,7 @@ import {
 import { DoctorCardList } from '..';
 import { messages,} from 'shared';
 
+
 export function MyAppointments() {
   return (
     <BoardCard>
@@ -13,5 +14,7 @@ export function MyAppointments() {
         />
         <DoctorCardList />
     </BoardCard>
+
+
   );
 }

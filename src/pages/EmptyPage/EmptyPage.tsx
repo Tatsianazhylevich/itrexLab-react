@@ -3,7 +3,7 @@ import { EmptyPageContainer, EmptyPageImg, EmptyPageText } from "./EmptyPage.sty
 interface EmptyPageProps {
     text1: string,
     text2?: string,
-  }
+}
 
 export function EmptyPage({ text1, text2 }: EmptyPageProps) {
     return (

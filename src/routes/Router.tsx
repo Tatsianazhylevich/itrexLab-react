@@ -22,6 +22,8 @@ import {
   SIGN_UP_PATH, 
   USER_APPOINTMENT_PATH
 } from './routes';
+import { InnerUserRoute } from 'routes';
+import { SelectDoctorForm } from 'pages/Appointments/components/SelectDoctorForm';
 
 export function AppRouter() {
   const status = useAppSelector(getStatus);
@@ -38,9 +40,8 @@ export function AppRouter() {
           <Route exact path={RESTORED_PASSWORD_PATH} component={RestoredPassword} />
           <Route exact path={DOCTOR_VIEW_PATH} component={DoctorView} />
           <Route exact path={PATIENT_VIEW_PATH} component={UserView}>
-            {/* {status !== 'OK' ? <Redirect to={SIGN_UP_PATH} /> : <Route path={PATIENT_VIEW_PATH} component={UserView} />} */}
           </Route>
-          <Route exact path={USER_APPOINTMENT_PATH} component={AppointmentsView} />
+          <Route exact path={USER_APPOINTMENT_PATH} component={SelectDoctorForm} />
           <Route exact path={APPOINTMENTS_LIST_PATH} component={DoctorCardList} />
            <Route path={PAGE_404_PATH} component={Page404} />
         </Switch>

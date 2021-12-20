@@ -4,11 +4,10 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import { MyAppointments, UserProfile, ResolutionsForUser, DoctorsResolutions, Patients } from "pages";
+import { MyAppointments, UserProfile, ResolutionsForUser, DoctorsResolutions, Patients, AppointmentsView } from "pages";
 import { NavMenu } from "modules";
 import { USER_APPOINTMENT_PATH, APPOINTMENTS_LIST_PATH, PATIENTS_LIST_PATH, PROFILE_LIST_PATH, RESOLUTION_DOCTOR_LIST_PATH, RESOLUTION_PATIENT_LIST_PATH} from "./routes";
 import { navButtons } from "shared";
-import { SelectContainer } from "react-select/dist/declarations/src/components/containers";
 import { SelectDoctorForm } from "pages/Appointments/components/SelectDoctorForm";
 
 export function InnerUserRoute() {
@@ -18,18 +17,16 @@ export function InnerUserRoute() {
                 buttons={navButtons.usersButtons}
             />
             <Switch>
-                <Route path={PROFILE_LIST_PATH}>
+                <Route exact path={PROFILE_LIST_PATH}>
                     <UserProfile />
                 </Route>
                 <Route exact path={APPOINTMENTS_LIST_PATH}>
                     <MyAppointments />
                 </Route>
-                <Route path={RESOLUTION_PATIENT_LIST_PATH}>
+                <Route exact path={RESOLUTION_PATIENT_LIST_PATH}>
                     < ResolutionsForUser />
                 </Route>
-                <Route path={USER_APPOINTMENT_PATH}>
-                    < SelectDoctorForm />
-                </Route>
+                <Route exact path={USER_APPOINTMENT_PATH} component={SelectDoctorForm} />
             </Switch>
         </Router>   
     )

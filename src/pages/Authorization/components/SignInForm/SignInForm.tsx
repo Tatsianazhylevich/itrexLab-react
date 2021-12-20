@@ -10,11 +10,7 @@ import { loginUser, userProfile, getStatus } from '../../redux';
 import { SIGN_UP_PATH, RESTORE_PASSWORD_PATH, PATIENT_VIEW_PATH } from '../../../../routes/routes';
 import { FormStyled, InputEmail, InputPassword } from './SignInForm.styles';
 import { messages } from '../../../../shared';
-
-export interface SignInFormTypes {
-  email: string,
-  password: string,
-};
+import { SignInFormTypes } from 'pages';
 
 export function SignInForm() {
   const { push } = useHistory();

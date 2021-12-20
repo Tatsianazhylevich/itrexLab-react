@@ -84,6 +84,7 @@ export const ButtonWrapperStyled = styled.div`
 `;
 
 export const ButtonSubmitStyled = styled(Button)`
+  margin-right: 10px;
   padding: 0;
   background: ${colors.blue};
   border: none;

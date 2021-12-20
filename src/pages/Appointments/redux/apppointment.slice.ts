@@ -4,6 +4,7 @@ import {
 } from '../../../api';
 import { responceNotify, errorNotify } from '../../../components/Toast';
 import { notifyMessages } from 'shared';
+import { FreeTimeType, SpecializationType, DoctorType, AppointmentType } from 'pages';
 
 export const getSpecializations = createAsyncThunk(
   'appointment/getSpecializations',
@@ -41,10 +42,7 @@ export const getFreeTime = createAsyncThunk(
     }
   },
 );
-type FreeTimeType = {
-  date: string,
-  doctorId: string
-}
+
 export const createNewAppointment = createAsyncThunk(
   'appointment/createNewAppointment',
   async (params: {}, { rejectWithValue }) => {
@@ -58,27 +56,6 @@ export const createNewAppointment = createAsyncThunk(
     }
   },
 );
-
-export interface SpecializationType {
-  specialization_name: string,
-  id: string
-}
-
-export interface DoctorType {
-  first_name: string,
-  last_name: string,
-  id: string
-}
-
-interface AppointmentType {
-  id: string,
-  patient_id: string,
-  doctor_id: string,
-  visit_date: string,
-  reason: string,
-  note: string,
-  status: string
-}
 
 interface InitialStateTypes {
   loading: boolean,

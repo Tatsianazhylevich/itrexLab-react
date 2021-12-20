@@ -14,10 +14,7 @@ export type NavMenuProps = {
 }
 
 export function NavMenu({ buttons }: NavMenuProps ) {
-  // const [activeButton, setActiveButton] = useState(buttons[0].title);
-  // const handleOnClick = (title: string) => {
-  //   setActiveButton(title);
-  // };
+
   return (
     <MenuStyled>
       <MenuContainerStyled>

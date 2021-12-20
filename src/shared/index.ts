@@ -1,4 +1,4 @@
 export * from './messages';
 export { navButtons } from './constants';
-export { getDateFormat } from './utils/getDateFormat';
+export { FormatDateForCards } from './utils';
 export * from './hooks/hooks';

@@ -5,6 +5,8 @@ import { MainPage } from '../Main';
 import { userProfile } from '../Authorization/redux';
 import { MainStyled } from './UserView.styles';
 import { InnerUserRoute } from 'routes';
+import { NavMenu } from 'modules';
+import { navButtons } from '../../shared';
 
 
 export function UserView() {

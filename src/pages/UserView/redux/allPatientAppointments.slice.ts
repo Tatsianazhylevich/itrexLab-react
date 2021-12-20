@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { allPatientAppointments } from '../../../api';
-import { AppointmentForPatient } from '../../types'
+import { PatientAppointmentsType } from 'pages'
 
 type AllAppointmentsType = {
   offset: number,
@@ -19,14 +19,10 @@ export const getAllAppointmentsforPatient = createAsyncThunk(
   },
 );
 
-type AppointmentsType = {
-  appointments: AppointmentForPatient[]
-}
-
 interface InitialStateTypes {
   loading: boolean,
   error: string | null,
-  appointments: AppointmentsType | { appointments:[] },
+  appointments: PatientAppointmentsType | { appointments:[] },
 }
 
 const initialState = {
@@ -41,7 +37,7 @@ const allPatientAppointmentsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getAllAppointmentsforPatient.pending, (state) => ({ ...state, loading: true }));
-    builder.addCase(getAllAppointmentsforPatient.fulfilled, (state, action: PayloadAction<AppointmentsType>) => ({
+    builder.addCase(getAllAppointmentsforPatient.fulfilled, (state, action: PayloadAction<PatientAppointmentsType>) => ({
       ...state,
       loading: false,
       appointments: action.payload,

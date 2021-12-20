@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { getUserProfile } from '../../../../api';
+import { UserProfileType } from 'pages';
 
 export const userProfile = createAsyncThunk(
   'user/userProfile',
@@ -14,13 +15,6 @@ export const userProfile = createAsyncThunk(
 
 );
 
-interface UserProfileType {
-  id: string,
-  first_name: string,
-  last_name: string,
-  photo: string,
-  role_name: string
-}
 
 interface InitialStateTypes {
   loading: boolean,

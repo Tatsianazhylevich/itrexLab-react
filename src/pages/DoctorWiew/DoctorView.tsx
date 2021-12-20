@@ -11,6 +11,7 @@ import { userProfile } from '../Authorization/redux';
 import { getUserProfile } from '../Authorization/redux/user/user.selector';
 import { InnerDoctorRoute } from 'routes/innerRoute';
 
+
 export function DoctorView() {
   const dispatch = useAppDispatch();
   const user = useAppSelector(getUserProfile);

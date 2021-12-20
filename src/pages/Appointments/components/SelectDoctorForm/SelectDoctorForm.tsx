@@ -37,7 +37,7 @@ import {
   WrapperStyled,
   InputWrapper,
 } from './SelectDoctorForm.styles';
-import { OccupationType, OptionType } from '../../../types'
+import { OptionType } from '../../../types'
 
 export interface SelectDoctorFormTypes {
   date: string,
@@ -78,8 +78,6 @@ export function SelectDoctorForm() {
     date: '',
     time: '',
   };
-
-
 
   const createAppointment = ({reason, note, doctorsName, time}: SelectDoctorFormTypes) => {
     const formatTimetoISO = new Date(time).toISOString();
@@ -129,7 +127,6 @@ export function SelectDoctorForm() {
                         dispatch(getDoctorsBySpecializations(value.value));
                       }
                     }}
-                    // handleReset={setFieldValue}
                   />
                   {errors.occupation && touched.occupation
                     ? <WarningsStyled>{errors.occupation}</WarningsStyled>
@@ -148,7 +145,6 @@ export function SelectDoctorForm() {
                       setFieldValue('doctorsName', value.value);
                     }}
                     value={values.doctorsName}
-                    // handleReset={setFieldValue}
                   />
                   {errors.doctorsName && touched.doctorsName
                     ? <WarningsStyled>{errors.doctorsName}</WarningsStyled>

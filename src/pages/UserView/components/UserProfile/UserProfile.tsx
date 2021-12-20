@@ -1,6 +1,6 @@
 import {
     BoardCard, BoardHeader,
-   } from 'modules';
+} from 'modules';
 import { messages,} from 'shared';
 import { EmptyPage } from 'pages';
   

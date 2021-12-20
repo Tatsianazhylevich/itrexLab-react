@@ -4,7 +4,7 @@ import { PatientCard } from '../../../../modules/Card';
 import { CardListStyled } from './PatientCardList.styles';
 import anneteBlack from '../../../../assets/patients/annete_black.png';
 import { getPatients, doctorsAppointments } from '../../redux';
-import { EmptyPage, Appointment, AppointmentForDoctor } from 'pages';
+import { EmptyPage, AppointmentForDoctor } from 'pages';
 
 export function PatientCardList() {
   const dispatch = useAppDispatch();

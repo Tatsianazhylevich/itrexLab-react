@@ -1,4 +1,3 @@
-import React from 'react';
 import { LinkStyled } from './Link.styles';
 
 export function Link({ ...props }) {

@@ -1,8 +1,6 @@
 import {
-    BrowserRouter as Router,
     Switch,
     Route,
-    Link
 } from "react-router-dom";
 import { MyAppointments, UserProfile, ResolutionsForUser, DoctorsResolutions, Patients, AppointmentsView } from "pages";
 import { NavMenu } from "modules";

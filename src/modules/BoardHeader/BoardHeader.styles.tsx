@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { Button } from '../../components';
 import plusIcon from '../../assets/icons/plus.png';
 import { breakpoints, colors } from '../../theme';
 

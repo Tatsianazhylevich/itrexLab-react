@@ -1,4 +1,3 @@
-import React from 'react';
 import { FooterStyled, FooterTextStyled, FooterLinkStyled } from './Footer.styles';
 
 export type FooterProps = {

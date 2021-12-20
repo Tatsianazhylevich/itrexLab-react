@@ -1,7 +1,7 @@
 export const messages = {
   signUpFooterText: 'Don\'t have an account?',
   signInFooterText: 'Already have an account?',
-  restorePasswordText: 'Please use your email address, and we’ll send you the link to reset your password',
+  restorePasswordText: 'Please use your email address, and we\'ll send you the link to reset your password',
   restoredPasswordText: `An email has been sent to example@exam.com. 
   Check your inbox, and click the reset link provided.`,
   firstSectionText: 'Select a doctor and define the reason of your visit',

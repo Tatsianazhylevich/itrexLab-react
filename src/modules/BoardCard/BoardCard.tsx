@@ -1,4 +1,3 @@
-import React from 'react';
 import { BoardCardStyled } from './BoardCard.styles';
 
 type BoardCardProps = {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { ContainerStyled, TextStyled, NumberStyled } from './SectionHeader.styles';
 
 export type SectionHeaderProps = {

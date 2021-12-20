@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { breakpoints, colors } from '../../theme';
-import { InputProps, InputLabelProps } from './Input'
+import { InputLabelProps } from './Input'
 export const InputStyled = styled.div`
   position: relative;
   display: flex;

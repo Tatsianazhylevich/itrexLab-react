@@ -1,12 +1,11 @@
-import React from 'react';
 import { useAppSelector } from 'shared';
 import {
-  BrowserRouter as Router, Switch, Route, Redirect
+  BrowserRouter as Router, Switch, Route,
 } from 'react-router-dom';
 import {
   SignUp, SignIn, RestorePassword, RestoredPassword,
 } from '../pages/Authorization';
-import { AppointmentsView, DoctorCardList, DoctorView, UserView } from '../pages';
+import { DoctorCardList, DoctorView, UserView } from '../pages';
 import { Page404 } from 'components/Page404';
 import { getStatus } from '../pages/Authorization/redux';
 import { PrivateRoute } from './PrivateRoute';
@@ -22,7 +21,6 @@ import {
   SIGN_UP_PATH, 
   USER_APPOINTMENT_PATH
 } from './routes';
-import { InnerUserRoute } from 'routes';
 import { SelectDoctorForm } from 'pages/Appointments/components/SelectDoctorForm';
 
 export function AppRouter() {

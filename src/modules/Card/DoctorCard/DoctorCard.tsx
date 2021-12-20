@@ -1,4 +1,3 @@
-import React from 'react';
 import { CardStyled } from './DoctorCard.styles';
 
 import { DoctorCardHeader, DoctorCardMain } from '.';

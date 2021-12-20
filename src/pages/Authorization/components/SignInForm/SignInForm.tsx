@@ -34,7 +34,6 @@ export function SignInForm() {
       userName: values.email,
       password: values.password,
     };
-    console.log(userData);
     dispatch(loginUser(userData));
     dispatch(userProfile());
   };

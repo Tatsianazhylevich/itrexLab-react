@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../shared';
-import { useHistory } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from 'shared';
 import { MainPage } from '../Main';
 import { userProfile, getUserProfile } from '../Authorization/redux';
 import { MainStyled } from './UserView.styles';

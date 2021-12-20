@@ -3,7 +3,7 @@ import { ButtonStyled } from './Button.styles';
 export type ButtonProps = {
   children?: JSX.Element | JSX.Element[] | string,
   isDisabled?: boolean,
-  type: 'button' | 'submit' | 'reset' | undefined,
+  type: 'button' | 'submit' | undefined,
   onClick?: () => void,
   title?: string,
   id?: string,

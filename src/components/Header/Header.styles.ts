@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import avatar from '../../assets/doctors/mirandaNelson.png';
 import { breakpoints, colors } from '../../theme';
 
@@ -30,7 +30,7 @@ export const LogoText = styled.h2`
     text-transform: uppercase;
     font-size: 15px;
 `;
-export const LogoLink = styled(NavLink)`
+export const LogoLink = styled(Link)`
     color: ${colors.black};
     outline: none;
     text-decoration: none;

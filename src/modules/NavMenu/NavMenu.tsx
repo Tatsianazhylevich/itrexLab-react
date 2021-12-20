@@ -1,5 +1,3 @@
-
-import React, { useState } from 'react';
 import { MenuStyled, MenuContainerStyled, MenuLinkStyled } from './NavMenu.styles';
 import { colors } from 'theme';
 

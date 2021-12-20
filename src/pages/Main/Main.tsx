@@ -7,6 +7,7 @@ import { DOCTOR_VIEW_PATH, PATIENT_VIEW_PATH, SIGN_UP_PATH } from '../../routes'
 import { userProfile, getUserProfile } from '../Authorization/redux';
 import { WrapperStyled } from './Main.styles';
 
+
 export interface MainPageProps {
   children: JSX.Element | JSX.Element[];
 }
@@ -22,6 +23,7 @@ export function MainPage({ children }: MainPageProps) {
   }, [user, dispatch]);
 
   const userRoleNavigation = user?.role_name === 'Patient' ? PATIENT_VIEW_PATH : DOCTOR_VIEW_PATH;
+
 
   return (
     <WrapperStyled>

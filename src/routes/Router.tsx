@@ -9,7 +9,7 @@ import {
 import { AppointmentsView, DoctorCardList, DoctorView, UserView } from '../pages';
 import { Page404 } from 'components/Page404';
 import { getStatus } from '../pages/Authorization/redux';
-import { RedirectRoute } from './RedirectRoute';
+import { PrivateRoute } from './PrivateRoute';
 import {
   APPOINTMENTS_LIST_PATH,
   DOCTOR_VIEW_PATH, 
@@ -32,15 +32,14 @@ export function AppRouter() {
       <div className="App">
         <Switch>
           <Route exact path={MAIN_PATH}>
-            <RedirectRoute logStatus={status} pathTo={PATIENT_VIEW_PATH} redirect={SIGN_UP_PATH}/>
+            <PrivateRoute status={status} path={MAIN_PATH} component={UserView} redirectPath={SIGN_UP_PATH}/>
           </Route>
           <Route exact path={SIGN_UP_PATH} component={SignUp} />
           <Route exact path={SIGN_IN_PATH} component={SignIn} />
           <Route exact path={RESTORE_PASSWORD_PATH} component={RestorePassword} />
           <Route exact path={RESTORED_PASSWORD_PATH} component={RestoredPassword} />
-          <Route exact path={DOCTOR_VIEW_PATH} component={DoctorView} />
-          <Route exact path={PATIENT_VIEW_PATH} component={UserView}>
-          </Route>
+          <PrivateRoute status={status} path={DOCTOR_VIEW_PATH} component={DoctorView} redirectPath={SIGN_UP_PATH}/>
+          <PrivateRoute status={status} path={PATIENT_VIEW_PATH} component={UserView} redirectPath={SIGN_UP_PATH}/>
           <Route exact path={USER_APPOINTMENT_PATH} component={SelectDoctorForm} />
           <Route exact path={APPOINTMENTS_LIST_PATH} component={DoctorCardList} />
            <Route path={PAGE_404_PATH} component={Page404} />

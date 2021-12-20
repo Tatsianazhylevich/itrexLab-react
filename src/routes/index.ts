@@ -1,3 +1,3 @@
 export * from './routes';
 export { AppRouter } from './Router';
-export { InnerUserRoute } from './innerRoute';
+export { InnerUserRoute, InnerDoctorRoute } from './innerRoute';

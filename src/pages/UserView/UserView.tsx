@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
-import { useAppDispatch } from '../../shared';
+import { useAppDispatch, useAppSelector } from '../../shared';
 import { useHistory } from 'react-router-dom';
 import { MainPage } from '../Main';
-import { userProfile } from '../Authorization/redux';
+import { userProfile, getUserProfile } from '../Authorization/redux';
 import { MainStyled } from './UserView.styles';
-import { InnerUserRoute } from 'routes';
-import { NavMenu } from 'modules';
-import { navButtons } from '../../shared';
+import { InnerUserRoute, InnerDoctorRoute } from 'routes';
+
 
 
 export function UserView() {
   const dispatch = useAppDispatch();
+  const user = useAppSelector(getUserProfile);
 
   useEffect(() => {
     dispatch(userProfile());
@@ -19,7 +19,7 @@ export function UserView() {
   return (
     <MainPage>
       <MainStyled>
-        <InnerUserRoute />
+        {user?.role_name === 'Patient' ? <InnerUserRoute /> : <InnerDoctorRoute />}
       </MainStyled> 
     </MainPage>
   );

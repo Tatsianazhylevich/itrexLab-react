@@ -12,42 +12,32 @@ import { SelectDoctorForm } from "pages/Appointments/components/SelectDoctorForm
 
 export function InnerUserRoute() {
     return(
-        <Router>
+        <div>
             <NavMenu
                 buttons={navButtons.usersButtons}
             />
             <Switch>
-                <Route exact path={PROFILE_LIST_PATH}>
-                    <UserProfile />
-                </Route>
-                <Route exact path={APPOINTMENTS_LIST_PATH}>
-                    <MyAppointments />
-                </Route>
-                <Route exact path={RESOLUTION_PATIENT_LIST_PATH}>
-                    < ResolutionsForUser />
-                </Route>
+                <Route exact path={PROFILE_LIST_PATH} component={UserProfile} />
+                <Route exact path={APPOINTMENTS_LIST_PATH} component={MyAppointments} />
+                <Route exact path={RESOLUTION_PATIENT_LIST_PATH} component={ResolutionsForUser} />
                 <Route exact path={USER_APPOINTMENT_PATH} component={SelectDoctorForm} />
             </Switch>
-        </Router>   
+        </div>   
     )
 }
 
 
 export function InnerDoctorRoute() {
     return(
-        <Router>
+        <div>
             <NavMenu
                 buttons={navButtons.doctorsButtons}
             />
             <Switch>
-                <Route exact path={PATIENTS_LIST_PATH}>
-                    <Patients />
-                </Route>
-                <Route path={RESOLUTION_DOCTOR_LIST_PATH}>
-                    < DoctorsResolutions />
-                </Route>
+                <Route exact path={PATIENTS_LIST_PATH} component={Patients} />
+                <Route path={RESOLUTION_DOCTOR_LIST_PATH} component={DoctorsResolutions} />
             </Switch>
-        </Router>   
+        </div>   
     )
 }
 

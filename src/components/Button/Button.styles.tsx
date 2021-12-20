@@ -5,7 +5,6 @@ import { ButtonProps } from './Button';
 
 export const ButtonStyled = styled.button<ButtonProps>`
   min-width: 146px;
-  /* height: 56px; */
   margin: 34px 0px;
   padding: 15px 0px 15px 15px;
   border-radius: 8px;
@@ -19,6 +18,7 @@ export const ButtonStyled = styled.button<ButtonProps>`
     cursor: not-allowed;
     border: 1px solid gray;
   `}
+
   @media (max-width: ${breakpoints.tablet}) {
     width: 123px;
     height: 46px;
@@ -26,4 +26,10 @@ export const ButtonStyled = styled.button<ButtonProps>`
     background: url(${arrowRightIcon}) no-repeat center right 16px, ${colors.blue};
     padding-right: 30px;
   }
+
+  ${(props) => props
+    .type === 'submit' && css`
+      margin-right: 30px;
+  `}
 `;
+

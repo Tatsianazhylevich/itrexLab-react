@@ -4,11 +4,13 @@ import {
 } from 'formik';
 import { RadioInputStyled, RadioLabelStyled } from './RadioInput.styles';
 
-export function RadioInput({ timeValue, selectedTime, ...props }) {
+export function RadioInput({
+  timeValue, selectedTime, stateValue, ...props
+}) {
   const [field] = useField(props.field);
   return (
-    <RadioLabelStyled isSelected={selectedTime === timeValue} htmlFor={`${timeValue}`}>
-      <RadioInputStyled {...field} id={`${timeValue}`} type="radio" name="time" value={timeValue} />
+    <RadioLabelStyled isSelected={selectedTime === stateValue} htmlFor={`${timeValue}`}>
+      <RadioInputStyled {...field} id={`${timeValue}`} type="radio" name="time" value={stateValue} />
       {timeValue}
     </RadioLabelStyled>
   );

@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { format } from 'date-fns';
 import {
   Formik, Field,
 } from 'formik';
-import { doctors, timeList } from '../../mocks';
 import { WarningTextStyled } from '../../components';
 import {
   CalendarStyled, RadioInput, CustomSelect, SectionHeader,
@@ -11,6 +13,16 @@ import {
 import { validate } from './ValidationForAppointment';
 import { PATIENT_VIEW_PATH } from '../../routes/routes';
 import { messages } from '../../shared';
+import {
+  getSpecializations,
+  allSpecializations,
+  allDoctorsBySpecializationsID,
+  getDoctorsBySpecializations,
+  freeTimeForVisit,
+  getFreeTime,
+  createNewAppointment,
+  newAppointment,
+} from '../../pages/Appointments/redux';
 import {
   SectionWrapper,
   AppointmentsFormStyled,
@@ -28,41 +40,48 @@ import {
 
 export function SelectDoctorForm() {
   const { push } = useHistory();
-  const [doctorsPosition, setDoctorsPosition] = useState('');
-  const [doctorsName, setDoctorsName] = useState('');
-  const [calendarValue, setCalendarValue] = useState(new Date());
+  const dispatch = useDispatch();
+
+  const allOccupations = useSelector(allSpecializations)
+    .map((occupation) => ({ value: occupation.id, label: occupation.specialization_name }));
+
+  const doctorsByOccupation = useSelector(allDoctorsBySpecializationsID).map((doctor) => ({
+    value: doctor.id, label: `${doctor.first_name} ${doctor.last_name}`,
+  }));
+
+  const timeForVisit = useSelector(freeTimeForVisit).map((item) => ({ label: format(new Date(item), 'h:mm aaa'), value: item }));
+
+  const isNewAppointment = useSelector(newAppointment);
+
+  const getDateFormat = (value) => new Date(value.getTime()
+ - (value.getTimezoneOffset() * 60000)).toISOString();
+
+  useEffect(() => {
+    dispatch(getSpecializations());
+  }, []);
 
   const initialValue = {
     occupation: '',
     doctorsName: '',
     reason: '',
     note: '',
-    date: calendarValue,
+    date: '',
     time: '',
   };
 
-  const occupations = doctors
-    .filter(({ position }) => [...position])
-    .map(({ position }) => ({ label: position, value: position }));
-
-  const getFilteredDoctorsByOccupation = (occupation) => {
-    if (occupation) {
-      return doctors
-        .filter(({ position }) => position === occupation)
-        .map(({ firstName, lastName }) => ({
-          label: `${firstName} ${lastName}`,
-          value: `${firstName} ${lastName}`,
-        }));
+  const createAppointment = (values) => {
+    const formatTimetoISO = new Date(values.time).toISOString();
+    const valuesForAppointment = {
+      date: formatTimetoISO,
+      reason: values.reason,
+      note: values.note,
+      doctorID: values.doctorsName,
+    };
+    dispatch(createNewAppointment(valuesForAppointment));
+    if (isNewAppointment) {
+      push(PATIENT_VIEW_PATH);
     }
-    return doctors.map(({ firstName, lastName }) => ({
-      label: `${firstName} ${lastName}`,
-      value: `${firstName} ${lastName}`,
-    }));
   };
-
-  function handleClick() {
-    push(PATIENT_VIEW_PATH);
-  }
 
   return (
     <Formik
@@ -70,7 +89,7 @@ export function SelectDoctorForm() {
       validationSchema={validate}
       onSubmit={(values, { setSubmitting }) => {
         setSubmitting(false);
-        handleClick();
+        createAppointment(values);
       }}
     >
       {({
@@ -87,12 +106,12 @@ export function SelectDoctorForm() {
                     component={CustomSelect}
                     name="occupation"
                     id="occupation"
-                    options={occupations}
+                    options={allOccupations}
                     onChange={(value) => {
-                      setDoctorsPosition(value);
-                      setFieldValue('occupation', value.value);
+                      setFieldValue('occupation', value.label);
+                      dispatch(getDoctorsBySpecializations(value.value));
                     }}
-                    value={doctorsPosition}
+                    handleReset={setFieldValue}
                   />
                   {errors.occupation && touched.occupation
                     ? <WarningsStyled>{errors.occupation}</WarningsStyled>
@@ -105,12 +124,11 @@ export function SelectDoctorForm() {
                     component={CustomSelect}
                     name="doctorsName"
                     id="doctorsName"
-                    options={getFilteredDoctorsByOccupation(values.occupation)}
+                    options={doctorsByOccupation}
                     onChange={(value) => {
-                      setDoctorsName(value);
                       setFieldValue('doctorsName', value.value);
                     }}
-                    value={doctorsName}
+                    handleReset={setFieldValue}
                   />
                   {errors.doctorsName && touched.doctorsName
                     ? <WarningsStyled>{errors.doctorsName}</WarningsStyled>
@@ -135,7 +153,17 @@ export function SelectDoctorForm() {
 
               <SectionWrapper>
                 <SectionHeader sectionNumber="2" sectionText={messages.secondSectionText} />
-                <Field name="date" id="date" component={CalendarStyled} onChange={setCalendarValue} value={calendarValue} />
+                <Field
+                  name="date"
+                  id="date"
+                  component={CalendarStyled}
+                  onChange={(value) => {
+                    const dateFormat = getDateFormat(value);
+                    setFieldValue('date', dateFormat);
+                    dispatch(getFreeTime({ date: dateFormat, doctorId: values.doctorsName }));
+                  }}
+                  handleReset={setFieldValue}
+                />
               </SectionWrapper>
 
               <SectionWrapper>
@@ -144,8 +172,8 @@ export function SelectDoctorForm() {
                   {errors.time && touched.time
                     ? <WarningsTimeStyled>{errors.time}</WarningsTimeStyled>
                     : null}
-                  {timeList.map((time) => (
-                    <Field name="time" id={time} component={RadioInput} timeValue={time} selectedTime={values.time} key={time} />
+                  {timeForVisit.map((time) => (
+                    <Field name="time" component={RadioInput} timeValue={time.label} selectedTime={values.time} stateValue={time.value} key={time.value} />
                   ))}
                 </RadioWrapperStyled>
               </SectionWrapper>

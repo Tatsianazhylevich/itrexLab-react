@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import arrowRightIcon from '../../assets/icons/angle-right-b.png';
 import { breackpoints, colors } from '../../theme';
 
@@ -12,6 +12,11 @@ export const ButtonStyled = styled.button`
   color: ${colors.white};
   font-size: 17px;
   cursor: pointer;
+  ${(props) => props.isDisabled && css`
+    background:  ${colors.solidgrey};
+    cursor: not-allowed;
+    border: 1px solid gray;
+  `}
   @media (max-width: ${breackpoints.tablet}) {
     width: 123px;
     height: 46px;

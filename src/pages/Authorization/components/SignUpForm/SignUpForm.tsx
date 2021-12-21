@@ -8,7 +8,7 @@ import {
 import {
   FormStyled, InputName, InputEmail, InputPassword, InputConfirmPassword,
 } from './SignUpForm.styles';
-import { createUser, userProfile, getStatus } from '../../redux';
+import { createUser, getStatus } from '../../redux';
 import { ValidationForSignUpForm } from './ValidationForSignUpForm';
 import { SIGN_IN_PATH, PATIENT_VIEW_PATH } from '../../../../routes/routes';
 import { messages } from '../../../../shared';
@@ -33,15 +33,14 @@ export function SignUpForm() {
     confirmPassword: '',
   };
 
-  const sumbitSignUp = (values: SignUpTypes) => {
+  const sumbitSignUp = async (values: SignUpTypes) => {
     const userData = {
       userName: values.email,
       password: values.password,
       firstName: values.name,
       lastName: values.lastName,
     };
-    console.log(userData);
-    dispatch(createUser(userData));
+    await dispatch(createUser(userData));
   };
 
   return (

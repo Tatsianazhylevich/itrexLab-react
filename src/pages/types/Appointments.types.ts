@@ -51,6 +51,7 @@ export interface DoctorAppointmentsType {
   appointments: AppointmentForDoctor[]
 }
 
+
 export interface AppointmentForPatient extends Appointment {
   doctor: {
     last_name: 'string',

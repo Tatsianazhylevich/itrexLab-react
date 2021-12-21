@@ -12,4 +12,11 @@ export const allAppointmentsForDoctor = ({offset, limit}: AllAppointmentsType) =
       limit
     }
   });
+export const allResolutionsForDoctor = ({offset, limit}: AllAppointmentsType) => instance
+  .get('/resolutions/doctor/me', {
+    params: {
+      offset,
+      limit
+    }
+  });
   

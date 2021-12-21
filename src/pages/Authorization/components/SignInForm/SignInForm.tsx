@@ -29,13 +29,12 @@ export function SignInForm() {
     password: '',
   };
 
-  const submitSignInForm = (values: SignInFormTypes) => {
+  const submitSignInForm = async (values: SignInFormTypes) => {
     const userData = {
       userName: values.email,
       password: values.password,
     };
-    dispatch(loginUser(userData));
-    dispatch(userProfile());
+    await dispatch(loginUser(userData));
   };
 
   return (

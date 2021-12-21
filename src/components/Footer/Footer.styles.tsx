@@ -7,6 +7,7 @@ export const FooterStyled = styled.div`
     margin-top: 70px;
     @media (max-width: ${breakpoints.tablet}) {
       display: flex;
+      align-items: center;
       flex-direction: column;
       margin-top: 48px;
     }

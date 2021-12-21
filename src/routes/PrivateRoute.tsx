@@ -1,21 +1,16 @@
 import { Redirect, Route } from "react-router-dom";
 
 type PrivateRoutePropsType = {
-  component: any,
+  component: React.FC,
   redirectPath: string,
-  status: string,
+  isLogged: boolean,
   path: string
 }
 
 export const PrivateRoute = ({
   component: Component,
   redirectPath,
-  status,
+  isLogged,
   path,
   ...rest
-}: PrivateRoutePropsType) => (
-  <Route
-    {...rest}
-   path={path} render={(props) => ((status === 'OK') ? <Component {...props} /> : <Redirect to={redirectPath} />)}
-  />
-);
+}: PrivateRoutePropsType) => ( isLogged ? <Route exact {...rest} path={path} component={Component} /> : <Redirect to={redirectPath}/>);

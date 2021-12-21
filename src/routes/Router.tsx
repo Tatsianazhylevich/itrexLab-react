@@ -1,16 +1,20 @@
 import { useAppSelector } from 'shared';
 import {
-  BrowserRouter as Router, Switch, Route,
+  BrowserRouter as Router, Switch, Route, Redirect,
 } from 'react-router-dom';
 import {
-  SignUp, SignIn, RestorePassword, RestoredPassword,
+  SignUp,
+  SignIn,
+  RestorePassword,
+  RestoredPassword,
+  DoctorView,
+  UserView,
+  AppointmentsView
 } from 'pages';
-import { DoctorCardList, DoctorView, UserView } from 'pages';
 import { Page404 } from 'components/Page404';
-import { getStatus } from '../pages/Authorization/redux';
+import { getStateOfLog } from '../pages/Authorization/redux';
 import { PrivateRoute } from './PrivateRoute';
 import {
-  APPOINTMENTS_LIST_PATH,
   DOCTOR_VIEW_PATH, 
   MAIN_PATH, 
   PAGE_404_PATH, 
@@ -21,26 +25,26 @@ import {
   SIGN_UP_PATH, 
   USER_APPOINTMENT_PATH
 } from './routes';
-import { SelectDoctorForm } from 'pages/Appointments/components/SelectDoctorForm';
+
 
 export function AppRouter() {
-  const status = useAppSelector(getStatus);
+  const isLogged = useAppSelector(getStateOfLog);
+  console.log(isLogged);
   return (
     <Router>
       <div className="App">
         <Switch>
           <Route exact path={MAIN_PATH}>
-            <PrivateRoute status={status} path={MAIN_PATH} component={UserView} redirectPath={SIGN_UP_PATH}/>
+            {isLogged ? <Redirect to={PATIENT_VIEW_PATH} /> : <Redirect to={SIGN_IN_PATH} />}
           </Route>
-          <Route exact path={SIGN_UP_PATH} component={SignUp} />
-          <Route exact path={SIGN_IN_PATH} component={SignIn} />
-          <Route exact path={RESTORE_PASSWORD_PATH} component={RestorePassword} />
-          <Route exact path={RESTORED_PASSWORD_PATH} component={RestoredPassword} />
-          <PrivateRoute status={status} path={DOCTOR_VIEW_PATH} component={DoctorView} redirectPath={SIGN_UP_PATH}/>
-          <PrivateRoute status={status} path={PATIENT_VIEW_PATH} component={UserView} redirectPath={SIGN_UP_PATH}/>
-          <Route exact path={USER_APPOINTMENT_PATH} component={SelectDoctorForm} />
-          <Route exact path={APPOINTMENTS_LIST_PATH} component={DoctorCardList} />
-           <Route path={PAGE_404_PATH} component={Page404} />
+          <PrivateRoute isLogged={!isLogged} path={SIGN_UP_PATH} component={SignUp} redirectPath={PATIENT_VIEW_PATH}/>
+          <PrivateRoute isLogged={!isLogged} path={SIGN_IN_PATH} component={SignIn} redirectPath={PATIENT_VIEW_PATH}/>
+          <PrivateRoute isLogged={!isLogged} path={RESTORE_PASSWORD_PATH} component={RestorePassword} redirectPath={PATIENT_VIEW_PATH}/>
+          <PrivateRoute isLogged={!isLogged} path={RESTORED_PASSWORD_PATH} component={RestoredPassword} redirectPath={PATIENT_VIEW_PATH}/>
+          <PrivateRoute isLogged={isLogged} path={DOCTOR_VIEW_PATH} component={DoctorView} redirectPath={SIGN_UP_PATH}/>
+          <PrivateRoute isLogged={isLogged} path={PATIENT_VIEW_PATH} component={UserView} redirectPath={SIGN_UP_PATH}/>
+          <PrivateRoute isLogged={isLogged} path={USER_APPOINTMENT_PATH} component={AppointmentsView} redirectPath={SIGN_IN_PATH}/>
+          <Route path={PAGE_404_PATH} component={Page404} />
         </Switch>
       </div>
     </Router>

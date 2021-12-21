@@ -41,10 +41,3 @@ export const CreateAnAppointmentBtn = styled.button`
     padding-right: 30px;
   }
 `;
-
-export const NewAppointmentLink = styled(NavLink)`
-  cursor: pointer;
-  outline: none;
-  text-decoration: none;
-}
-`

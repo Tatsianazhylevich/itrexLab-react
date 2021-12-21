@@ -1,15 +1,10 @@
 import React, { useEffect } from 'react';
-import { useAppDispatch, useAppSelector} from '../../shared/hooks/hooks'
+import { useAppDispatch, useAppSelector} from 'shared'
 import { MainPage } from '../Main';
-import {
-  NavMenu, BoardCard, BoardHeader,
-} from '../../modules';
-import { PatientCardList } from './components';
-import { messages, navButtons } from '../../shared';
 import { MainStyled } from './DoctorView.styles';
 import { userProfile } from '../Authorization/redux';
 import { getUserProfile } from '../Authorization/redux/user/user.selector';
-import { InnerDoctorRoute } from 'routes/innerRoute';
+import { InnerDoctorRouter } from 'routes/InnerRouter';
 
 
 export function DoctorView() {
@@ -24,7 +19,7 @@ export function DoctorView() {
   return (
     <MainPage>
       <MainStyled>
-        <InnerDoctorRoute /> 
+        <InnerDoctorRouter /> 
       </MainStyled>
     </MainPage>
   );

@@ -41,13 +41,13 @@ const allDoctorResolutions = createSlice({
     builder.addCase(getResolutions.fulfilled, (state, action: PayloadAction<DoctorResolutionType>) => ({
       ...state,
       loading: false,
-      patients: action.payload,
+      resolutions: action.payload,
     }));
     builder.addCase(getResolutions.rejected, (state, action: PayloadAction<any>) => ({
       ...state,
       loading: false,
       error: action.payload,
-      patients: { resolutions: [] },
+      resolutions: { resolutions: [] },
     }));
   },
 });

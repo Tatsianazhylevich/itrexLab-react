@@ -6,6 +6,7 @@ export type ButtonType = {
   id: string,
   path: string,
   exact?: boolean,
+  activeClassName?: string,
 }
 export type NavMenuProps = {
   buttons: ButtonType[],
@@ -17,11 +18,11 @@ export function NavMenu({ buttons }: NavMenuProps ) {
     <MenuStyled>
       <MenuContainerStyled>
         {
-        buttons.map(({title, id, path, exact}: ButtonType) => (
+        buttons.map(({title, id, path, exact, activeClassName}: ButtonType) => (
           <MenuLinkStyled exact={exact} to={path} key={id} activeStyle={{
             background: colors.blue,
             color: colors.white
-          }}>
+          }} activeClassName={'active'}>
             {title}
           </MenuLinkStyled>
         ))

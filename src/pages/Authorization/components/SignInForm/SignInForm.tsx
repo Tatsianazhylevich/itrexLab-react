@@ -51,7 +51,7 @@ export function SignInForm() {
             label="Email"
             name="email"
             type="email"
-            placeholder="bart@gmail.com"
+            placeholder="email@gmail.com"
             fontSize="0"
           />
           <InputPassword

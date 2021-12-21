@@ -6,7 +6,7 @@ export const RESTORED_PASSWORD_PATH = '/restored-password';
 export const DOCTOR_VIEW_PATH = '/doctor';
 export const PATIENT_VIEW_PATH = '/patient';
 
-export const USER_APPOINTMENT_PATH = '/patient/create-appointment';
+export const USER_APPOINTMENT_PATH = '/create-appointment';
 
 export const PAGE_404_PATH = '/*';
 

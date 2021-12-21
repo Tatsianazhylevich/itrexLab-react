@@ -44,27 +44,32 @@ const authorizationSlice = createSlice({
   name: 'login',
   initialState: {
     status: 'idle',
+    isLogged: false,
   },
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(createUser.fulfilled, (state, action: PayloadAction<string>) => ({
       ...state,
       status: action.payload,
+      isLogged: true,
     }));
     builder.addCase(createUser.rejected,
       (state) => ({
         ...state,
         status: 'rejected',
+        isLogged: false,
       }));
 
     builder.addCase(loginUser.fulfilled, (state, action: PayloadAction<string>) => ({
       ...state,
       status: action.payload,
+      isLogged: true,
     }));
     builder.addCase(loginUser.rejected,
       (state) => ({
         ...state,
         status: 'rejected',
+        isLogged: false,
       }));
   },
 });

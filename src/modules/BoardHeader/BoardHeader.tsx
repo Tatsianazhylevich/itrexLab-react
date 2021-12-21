@@ -1,8 +1,9 @@
 import {
-  BoardHeaderStyled, BoardTitleStyled, CreateAnAppointmentBtn, ContainerStyled, NewAppointmentLink
+  BoardHeaderStyled, BoardTitleStyled, CreateAnAppointmentBtn, ContainerStyled
 } from './BoardHeader.styles';
 import { messages } from 'shared';
 import { USER_APPOINTMENT_PATH } from 'routes'
+import { useHistory } from 'react-router-dom';
 
 interface BoardHeaderProps {
   title: string,
@@ -11,6 +12,10 @@ interface BoardHeaderProps {
 
 
 export function BoardHeader({ title, isBtnVisible }: BoardHeaderProps) {
+  const history = useHistory();
+  const RouteTo = () => {
+    history.push(USER_APPOINTMENT_PATH);
+  }
   return (
     <BoardHeaderStyled className="board_header card-header">
       <BoardTitleStyled>{title}</BoardTitleStyled>
@@ -18,9 +23,7 @@ export function BoardHeader({ title, isBtnVisible }: BoardHeaderProps) {
         ? (
           <ContainerStyled>
             <div>
-            <NewAppointmentLink to={USER_APPOINTMENT_PATH}>
-            <CreateAnAppointmentBtn type='button'>{messages.createAnAppointment}</CreateAnAppointmentBtn>
-            </NewAppointmentLink>
+            <CreateAnAppointmentBtn type='button' onClick={RouteTo}>{messages.createAnAppointment}</CreateAnAppointmentBtn>
             </div>
           </ContainerStyled>
         )

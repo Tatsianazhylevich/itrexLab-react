@@ -13,7 +13,7 @@ export const navButtons = {
   ],
   usersButtons: [
     { title: 'Profile', id: '3', path: PROFILE_LIST_PATH },
-    { className: 'active', title: 'Appointments', id: '4', path:  APPOINTMENTS_LIST_PATH,},
+    { title: 'Appointments', id: '4', path:  APPOINTMENTS_LIST_PATH, className: 'active'},
     { title: 'Resolutions', id: '2', path: RESOLUTION_PATIENT_LIST_PATH },
   ],
 };

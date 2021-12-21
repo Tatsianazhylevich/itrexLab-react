@@ -2,7 +2,7 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
-import { MyAppointments, UserProfile, ResolutionsForUser, DoctorsResolutions, Patients, AppointmentsView } from "pages";
+import { MyAppointments, UserProfile, ResolutionsForUser, DoctorsResolutions, Patients } from "pages";
 import { NavMenu } from "modules";
 import { USER_APPOINTMENT_PATH, APPOINTMENTS_LIST_PATH, PATIENTS_LIST_PATH, PROFILE_LIST_PATH, RESOLUTION_DOCTOR_LIST_PATH, RESOLUTION_PATIENT_LIST_PATH} from "./routes";
 import { navButtons } from "shared";

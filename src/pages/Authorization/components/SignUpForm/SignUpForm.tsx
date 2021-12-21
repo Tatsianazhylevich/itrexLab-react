@@ -1,17 +1,16 @@
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../../../../shared/hooks/hooks';
+import { useAppDispatch, useAppSelector, messages } from 'shared';
 import { Formik } from 'formik';
 import {
   Button, Title, Footer,
-} from '../../../../components';
+} from 'components';
 import {
   FormStyled, InputName, InputEmail, InputPassword, InputConfirmPassword,
 } from './SignUpForm.styles';
 import { createUser, getStatus } from '../../redux';
 import { ValidationForSignUpForm } from './ValidationForSignUpForm';
-import { SIGN_IN_PATH, PATIENT_VIEW_PATH } from '../../../../routes/routes';
-import { messages } from '../../../../shared';
+import { SIGN_IN_PATH, PATIENT_VIEW_PATH } from 'routes/routes';
 import { SignUpTypes } from 'pages';
 
 export function SignUpForm() {

@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Title } from '../../components';
 import arrowLeftIcon from '../../assets/icons/angle-left-b.png';
-import { breakpoints, colors } from '../../theme';
+import { breakpoints, colors } from 'theme';
 
 export const FormStyled = styled.div`
       display: flex;

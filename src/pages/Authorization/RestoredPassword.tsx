@@ -1,6 +1,5 @@
-import React from 'react';
-import { Container } from '../../components';
-import { SIGN_IN_PATH } from '../../routes';
+import { Container } from 'components';
+import { SIGN_IN_PATH } from 'routes';
 import {
   FormStyled, TitleStyled, ArrowLink, TitleTextStyled, RestorePasswordText,
 } from './RestoredPassword.styles';

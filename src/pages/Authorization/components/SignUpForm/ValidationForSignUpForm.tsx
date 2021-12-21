@@ -1,5 +1,5 @@
 import * as Yup from 'yup';
-import { errorMessages } from '../../../../shared';
+import { errorMessages } from 'shared';
 
 export const ValidationForSignUpForm = Yup.object({
   name: Yup.string()

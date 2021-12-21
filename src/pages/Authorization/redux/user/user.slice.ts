@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { getUserProfile } from '../../../../api';
+import { getUserProfile } from 'api';
 import { UserProfileType } from 'pages';
 
 export const userProfile = createAsyncThunk(

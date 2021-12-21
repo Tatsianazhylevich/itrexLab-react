@@ -1,9 +1,7 @@
-
 import { useEffect } from 'react';
-import { UserView } from 'pages';
 import { useAppDispatch, useAppSelector } from 'shared';
-import { Header } from '../../components';
-import { DOCTOR_VIEW_PATH, PATIENT_VIEW_PATH, SIGN_UP_PATH } from '../../routes';
+import { Header } from 'components';
+import { DOCTOR_VIEW_PATH, PATIENT_VIEW_PATH } from 'routes';
 import { userProfile, getUserProfile } from '../Authorization/redux';
 import { WrapperStyled } from './Main.styles';
 

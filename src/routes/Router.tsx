@@ -4,8 +4,8 @@ import {
 } from 'react-router-dom';
 import {
   SignUp, SignIn, RestorePassword, RestoredPassword,
-} from '../pages/Authorization';
-import { DoctorCardList, DoctorView, UserView } from '../pages';
+} from 'pages';
+import { DoctorCardList, DoctorView, UserView } from 'pages';
 import { Page404 } from 'components/Page404';
 import { getStatus } from '../pages/Authorization/redux';
 import { PrivateRoute } from './PrivateRoute';

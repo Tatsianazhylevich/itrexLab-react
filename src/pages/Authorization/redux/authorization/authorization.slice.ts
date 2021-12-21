@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { registration, login } from '../../../../api';
-import * as tokenRepository from '../../../../api';
+import { registration, login } from 'api';
+import * as tokenRepository from 'api';
 import { responceNotify, errorNotify } from 'components';
 import { notifyMessages } from 'shared';
 

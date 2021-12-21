@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { allPatientAppointments } from '../../../api';
+import { allPatientAppointments } from 'api';
 import { PatientAppointmentsType } from 'pages'
 
 type AllAppointmentsType = {

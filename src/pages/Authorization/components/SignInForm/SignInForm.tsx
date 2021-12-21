@@ -1,15 +1,14 @@
 import React, { useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../../../../shared';
+import { useAppDispatch, useAppSelector, messages } from 'shared';
 import { Formik } from 'formik';
 import {
   Button, Title, Footer,
-} from '../../../../components';
+} from 'components';
 import { ValidationForSignInForm } from './ValidationForSignInForm';
-import { loginUser, userProfile, getStatus } from '../../redux';
-import { SIGN_UP_PATH, RESTORE_PASSWORD_PATH, PATIENT_VIEW_PATH } from '../../../../routes/routes';
+import { loginUser, getStatus } from '../../redux';
+import { SIGN_UP_PATH, RESTORE_PASSWORD_PATH, PATIENT_VIEW_PATH } from 'routes/routes';
 import { FormStyled, InputEmail, InputPassword } from './SignInForm.styles';
-import { messages } from '../../../../shared';
 import { SignInFormTypes } from 'pages';
 
 export function SignInForm() {

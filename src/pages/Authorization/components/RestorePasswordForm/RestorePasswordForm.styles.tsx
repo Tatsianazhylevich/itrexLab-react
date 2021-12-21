@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { Form } from 'formik';
-import { Button, Input, Title } from '../../../../components';
+import { Button, Input } from 'components';
 import arrowLeftIcon from '../../../../assets/icons/angle-left-b.png';
 import emailIcon from '../../../../assets/icons/Vector.png';
-import { breakpoints, colors } from '../../../../theme';
+import { breakpoints, colors } from 'theme';
 
 export const FormStyled = styled(Form)`
     display: flex;

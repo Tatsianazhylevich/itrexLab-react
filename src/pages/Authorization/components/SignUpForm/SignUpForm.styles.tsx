@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { Form } from 'formik';
-import { Input } from '../../../../components';
+import { Input } from 'components';
 import nameIcon from '../../../../assets/icons/user.png';
 import emailIcon from '../../../../assets/icons/Vector.png';
 import passwordIcon from '../../../../assets/icons/lock.png';
 import confirmIcon from '../../../../assets/icons/check.png';
-import { breakpoints, colors } from '../../../../theme';
+import { breakpoints, colors } from 'theme';
 
 export const FormStyled = styled(Form)`
     display: flex;

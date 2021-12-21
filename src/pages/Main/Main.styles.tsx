@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { breakpoints, colors } from '../../theme';
+import { breakpoints, colors } from 'theme';
 
 export const WrapperStyled = styled.div`
   position: relative;

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector, FormatDateForCards, messages } from 'shared';
-import { DoctorCard } from '../../../../modules/Card/DoctorCard/DoctorCard';
+import { DoctorCard } from 'modules';
 import { CardListStyled } from './DoctorCardList.styles';
 import anneteBlack from '../../../../assets/patients/annete_black.png';
 import { allApppointmentsOfPatient, getAllAppointmentsforPatient } from '../../redux';

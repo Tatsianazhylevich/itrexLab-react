@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../../../shared'
+import { useAppDispatch, useAppSelector } from 'shared'
 import { useHistory } from 'react-router-dom';
 import { format } from 'date-fns';
 import { SingleValue } from 'react-select';
 import {
   Formik, Field,
 } from 'formik';
-import { WarningTextStyled } from '../../../../components';
+import { WarningTextStyled } from 'components';
 import {
   CalendarStyled, RadioInput, CustomSelect, SectionHeader,
-} from '../../../../modules';
+} from 'modules';
 import { validate } from './ValidationForAppointment';
-import { APPOINTMENTS_LIST_PATH, PATIENT_VIEW_PATH } from '../../../../routes/routes';
-import { messages } from '../../../../shared';
+import { APPOINTMENTS_LIST_PATH } from 'routes/routes';
+import { messages } from 'shared';
 import {
   getSpecializations,
   allSpecializations,
@@ -37,7 +37,7 @@ import {
   WrapperStyled,
   InputWrapper,
 } from './SelectDoctorForm.styles';
-import { OptionType } from '../../../types'
+import { OptionType } from 'pages'
 
 export interface SelectDoctorFormTypes {
   date: string,

@@ -75,6 +75,5 @@ export const RestorePasswordText = styled.div`
     }
 `;
 export const ButtonForRestoredStyled = styled(Button)`
-      width: 214px;
-      margin: 0;
+    color: red;
 `;

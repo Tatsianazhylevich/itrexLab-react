@@ -8,7 +8,7 @@ export const ButtonStyled = styled.button<ButtonProps>`
   margin: 34px 0px;
   padding: 15px 0px 15px 15px;
   border-radius: 8px;
-  background: url(${arrowRightIcon}) no-repeat center right 15px, ${colors.blue};
+  background: url(${arrowRightIcon}) no-repeat center right 10px, ${colors.blue};
   padding-right: 32px;
   color: ${colors.white};
   font-size: 17px;
@@ -21,10 +21,15 @@ export const ButtonStyled = styled.button<ButtonProps>`
 
   @media (max-width: ${breakpoints.tablet}) {
     width: 123px;
-    height: 46px;
-    margin-top: 20px;
-    background: url(${arrowRightIcon}) no-repeat center right 16px, ${colors.blue};
+    /* height: 46px; */
+    /* margin-top: 20px; */
+    background: url(${arrowRightIcon}) no-repeat center right 10px, ${colors.blue};
     padding-right: 30px;
+    ${(props) => props.isDisabled && css`
+    background:  ${colors.solidgrey};
+    cursor: not-allowed;
+    border: 1px solid gray;
+  `}
   }
 
   ${(props) => props

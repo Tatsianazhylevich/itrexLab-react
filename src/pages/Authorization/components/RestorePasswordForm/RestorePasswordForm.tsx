@@ -29,6 +29,7 @@ export function RestorePasswordForm() {
         validationSchema={ValidationForRestorePassForm}
         onSubmit={handleClick}
       >
+        {({ isValid, dirty }) => (
         <FormStyled>
           <TitleStyled>
             <ArrowLink to={SIGN_IN_PATH} />
@@ -41,11 +42,11 @@ export function RestorePasswordForm() {
             label="Email"
             name="email"
             type="email"
-            placeholder="bart@gmail.com"
+            placeholder="Email"
             fontSize="0"
           />
-          <ButtonForRestoredStyled type="submit">Send Reset Link</ButtonForRestoredStyled>
-        </FormStyled>
+          <ButtonForRestoredStyled isDisabled={!isValid || !dirty} type="submit">Send Reset Link</ButtonForRestoredStyled>
+        </FormStyled>)}
       </Formik>
     </>
   );

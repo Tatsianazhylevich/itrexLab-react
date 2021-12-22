@@ -1,5 +1,5 @@
 import { format } from 'date-fns';
-import { ResolutionsTable, HeaderCell, ResolutionsTableHead } from './DoctorResolutions.styles';
+import { ResolutionsTable, HeaderCell, ResolutionsTableHead, More } from './DoctorResolutions.styles';
 import { DoctorsResolutionTableRow } from './DoctorsResolutionsTableRow';
 import { ResolutionForDoctor, DoctorResolutionType } from 'pages';
 
@@ -27,6 +27,7 @@ export function DoctorsResolutionsTable({resolutions}: DoctorResolutionType) {
                     resolution={resolution.resolution}
                     visitDate={format(new Date(resolution.visit_date), 'MM/dd/yy')}
                     nextVisit={format(new Date(resolution.next_appointment_date), 'MM/dd/yy')}
+                    actions={<More />}
               />
             ))}
         </tbody>

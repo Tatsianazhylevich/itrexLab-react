@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { getUserProfile } from 'api';
 import { UserProfileType } from 'pages';
+import { PURGE } from 'redux-persist';
 
 export const userProfile = createAsyncThunk(
   'user/userProfile',
@@ -46,11 +47,12 @@ const userSlice = createSlice({
       profile: action.payload,
     }));
     builder.addCase(userProfile.rejected,
-      (state, action: PayloadAction<any>) => ({
+      ( state, action: PayloadAction<any>) => ({
         ...state,
         status: 'rejected',
         error: action.payload,
-      }));
+    }));
+    
   },
 });
 

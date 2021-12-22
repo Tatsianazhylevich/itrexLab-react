@@ -27,11 +27,11 @@ export const loginUser = createAsyncThunk(
   async (params: {}, { rejectWithValue }) => {
     try {
       const response = await login(params);
-      responceNotify(notifyMessages.signIn);
       const token = response.data.access_token;
       if (token) {
         tokenRepository.setToken(token);
       }
+      responceNotify(notifyMessages.signIn);
       return response.statusText;
     } catch (error: any) {
       errorNotify(notifyMessages.failedSignin);

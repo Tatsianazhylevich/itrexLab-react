@@ -35,7 +35,7 @@ export function AppRouter() {
       <div className="App">
         <Switch>
           <Route exact path={MAIN_PATH}>
-            {isLogged ? <Redirect to={PATIENT_VIEW_PATH} /> : <Redirect to={SIGN_IN_PATH} />}
+            {isLogged ? <Redirect to={PATIENT_VIEW_PATH} /> : <Redirect to={SIGN_UP_PATH} />}
           </Route>
           <PrivateRoute isLogged={!isLogged} path={SIGN_UP_PATH} component={SignUp} redirectPath={PATIENT_VIEW_PATH}/>
           <PrivateRoute isLogged={!isLogged} path={SIGN_IN_PATH} component={SignIn} redirectPath={PATIENT_VIEW_PATH}/>

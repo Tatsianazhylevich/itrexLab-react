@@ -23,7 +23,7 @@ export function BoardHeader({ title, isBtnVisible }: BoardHeaderProps) {
         ? (
           <ContainerStyled>
             <div>
-            <CreateAnAppointmentBtn type='button' onClick={RouteTo}>{messages.createAnAppointment}</CreateAnAppointmentBtn>
+              <CreateAnAppointmentBtn type='button' onClick={RouteTo}>{messages.createAnAppointment}</CreateAnAppointmentBtn>
             </div>
           </ContainerStyled>
         )

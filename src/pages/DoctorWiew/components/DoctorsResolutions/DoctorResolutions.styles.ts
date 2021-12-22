@@ -12,7 +12,7 @@ export const ResolutionsTable = styled.table`
 `;
 
 export const ResolutionsTableRow = styled.tr`
-    font-size: 15px;
+    font-size: 17px;
     line-height: 24px;
     color: ${colors.black};
     background-color: white;
@@ -31,14 +31,14 @@ export const ResolutionsTableHead = styled.tr`
 export const ResolutionsTableCell = styled.td`
     padding: 10px 0;
     border-bottom: solid ${colors.greylight};
-    background: ${colors.darkgrey};
+    background: ${colors.white};
     &:first-child {
         border-radius: 12px 0 0 12px;
         padding: 10px 0 10px 40px;
     }
     &:last-child {
         border-radius: 0 12px 12px 0;
-        padding: 10px 30px 10px 0;
+        padding: 17px 40px 10px 0;
         display: flex;
         justify-content: flex-end;
     }
@@ -69,4 +69,31 @@ export const HeaderCell = styled(ResolutionsTableCell)`
   &:nth-child(6) {
     padding: 10px 24px 10px 0;
   }
+`;
+
+export const More = styled.div`
+    position: relative;
+    width: 5px;
+    height: 5px;
+    background: ${colors.solidgrey};
+    border-radius: 50%;
+    
+    &:before {
+    position: absolute;
+    content: '';
+    top: 7px;
+    width: 5px;
+    height: 5px;
+    background: ${colors.solidgrey};
+    border-radius: 50%;
+    }
+    &:after {
+    position: absolute;
+    content: '';
+    bottom: 7px;
+    width: 5px;
+    height: 5px;
+    background: ${colors.solidgrey};
+    border-radius: 50%;
+    }
 `;

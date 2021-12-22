@@ -4,17 +4,10 @@ import { MainPage } from 'pages';
 import { userProfile, getUserProfile } from '../Authorization/redux';
 import { MainStyled } from './UserView.styles';
 import { InnerUserRouter, InnerDoctorRouter } from 'routes';
-import {  useLocation } from 'react-router-dom'; 
-
-
-
-
 
 export function UserView() {
-  const location = useLocation();
   const dispatch = useAppDispatch();
   const user = useAppSelector(getUserProfile);
-  console.log(location);
   
 
   useEffect(() => {

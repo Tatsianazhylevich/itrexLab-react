@@ -33,7 +33,7 @@ describe('SignUpForm', () => {
     );
     firstNameInput = screen.getByPlaceholderText('First Name');
     lastNameInput = screen.getByPlaceholderText('Last Name');
-    emailInput = screen.getByPlaceholderText('email@gmail.com');
+    emailInput = screen.getByPlaceholderText('Email');
     passwordInput = screen.getByPlaceholderText('Password');
     confirmPasswordInput = screen.getByPlaceholderText('Confirm Password');
     submitButton = screen.getByRole('button');

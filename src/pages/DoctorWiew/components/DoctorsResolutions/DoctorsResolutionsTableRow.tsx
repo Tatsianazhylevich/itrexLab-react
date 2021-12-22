@@ -9,6 +9,7 @@ export function DoctorsResolutionTableRow({
     resolution,
     visitDate,
     nextVisit,
+    actions
 
  }: DoctorsResolutionTableRowProps) {
     return (
@@ -18,7 +19,7 @@ export function DoctorsResolutionTableRow({
             <ResolutionsTableCell>{resolution}</ResolutionsTableCell>
             <ResolutionsTableCell>{visitDate}</ResolutionsTableCell>
             <ResolutionsTableCell>{nextVisit}</ResolutionsTableCell>
-            <ResolutionsTableCell>btn</ResolutionsTableCell>
+            <ResolutionsTableCell>{actions}</ResolutionsTableCell>
         </ResolutionsTableRow>
     )
 } 

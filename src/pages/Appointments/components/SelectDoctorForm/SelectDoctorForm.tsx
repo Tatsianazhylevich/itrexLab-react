@@ -11,7 +11,7 @@ import {
   CalendarStyled, RadioInput, CustomSelect, SectionHeader,
 } from '../../../../modules';
 import { validate } from './ValidationForAppointment';
-import { PATIENT_VIEW_PATH } from '../../../../routes/routes';
+import { APPOINTMENTS_LIST_PATH, PATIENT_VIEW_PATH } from '../../../../routes/routes';
 import { messages } from '../../../../shared';
 import {
   getSpecializations,
@@ -71,7 +71,7 @@ export function SelectDoctorForm() {
   }, []);
 
   const initialValue = {
-    occupation: {},
+    occupation: '',
     doctorsName: '',
     reason: '',
     note: '',
@@ -89,7 +89,7 @@ export function SelectDoctorForm() {
     };
     dispatch(createNewAppointment(valuesForAppointment));
     if (isNewAppointment) {
-      push(PATIENT_VIEW_PATH);
+      push(APPOINTMENTS_LIST_PATH);
     }
   };
 

@@ -4,7 +4,7 @@ export interface DoctorsResolutionTableRowProps {
     resolution:  string,
     visitDate:  string,
     nextVisit:  string,
-    actionsBtn?: () => void
+    actions?: JSX.Element |(() => void)
 }
 
 export interface Resolution {

@@ -47,7 +47,7 @@ export const FieldsStyled = styled(Field)`
     height: 56px;
     margin-bottom: 40px;
     padding: 0 24px;
-    font-size: 17px;
+    font-size: 15px;
     line-height: 24px;
     border: 1px solid ${colors.solidgrey};
     border-radius: 8px;

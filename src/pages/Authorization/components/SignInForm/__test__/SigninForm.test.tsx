@@ -29,7 +29,7 @@ describe('SignInForm', () => {
       </Provider>,
 
     );
-    emailInput = screen.getByPlaceholderText('email@gmail.com');
+    emailInput = screen.getByPlaceholderText('Email');
     passwordInput = screen.getByPlaceholderText(/password/i);
     submitButton = screen.getByRole('button');
   });

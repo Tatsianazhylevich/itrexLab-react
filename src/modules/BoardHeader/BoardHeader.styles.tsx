@@ -25,19 +25,17 @@ export const ContainerStyled = styled.div`
 export const CreateAnAppointmentBtn = styled.button`
   margin: 0;
   border-radius: 8px;
-  padding-left: 50px;
-  width: 244px;
+  padding: 12px 16px 12px 50px;
+  max-width: 244px;
   background: url(${plusIcon}) no-repeat center left 20px, ${colors.blue};
   border: none;
-  padding-right: 32px;
   color: ${colors.white};
-  font-size: 17px;
+  font-size: 15px;
   cursor: pointer;
   @media (max-width: ${breakpoints.tablet}) {
-    width: 123px;
-    height: 46px;
-    margin-top: 20px;
-    background: url(${plusIcon}) no-repeat center right 16px, ${colors.blue};
-    padding-right: 30px;
+    max-width: 123px;
+    padding-left: 30px;
+    background: url(${plusIcon}) no-repeat center left 10px, ${colors.blue};
+    font-size: 12px;
   }
 `;

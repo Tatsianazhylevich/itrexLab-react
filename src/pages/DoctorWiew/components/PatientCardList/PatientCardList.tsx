@@ -3,8 +3,9 @@ import { useAppSelector, useAppDispatch, FormatDateForCards, messages } from 'sh
 import { PatientCard } from 'modules/Card';
 import { CardListStyled } from './PatientCardList.styles';
 import anneteBlack from '../../../../assets/patients/annete_black.png';
-import { getPatients, doctorsAppointments } from '../../redux';
+import { getPatients, doctorsAppointments, loadingForDoctorAppointments } from '../../redux';
 import { EmptyPage, AppointmentForDoctor } from 'pages';
+import { Spinner } from 'components';
 
 export function PatientCardList() {
   const dispatch = useAppDispatch();
@@ -14,10 +15,11 @@ export function PatientCardList() {
   }, [dispatch]);
 
 const { appointments } = useAppSelector(doctorsAppointments);
+const isLoading = useAppSelector(loadingForDoctorAppointments);
 
   return (
     <CardListStyled>
-      {appointments.length ? appointments.map((patient: AppointmentForDoctor) => (
+      {!isLoading ? (appointments.length ? appointments.map((patient: AppointmentForDoctor) => (
         <PatientCard
           avatar={anneteBlack}
           firstName={patient.patient.first_name}
@@ -28,7 +30,7 @@ const { appointments } = useAppSelector(doctorsAppointments);
           key={patient.id}
           dataTestId="patientCard"
         />
-      )) : <EmptyPage text1={messages.emptyPageDoctorText1} text2={messages.emptyPageDoctorText2} />}
+      )) : <EmptyPage text1={messages.emptyPageDoctorText1} text2={messages.emptyPageDoctorText2} />): <Spinner />}
 
     </CardListStyled>
   );

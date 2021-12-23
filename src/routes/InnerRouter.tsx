@@ -2,7 +2,7 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
-import { MyAppointments, UserProfile, ResolutionsForUser, DoctorsResolutions, Patients } from "pages";
+import { MyAppointments, UserProfile, PatientResolutions, DoctorsResolutions, Patients } from "pages";
 import { NavMenu } from "modules";
 import { APPOINTMENTS_LIST_PATH, PATIENTS_LIST_PATH, PROFILE_LIST_PATH, RESOLUTION_DOCTOR_LIST_PATH, RESOLUTION_PATIENT_LIST_PATH} from "./routes";
 import { navButtons } from "shared";
@@ -17,7 +17,7 @@ export function InnerUserRouter() {
             <Switch>
                 <Route exact path={PROFILE_LIST_PATH} component={UserProfile} />
                 <Route exact path={APPOINTMENTS_LIST_PATH} component={MyAppointments} />
-                <Route exact path={RESOLUTION_PATIENT_LIST_PATH} component={ResolutionsForUser} />
+                <Route exact path={RESOLUTION_PATIENT_LIST_PATH} component={PatientResolutions} />
             </Switch>
         </div>   
     )
@@ -37,4 +37,3 @@ export function InnerDoctorRouter() {
         </div>   
     )
 }
-

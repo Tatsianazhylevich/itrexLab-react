@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { MainPage } from '../Main';
-import { SelectDoctorForm } from './components/SelectDoctorForm';
+import { SelectDoctorForm, NavigationLinks } from './components';
 import { BoardCard, BoardHeader } from '../../modules';
 import { userProfile } from '../Authorization/redux';
 import { MainStyled } from './AppointmentsView.styles';
@@ -17,6 +17,7 @@ export function AppointmentsView() {
   return (
     <MainPage>
       <MainStyled>
+        <NavigationLinks />
         <BoardCard>
           <BoardHeader title={messages.appointmentsViewTitle} />
           <SelectDoctorForm />

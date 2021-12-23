@@ -1,9 +1,13 @@
 import Loader from "react-loader-spinner";
 import { colors } from "theme";
+import { SpinnerStyled } from './Spinner.style';
 
 
 export function Spinner() {
  return (
-     <Loader type="Puff" color={colors.solidgrey} height={80} width={80} />
+     <SpinnerStyled>
+        <Loader type="Puff" color={colors.solidgrey} height={100} width={100} />
+     </SpinnerStyled>
+     
  )
 }

@@ -23,7 +23,8 @@ import {
   RESTORE_PASSWORD_PATH, 
   SIGN_IN_PATH, 
   SIGN_UP_PATH, 
-  USER_APPOINTMENT_PATH
+  USER_APPOINTMENT_PATH,
+  APPOINTMENTS_LIST_PATH
 } from './routes';
 
 
@@ -37,8 +38,8 @@ export function AppRouter() {
           <Route exact path={MAIN_PATH}>
             {isLogged ? <Redirect to={PATIENT_VIEW_PATH} /> : <Redirect to={SIGN_UP_PATH} />}
           </Route>
-          <PrivateRoute isLogged={!isLogged} path={SIGN_UP_PATH} component={SignUp} redirectPath={PATIENT_VIEW_PATH}/>
-          <PrivateRoute isLogged={!isLogged} path={SIGN_IN_PATH} component={SignIn} redirectPath={PATIENT_VIEW_PATH}/>
+          <PrivateRoute isLogged={!isLogged} path={SIGN_UP_PATH} component={SignUp} redirectPath={APPOINTMENTS_LIST_PATH}/>
+          <PrivateRoute isLogged={!isLogged} path={SIGN_IN_PATH} component={SignIn} redirectPath={APPOINTMENTS_LIST_PATH}/>
           <PrivateRoute isLogged={!isLogged} path={RESTORE_PASSWORD_PATH} component={RestorePassword} redirectPath={PATIENT_VIEW_PATH}/>
           <PrivateRoute isLogged={!isLogged} path={RESTORED_PASSWORD_PATH} component={RestoredPassword} redirectPath={PATIENT_VIEW_PATH}/>
           <PrivateRoute isLogged={isLogged} path={DOCTOR_VIEW_PATH} component={DoctorView} redirectPath={SIGN_UP_PATH}/>

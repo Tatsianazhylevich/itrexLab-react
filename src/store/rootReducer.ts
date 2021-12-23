@@ -5,6 +5,7 @@ import { appointmentReducer } from '../pages/Appointments/redux';
 import { allPatientAppointmentsReducer } from '../pages/UserView/redux';
 import { allDoctorAppointmentsReducer } from '../pages/DoctorWiew/redux/allDoctorAppointments.slice';
 import { allDoctorResolutionsReducer} from '../pages/DoctorWiew/redux/AllDoctorResolutions.slice';
+import { allPatientResolutionsReducer} from '../pages/UserView/redux/allPatientResolutions.slice';
 
 const loginPersistConfig = {
   key: 'login',
@@ -22,4 +23,5 @@ export const rootReducer = {
   patientAppointments: allPatientAppointmentsReducer,
   doctorAppointments: allDoctorAppointmentsReducer,
   doctorResolutions: allDoctorResolutionsReducer,
+  patientResolutions: allPatientResolutionsReducer,
 };

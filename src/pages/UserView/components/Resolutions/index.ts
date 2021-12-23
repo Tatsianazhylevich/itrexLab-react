@@ -1,1 +1,1 @@
-export { ResolutionsForUser } from './ResolutionsForUser';
+export { PatientResolutions } from './PatientResolutions';

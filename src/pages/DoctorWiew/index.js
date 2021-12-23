@@ -1,1 +1,2 @@
-export { DoctorWiew } from './DoctorWiew';
+export { DoctorView } from './DoctorView';
+export { PatientCardList } from './components';

@@ -3,10 +3,10 @@ import { PatientCardHeader, PatientCardMain } from '.';
 import { CardStyled } from './PatientCard.styles';
 
 export function PatientCard({
-  avatar, firstName, lastName, status, description, time,
+  avatar, firstName, lastName, status, description, time, dataTestId,
 }) {
   return (
-    <CardStyled>
+    <CardStyled data-testid={dataTestId}>
       <PatientCardHeader
         avatar={avatar}
         firstName={firstName}

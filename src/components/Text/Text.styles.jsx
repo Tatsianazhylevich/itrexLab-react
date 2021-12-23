@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { breackpoints, colors } from '../../theme';
+import { breakpoints, colors } from '../../theme';
 
 export const TitleStyled = styled.div`
   margin-bottom: 40px;
@@ -8,7 +8,7 @@ export const TitleStyled = styled.div`
   font-size: 24px;
   line-height: 110%;
   color: ${colors.black};
-  @media (max-width: ${breackpoints.tablet}) {
+  @media (max-width: ${breakpoints.tablet}) {
     margin-top: 32px;
     font-weight: 600;
     font-size: 20px;

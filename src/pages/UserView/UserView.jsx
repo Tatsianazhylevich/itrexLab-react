@@ -1,20 +1,19 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { Header } from '../../components';
+import { MainPage } from '../Main';
 import {
-  NavMenu, BoardCard, BoardHeader, DoctorCardList,
+  NavMenu, BoardCard, BoardHeader,
 } from '../../modules';
+import { DoctorCardList } from './components';
 import { USER_APPOINTMENT_PATH } from '../../routes/routes';
 import { messages, navButtons } from '../../shared';
 import { userProfile } from '../Authorization/redux';
-import { getUserProfile } from '../Authorization/redux/user/user.selector';
-import { WrapperStyled, MainStyled } from './UserView.styles';
+import { MainStyled } from './UserView.styles';
 
 export function UserView() {
   const history = useHistory();
   const dispatch = useDispatch();
-  const user = useSelector(getUserProfile);
 
   useEffect(() => {
     dispatch(userProfile());
@@ -25,8 +24,7 @@ export function UserView() {
   };
 
   return (
-    <WrapperStyled className="wrapper">
-      <Header name={`${user.first_name} ${user.last_name}`} position={`${user.role_name}`} />
+    <MainPage>
       <MainStyled>
         <NavMenu
           buttons={navButtons.usersButtons}
@@ -40,6 +38,6 @@ export function UserView() {
           <DoctorCardList />
         </BoardCard>
       </MainStyled>
-    </WrapperStyled>
+    </MainPage>
   );
 }

@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { Button } from '../../components';
 import plusIcon from '../../assets/icons/plus.png';
-import { breackpoints, colors } from '../../theme';
+import { breakpoints, colors } from '../../theme';
 
 export const BoardTitleStyled = styled.h2`
     display: flex;
     color: ${colors.black};
     font-size: 24px;
-    @media (max-width: ${breackpoints.mobileL}) {
+    @media (max-width: ${breakpoints.mobileL}) {
       font-size: 20px;
     }
 `;

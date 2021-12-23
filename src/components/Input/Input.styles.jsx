@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { breackpoints, colors } from '../../theme';
+import { breakpoints, colors } from '../../theme';
 
 export const InputStyled = styled.div`
   position: relative;
@@ -20,7 +20,7 @@ export const InputInnerStyled = styled.input`
     &:focus {
         border: 1px solid ${colors.blue};
     }
-    @media (max-width: ${breackpoints.tablet}) {
+    @media (max-width: ${breakpoints.tablet}) {
       width: 100%;
       height: 40px;
       font-size: 15px;
@@ -39,7 +39,7 @@ export const PasswordControl = styled.img`
   right: 20px;
   top: 17px;
   width: 24px;
-  @media (max-width: ${breackpoints.tablet}) {
+  @media (max-width: ${breakpoints.tablet}) {
     top: 20px;
     right: 20px;
   }   

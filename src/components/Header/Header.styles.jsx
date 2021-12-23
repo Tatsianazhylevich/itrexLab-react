@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import avatar from '../../assets/doctors/mirandaNelson.png';
-import { breackpoints, colors } from '../../theme';
+import { breakpoints, colors } from '../../theme';
 
 export const HeaderStyled = styled.header`
     display: flex;
     justify-content: space-between;
     padding: 20px 0;
-    @media (max-width: ${breackpoints.mobileL}) {
+    @media (max-width: ${breakpoints.mobileL}) {
       margin: 0 24px;
       padding: 16px 0;
     }
@@ -39,7 +39,7 @@ export const HeaderUserInfo = styled.div`
     align-items: flex-end;
     flex-direction: column;
     margin-right: 16px;
-    @media (max-width: ${breackpoints.mobileL}) {
+    @media (max-width: ${breakpoints.mobileL}) {
       display: none;
     }
 `;

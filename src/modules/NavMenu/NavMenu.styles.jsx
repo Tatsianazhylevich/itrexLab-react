@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { breackpoints, colors } from '../../theme';
+import { breakpoints, colors } from '../../theme';
 
 export const MenuStyled = styled.nav`
     display: flex;
@@ -10,7 +10,7 @@ export const MenuContainerStyled = styled.div`
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
-    @media (max-width: ${breackpoints.mobileL}) {
+    @media (max-width: ${breakpoints.mobileL}) {
       display: flex;
     }
 `;
@@ -28,11 +28,11 @@ export const MenuItemStyled = styled.button`
     background: ${(props) => (props.isActive ? colors.blue : colors.white)};
     color: ${(props) => (props.isActive ? colors.white : colors.blue)};
     :first-child {
-      @media (max-width:${breackpoints.mobileL}) {
+      @media (max-width:${breakpoints.mobileL}) {
         margin-right: 24px;
       }
     }
-    @media (max-width: ${breackpoints.mobileL}) {
+    @media (max-width: ${breakpoints.mobileL}) {
         width: 120px;
         margin: 0px;
     }

@@ -6,7 +6,7 @@ import {
 import {
   SignUp, SignIn, RestorePassword, RestoredPassword,
 } from '../pages/Authorization';
-import { AppointmentsView, DoctorWiew, UserView } from '../pages';
+import { AppointmentsView, DoctorView, UserView } from '../pages';
 import { getStatus } from '../pages/Authorization/redux';
 
 export function AppRouter() {
@@ -22,7 +22,7 @@ export function AppRouter() {
           <Route exact path="/sign-in" component={SignIn} />
           <Route exact path="/restore-password" component={RestorePassword} />
           <Route exact path="/restored-password" component={RestoredPassword} />
-          <Route exact path="/doctor" component={DoctorWiew} />
+          <Route exact path="/doctor" component={DoctorView} />
           <Route exact path="/patient" component={UserView} />
           <Route exact path="/appointments" component={AppointmentsView} />
         </Switch>

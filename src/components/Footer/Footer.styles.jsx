@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { breackpoints } from '../../theme';
+import { breakpoints } from '../../theme';
 
 export const FooterStyled = styled.div`
     display: flex;
     margin-top: 70px;
-    @media (max-width: ${breackpoints.tablet}) {
+    @media (max-width: ${breakpoints.tablet}) {
       display: flex;
       flex-direction: column;
       margin-top: 48px;
@@ -21,7 +21,7 @@ export const FooterTextStyled = styled.span`
 `;
 
 export const FooterLinkStyled = styled(Link)`
- @media (max-width: ${breackpoints.tablet}) {
+ @media (max-width: ${breakpoints.tablet}) {
     margin: 0;
   }
 `;

@@ -6,4 +6,3 @@ export { RadioInput } from './RadioInput';
 export { CustomSelect } from './Select';
 export { SectionHeader } from './SectionHeader';
 export * from './Card';
-export * from './CardList';

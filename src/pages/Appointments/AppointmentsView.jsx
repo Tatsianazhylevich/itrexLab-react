@@ -1,15 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Header } from '../../components';
-import { SelectDoctorForm } from '../../forms';
+import { useDispatch } from 'react-redux';
+import { MainPage } from '../Main';
+import { SelectDoctorForm } from './components/SelectDoctorForm';
 import { BoardCard, BoardHeader } from '../../modules';
-import { userProfile, getUserProfile } from '../Authorization/redux';
-import { WrapperStyled, MainStyled } from './AppointmentsView.styles';
+import { userProfile } from '../Authorization/redux';
+import { MainStyled } from './AppointmentsView.styles';
 import { messages } from '../../shared';
 
 export function AppointmentsView() {
-  const user = useSelector(getUserProfile);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -17,14 +16,13 @@ export function AppointmentsView() {
   }, []);
 
   return (
-    <WrapperStyled className="wrapper">
-      <Header name={`${user.first_name} ${user.last_name}`} position={`${user.role_name}`} />
+    <MainPage>
       <MainStyled>
         <BoardCard>
           <BoardHeader title={messages.appointmentsViewTitle} />
           <SelectDoctorForm />
         </BoardCard>
       </MainStyled>
-    </WrapperStyled>
+    </MainPage>
   );
 }

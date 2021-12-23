@@ -1,0 +1,1 @@
+export { PatientResolutions } from './PatientResolutions';
